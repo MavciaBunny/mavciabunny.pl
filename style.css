@@ -357,45 +357,60 @@ TEXT UNDER PHOTO
 ONLINE
 ========================================================= */
 
+/* =========================================================
+ONLINE
+========================================================= */
+
 .online {
-  display: inline-flex;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: row !important;
 
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
+  width: auto !important;
+  height: auto !important;
 
-  padding: 9px 16px;
+  gap: 9px !important;
 
-  border: 1px solid rgba(80, 255, 150, 0.28);
+  margin: 0 auto 10px !important;
+  padding: 8px 15px !important;
 
-  border-radius: 999px;
+  border: 1px solid rgba(80, 255, 150, 0.35) !important;
+  border-radius: 999px !important;
 
-  background: rgba(20, 40, 27, 0.55);
+  background: rgba(20, 40, 27, 0.65) !important;
 
-  color: #a7e9bb;
+  color: #a7e9bb !important;
 
-  font-size: 10px;
-  font-weight: 700;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  letter-spacing: 0.14em !important;
 
-  letter-spacing: 0.14em;
+  white-space: nowrap !important;
 
   box-shadow:
-    0 0 20px rgba(80, 255, 150, 0.05);
+    0 0 18px rgba(80, 255, 150, 0.06) !important;
 }
 
 .online i {
-  width: 7px;
-  height: 7px;
+  flex: 0 0 7px !important;
 
-  display: block;
+  width: 7px !important;
+  height: 7px !important;
 
-  border-radius: 50%;
+  display: block !important;
 
-  background: #65e48c;
+  margin: 0 !important;
+  padding: 0 !important;
 
-  box-shadow: 0 0 12px rgba(101, 228, 140, 0.8);
+  border-radius: 50% !important;
+
+  background: #65e48c !important;
+
+  box-shadow:
+    0 0 10px rgba(101, 228, 140, 0.8) !important;
 }
-
 
 /* =========================================================
 SECTIONS
