@@ -1,7 +1,3 @@
-/* =========================================================
-MAVCIABUNNY — MAIN STYLE
-========================================================= */
-
 :root {
   --bg: #09090c;
   --bg-soft: #101015;
@@ -28,14 +24,12 @@ MAVCIABUNNY — MAIN STYLE
 }
 
 
-/* =========================================================
-RESET
-========================================================= */
+/* =========================
+   RESET
+========================= */
 
 * {
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
 }
 
 html {
@@ -43,232 +37,377 @@ html {
 }
 
 body {
+  margin: 0;
   min-height: 100vh;
 
   background:
-    radial-gradient(circle at 50% 0%, rgba(110, 40, 160, 0.18), transparent 35%),
-    radial-gradient(circle at 10% 35%, rgba(239, 49, 88, 0.06), transparent 25%),
-    var(--bg);
+    radial-gradient(
+      circle at 50% -10%,
+      rgba(168, 85, 247, 0.17),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 10% 35%,
+      rgba(239, 49, 88, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+      circle at 90% 65%,
+      rgba(168, 85, 247, 0.08),
+      transparent 30%
+    ),
+    #09090c;
 
   color: var(--text);
 
-  font-family: "Montserrat", Arial, sans-serif;
-  line-height: 1.7;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
   overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  display: block;
+
+/* =========================
+   DELIKATNY BROKAT TŁA
+========================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 0;
+
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.45) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(212,156,255,.35) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(239,49,88,.28) 0 1px, transparent 1.5px);
+
+  background-size:
+    145px 145px,
+    220px 220px,
+    280px 280px;
+
+  background-position:
+    20px 40px,
+    90px 120px,
+    170px 20px;
+
+  opacity: 0.35;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+
+/* =========================
+   RUCHOME ISKIERKI
+========================= */
+
+.luxury-particles {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  z-index: 1;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
+.particle {
+  position: absolute;
+
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 13px;
+
+  text-shadow:
+    0 0 6px rgba(255,255,255,.8),
+    0 0 15px rgba(168,85,247,.65);
+
+  opacity: 0;
+
+  animation:
+    sparkleFloat 7s ease-in-out infinite,
+    sparkleBlink 2.8s ease-in-out infinite;
+}
+
+.p1  { left: 7%;  top: 18%; animation-delay: 0s, .4s; }
+.p2  { left: 17%; top: 62%; animation-delay: 1.4s, 1.1s; }
+.p3  { left: 28%; top: 28%; animation-delay: 3s, .2s; }
+.p4  { left: 38%; top: 75%; animation-delay: 2s, 1.7s; }
+.p5  { left: 48%; top: 12%; animation-delay: 4s, .8s; }
+.p6  { left: 58%; top: 48%; animation-delay: .7s, 2s; }
+.p7  { left: 68%; top: 82%; animation-delay: 2.8s, .3s; }
+.p8  { left: 77%; top: 25%; animation-delay: 1.8s, 1.5s; }
+.p9  { left: 87%; top: 57%; animation-delay: 3.7s, .6s; }
+.p10 { left: 94%; top: 16%; animation-delay: 1.2s, 2.2s; }
+.p11 { left: 12%; top: 88%; animation-delay: 4.5s, 1s; }
+.p12 { left: 82%; top: 90%; animation-delay: 2.5s, 1.8s; }
+
+
+@keyframes sparkleFloat {
+  0% {
+    transform: translateY(30px) translateX(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-25px) translateX(12px) rotate(90deg);
+  }
+
+  100% {
+    transform: translateY(30px) translateX(0) rotate(180deg);
+  }
 }
 
 
-/* =========================================================
-MAIN
-========================================================= */
+@keyframes sparkleBlink {
+  0%,
+  100% {
+    opacity: 0.08;
+    transform: scale(.65);
+  }
+
+  45% {
+    opacity: 0.95;
+    transform: scale(1.35);
+  }
+
+  60% {
+    opacity: 0.3;
+    transform: scale(.85);
+  }
+}
+
+
+/* =========================
+   FLOATING CARDS
+========================= */
+
+.floating-cards {
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  overflow: hidden;
+
+  z-index: 0;
+}
+
+.floating-card {
+  position: absolute;
+
+  font-family: Georgia, serif;
+
+  font-size: 26px;
+
+  opacity: 0.1;
+
+  filter:
+    drop-shadow(0 0 8px rgba(168,85,247,.35));
+
+  animation: cardFloat 13s linear infinite;
+}
+
+.card-heart {
+  color: #ef3158;
+}
+
+.card-diamond {
+  color: #d49cff;
+}
+
+.card-spade,
+.card-club {
+  color: #fff;
+}
+
+.card-heart {
+  left: 5%;
+  bottom: -60px;
+  animation-delay: 0s;
+}
+
+.card-diamond {
+  left: 25%;
+  bottom: -70px;
+  animation-delay: 4s;
+}
+
+.card-spade {
+  left: 55%;
+  bottom: -60px;
+  animation-delay: 7s;
+}
+
+.card-club {
+  left: 80%;
+  bottom: -70px;
+  animation-delay: 2s;
+}
+
+.small-card {
+  font-size: 18px;
+}
+
+.card-heart.small-card {
+  left: 43%;
+  bottom: -40px;
+  animation-delay: 9s;
+}
+
+.card-diamond.small-card {
+  left: 92%;
+  bottom: -40px;
+  animation-delay: 5s;
+}
+
+
+@keyframes cardFloat {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: .12;
+  }
+
+  50% {
+    opacity: .16;
+  }
+
+  88% {
+    opacity: .08;
+  }
+
+  100% {
+    transform: translateY(-115vh) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+
+/* =========================
+   MAIN
+========================= */
 
 main {
   position: relative;
   z-index: 2;
 
   width: min(1120px, calc(100% - 32px));
+
   margin: 0 auto;
 }
 
 
-/* =========================================================
-FLOATING CARDS
-========================================================= */
-
-.floating-cards {
-  position: fixed;
-  inset: 0;
-
-  width: 100vw;
-  height: 100vh;
-
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.floating-cards span {
-  position: absolute;
-  bottom: -80px;
-
-  display: block;
-
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 42px;
-  font-weight: 700;
-  line-height: 1;
-
-  color: rgba(255, 255, 255, 0.22);
-
-  text-shadow:
-    0 0 10px rgba(255, 255, 255, 0.08),
-    0 0 25px rgba(168, 85, 247, 0.08);
-
-  opacity: 0;
-
-  animation:
-    floatingCards 13s linear infinite;
-}
-
-.floating-cards span:nth-child(1) { left: 5%; animation-delay: 0s; }
-.floating-cards span:nth-child(2) { left: 13%; animation-delay: -4s; }
-.floating-cards span:nth-child(3) { left: 22%; animation-delay: -8s; }
-.floating-cards span:nth-child(4) { left: 31%; animation-delay: -2s; }
-.floating-cards span:nth-child(5) { left: 40%; animation-delay: -10s; }
-.floating-cards span:nth-child(6) { left: 48%; animation-delay: -6s; }
-.floating-cards span:nth-child(7) { left: 56%; animation-delay: -1s; }
-.floating-cards span:nth-child(8) { left: 64%; animation-delay: -9s; }
-.floating-cards span:nth-child(9) { left: 71%; animation-delay: -5s; }
-.floating-cards span:nth-child(10) { left: 78%; animation-delay: -11s; }
-.floating-cards span:nth-child(11) { left: 84%; animation-delay: -3s; }
-.floating-cards span:nth-child(12) { left: 91%; animation-delay: -7s; }
-.floating-cards span:nth-child(13) { left: 17%; animation-delay: -12s; }
-.floating-cards span:nth-child(14) { left: 37%; animation-delay: -5s; }
-.floating-cards span:nth-child(15) { left: 68%; animation-delay: -10s; }
-.floating-cards span:nth-child(16) { left: 96%; animation-delay: -2s; }
-
-.floating-cards span:nth-child(3n) {
-  color: rgba(239, 49, 88, 0.45);
-}
-
-.floating-cards span:nth-child(4n) {
-  color: rgba(168, 85, 247, 0.48);
-}
-
-@keyframes floatingCards {
-  0% {
-    transform: translateY(0) rotate(0deg) scale(0.75);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 0.8;
-  }
-
-  50% {
-    opacity: 0.55;
-  }
-
-  85% {
-    opacity: 0.3;
-  }
-
-  100% {
-    transform: translateY(-120vh) rotate(360deg) scale(1.1);
-    opacity: 0;
-  }
-}
-
-
-/* =========================================================
-HERO
-========================================================= */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-  position: relative;
-
-  min-height: 100vh;
-
-  padding: 90px 0 80px;
+  min-height: 760px;
 
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   text-align: center;
+
+  padding:
+    70px
+    0
+    85px;
 }
 
-.eyebrow {
-  margin-bottom: 15px;
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
 
   color: var(--purple-light);
 
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 0.35em;
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: .32em;
+
+  margin-bottom: 20px;
+
+  opacity: .85;
 }
 
-.hero h1 {
-  max-width: 850px;
-
-  margin-bottom: 34px;
-
-  color: var(--white);
-
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(48px, 7vw, 86px);
-  font-weight: 700;
-
-  line-height: 0.95;
-}
-
-.hero h1 span {
-  color: var(--red);
-  display: inline-block;
-
-  filter: drop-shadow(0 0 12px rgba(239, 49, 88, 0.35));
-}
-
-
-/* =========================================================
-INTRO CARD
-========================================================= */
-
-.intro-card {
-  width: min(700px, 100%);
-
-  margin-bottom: 42px;
-  padding: 30px 34px;
+.hero-kicker span {
+  width: 25px;
+  height: 1px;
 
   background:
     linear-gradient(
-      145deg,
-      rgba(30, 30, 38, 0.92),
-      rgba(13, 13, 18, 0.94)
+      90deg,
+      transparent,
+      var(--purple)
     );
-
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
-
-  backdrop-filter: blur(15px);
 }
 
-.intro-card h2 {
-  margin-bottom: 12px;
-
-  color: var(--purple-light);
-
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 32px;
+.hero-kicker span:last-child {
+  background:
+    linear-gradient(
+      90deg,
+      var(--purple),
+      transparent
+    );
 }
 
-.intro-card p {
+
+.hero h1 {
+  margin: 0;
+
+  color: var(--white);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size:
+    clamp(38px, 7vw, 72px);
+
+  line-height: .98;
+
+  letter-spacing: -.04em;
+
+  text-shadow:
+    0 0 35px rgba(168,85,247,.15);
+}
+
+
+.hero-subtitle {
+  max-width: 520px;
+
+  margin:
+    22px auto
+    32px;
+
   color: var(--muted);
+
   font-size: 14px;
+
+  line-height: 1.7;
 }
 
 
-/* =========================================================
-PORTRAIT
-========================================================= */
+/* =========================
+   ZDJĘCIE
+   CELowo BEZ ANIMACJI
+========================= */
 
 .portrait-wrap {
   position: relative;
@@ -276,7 +415,10 @@ PORTRAIT
   width: 280px;
   height: 348px;
 
-  margin: 10px auto 24px;
+  margin:
+    10px auto
+    24px;
+
   padding: 4px;
 
   background:
@@ -295,6 +437,9 @@ PORTRAIT
 
   flex-shrink: 0;
 }
+
+
+/* ŻADNEGO ::before / ::after NA PORTRECIE */
 
 .portrait-wrap img {
   position: relative;
@@ -319,52 +464,17 @@ PORTRAIT
   background: #111116;
 }
 
-.portrait-glow {
-  position: absolute;
 
-  inset: -30px;
-
-  background:
-    radial-gradient(
-      circle,
-      rgba(168, 85, 247, 0.18),
-      transparent 65%
-    );
-
-  filter: blur(25px);
-
-  z-index: -1;
-}
-
-
-/* =========================================================
-TEXT UNDER PHOTO
-========================================================= */
-
-.under-photo {
-  width: min(600px, 90vw);
-
-  margin: 0 auto 22px;
-
-  color: var(--muted);
-
-  font-size: 13px;
-  text-align: center;
-}
-
-
-/* =========================================================
-ONLINE
-========================================================= */
-
-/* =========================================================
-ONLINE
-========================================================= */
+/* =========================
+   ONLINE
+========================= */
 
 .online {
   display: inline-flex !important;
+
   align-items: center !important;
   justify-content: center !important;
+
   flex-direction: row !important;
 
   width: auto !important;
@@ -372,26 +482,39 @@ ONLINE
 
   gap: 9px !important;
 
-  margin: 0 auto 10px !important;
-  padding: 8px 15px !important;
+  margin:
+    0 auto
+    10px !important;
 
-  border: 1px solid rgba(80, 255, 150, 0.35) !important;
+  padding:
+    8px 15px !important;
+
+  border:
+    1px solid rgba(80, 255, 150, 0.35) !important;
+
   border-radius: 999px !important;
 
-  background: rgba(20, 40, 27, 0.65) !important;
+  background:
+    rgba(20, 40, 27, 0.65) !important;
 
   color: #a7e9bb !important;
 
   font-size: 10px !important;
+
   font-weight: 700 !important;
+
   line-height: 1 !important;
-  letter-spacing: 0.14em !important;
+
+  letter-spacing: .14em !important;
 
   white-space: nowrap !important;
 
   box-shadow:
     0 0 18px rgba(80, 255, 150, 0.06) !important;
+
+  animation: onlinePulse 3s ease-in-out infinite;
 }
+
 
 .online i {
   flex: 0 0 7px !important;
@@ -410,745 +533,476 @@ ONLINE
 
   box-shadow:
     0 0 10px rgba(101, 228, 140, 0.8) !important;
+
+  animation: onlineDot 2s ease-in-out infinite;
 }
 
-/* =========================================================
-SECTIONS
-========================================================= */
+
+@keyframes onlinePulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 18px rgba(80,255,150,.05);
+  }
+
+  50% {
+    box-shadow:
+      0 0 25px rgba(80,255,150,.18);
+  }
+}
+
+
+@keyframes onlineDot {
+  0%,
+  100% {
+    opacity: .65;
+    transform: scale(.9);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+
+.hero-text {
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 13px;
+}
+
+.hero-kiss {
+  margin-top: 17px;
+
+  font-size: 20px;
+
+  filter:
+    drop-shadow(0 0 12px rgba(239,49,88,.35));
+
+  animation:
+    kissPulse 3s ease-in-out infinite;
+}
+
+
+@keyframes kissPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: .75;
+  }
+
+  50% {
+    transform: scale(1.12);
+    opacity: 1;
+  }
+}
+
+
+/* =========================
+   SEKCJE
+========================= */
 
 .section {
-  padding: 85px 0;
+  position: relative;
+
+  padding:
+    70px 0;
 }
 
-.section-title {
+
+.section-heading {
   display: flex;
-  align-items: baseline;
-  gap: 15px;
+  align-items: center;
 
-  margin-bottom: 30px;
+  gap: 16px;
+
+  margin-bottom: 28px;
 }
 
-.section-title > span {
-  color: var(--red);
 
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.15em;
+.section-number {
+  color: var(--purple-light);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+
+  opacity: .75;
 }
 
-.section-title h2 {
+
+.section-heading h2 {
+  position: relative;
+
+  margin: 0;
+
   color: var(--white);
 
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(35px, 5vw, 52px);
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
 
-  line-height: 1;
+  font-size: clamp(27px, 4vw, 39px);
+
+  font-weight: 500;
+
+  letter-spacing: -.025em;
 }
 
 
-/* =========================================================
-LINK CARDS
-========================================================= */
+/* MAŁY BŁYSK OBOK NAGŁÓWKÓW */
+
+.section-heading h2::after {
+  content: "✦";
+
+  display: inline-block;
+
+  margin-left: 10px;
+
+  color: var(--purple-light);
+
+  font-family: Georgia, serif;
+
+  font-size: 13px;
+
+  vertical-align: middle;
+
+  animation: headingSparkle 2.8s ease-in-out infinite;
+}
+
+
+@keyframes headingSparkle {
+  0%,
+  100% {
+    opacity: .2;
+    transform: scale(.7) rotate(0deg);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.25) rotate(25deg);
+  }
+}
+
+
+/* =========================
+   LINK CARDS
+========================= */
 
 .link-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 15px;
 }
+
 
 .link-card {
   position: relative;
 
-  min-height: 190px;
-
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-
-  align-items: start;
-  gap: 18px;
-
-  padding: 25px;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(26, 26, 33, 0.94),
-      rgba(13, 13, 18, 0.94)
-    );
-
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-
-  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    background 0.3s ease;
-}
-
-.link-card:hover {
-  transform: translateY(-6px);
-
-  border-color: var(--border-purple);
-
-  background: var(--card-hover);
-
-  box-shadow:
-    0 20px 55px rgba(0, 0, 0, 0.4),
-    0 0 30px rgba(168, 85, 247, 0.07);
-}
-
-.link-card .icon {
-  width: 42px;
-  height: 42px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 13px;
-
-  background: rgba(168, 85, 247, 0.12);
-
-  color: var(--purple-light);
-
-  font-size: 20px;
-}
-
-.link-card h3 {
-  margin-bottom: 8px;
-
-  color: var(--white);
-
-  font-size: 16px;
-}
-
-.link-card p {
-  color: var(--muted);
-
-  font-size: 12px;
-  line-height: 1.7;
-}
-
-.link-card > b {
-  color: var(--purple-light);
-  font-size: 18px;
-}
-
-
-/* =========================================================
-SOCIAL
-========================================================= */
-
-.social-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
-}
-
-.social-grid a {
-  display: grid;
-
-  grid-template-columns: auto 1fr auto;
-  grid-template-rows: auto auto;
-
-  column-gap: 13px;
-
-  padding: 20px;
-
-  background: rgba(20, 20, 26, 0.88);
-
-  border: 1px solid var(--border);
-  border-radius: 18px;
-
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.social-grid a:hover {
-  transform: translateY(-4px);
-  border-color: var(--border-purple);
-}
-
-.social-icon {
-  grid-row: span 2;
-
-  width: 43px;
-  height: 43px;
-
-  display: grid;
-  place-items: center;
-
-  border-radius: 13px;
-
-  background: rgba(255, 255, 255, 0.06);
-
-  color: var(--white);
-
-  font-size: 20px;
-}
-
-.social-grid strong {
-  align-self: end;
-
-  color: var(--white);
-  font-size: 14px;
-}
-
-.social-grid small {
-  color: var(--muted);
-  font-size: 11px;
-}
-
-.social-grid b {
-  grid-column: 3;
-  grid-row: 1 / span 2;
-
-  align-self: center;
-
-  color: var(--purple-light);
-}
-
-
-/* =========================================================
-OFFERS
-========================================================= */
-
-.offer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.offer {
-  position: relative;
-
-  min-height: 330px;
-
-  padding: 32px;
-
-  overflow: hidden;
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(25, 25, 32, 0.96),
-      rgba(12, 12, 17, 0.96)
-    );
-
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-
-  box-shadow: var(--shadow);
-}
-
-.offer::after {
-  content: "";
-
-  position: absolute;
-
-  width: 180px;
-  height: 180px;
-
-  right: -90px;
-  bottom: -90px;
-
-  border-radius: 50%;
-
-  background: rgba(168, 85, 247, 0.08);
-
-  filter: blur(5px);
-}
-
-.offer-number {
-  margin-bottom: 20px;
-
-  color: var(--red);
-
-  font-size: 11px;
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-}
-
-.offer-icon {
-  margin-bottom: 15px;
-  font-size: 29px;
-}
-
-.offer h3 {
-  margin-bottom: 13px;
-
-  color: var(--white);
-
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 29px;
-
-  line-height: 1.05;
-}
-
-.offer p {
-  color: var(--muted);
-
-  font-size: 12px;
-  line-height: 1.8;
-}
-
-
-/* =========================================================
-CONTACT
-========================================================= */
-
-.contact {
-  position: relative;
-
-  margin: 40px 0 90px;
-
-  padding: 70px 30px;
-
-  overflow: hidden;
-
-  text-align: center;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(168, 85, 247, 0.13),
-      transparent 60%
-    ),
-    rgba(18, 18, 24, 0.92);
-
-  border: 1px solid var(--border-purple);
-  border-radius: 30px;
-
-  box-shadow:
-    var(--shadow),
-    0 0 70px rgba(168, 85, 247, 0.07);
-}
-
-.contact-symbol {
-  margin-bottom: 20px;
-
-  color: var(--red);
-
-  font-size: 40px;
-
-  filter:
-    drop-shadow(0 0 15px rgba(239, 49, 88, 0.25));
-}
-
-.contact p {
-  width: min(700px, 100%);
-
-  margin: 0 auto 30px;
-
-  color: var(--muted);
-
-  font-size: 14px;
-}
-
-.contact-button {
-  width: fit-content;
-
-  margin: auto;
+  min-height: 126px;
 
   display: flex;
   align-items: center;
+
   gap: 15px;
 
-  padding: 15px 25px;
-
-  border: 1px solid rgba(239, 49, 88, 0.5);
-
-  border-radius: 999px;
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(239, 49, 88, 0.18),
-      rgba(168, 85, 247, 0.14)
-    );
-
-  color: var(--white);
-
-  font-size: 12px;
-  font-weight: 700;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    border-color 0.25s ease;
-}
-
-.contact-button:hover {
-  transform: translateY(-3px);
-
-  border-color: var(--red-light);
-
-  background:
-    linear-gradient(
-      135deg,
-      rgba(239, 49, 88, 0.3),
-      rgba(168, 85, 247, 0.22)
-    );
-}
-
-.contact-button .mail {
-  color: var(--red-light);
-  font-size: 18px;
-}
-
-
-/* =========================================================
-GALLERY
-========================================================= */
-
-.gallery-section {
-  padding: 20px 0 90px;
-}
-
-.gallery {
-  display: grid;
-
-  grid-template-columns: repeat(3, 1fr);
-
-  gap: 14px;
-}
-
-.gallery a {
-  position: relative;
-
-  display: block;
+  padding: 21px;
 
   overflow: hidden;
 
-  aspect-ratio: 1 / 1;
+  color: inherit;
+  text-decoration: none;
 
-  background: #111116;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(27,27,35,.94),
+      rgba(16,16,21,.92)
+    );
 
-  border: 1px solid var(--border);
+  border:
+    1px solid var(--border);
 
-  border-radius: 20px;
+  border-radius: var(--radius);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
-.gallery a::after {
+
+/* SZEROKI SHIMMER */
+
+.link-card::before,
+.social-card::before,
+.offer::before {
   content: "";
 
   position: absolute;
 
-  inset: 0;
+  top: -80%;
+  left: -70%;
+
+  width: 45%;
+  height: 260%;
 
   background:
     linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.35),
-      transparent 45%
+      90deg,
+      transparent,
+      rgba(255,255,255,.12),
+      transparent
     );
+
+  transform: rotate(22deg);
 
   opacity: 0;
 
-  transition: opacity 0.3s ease;
-}
-
-.gallery img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
-  transition:
-    transform 0.45s ease,
-    filter 0.45s ease;
-}
-
-.gallery a:hover img {
-  transform: scale(1.06);
-
-  filter: brightness(0.8);
-}
-
-.gallery a:hover::after {
-  opacity: 1;
+  transition: opacity .25s ease;
 }
 
 
-/* =========================================================
-FOOTER
-========================================================= */
+/* MAŁE GWIAZDKI NA KARTACH */
 
-footer {
-  padding: 50px 0 35px;
+.link-card::after,
+.social-card::after {
+  content: "✦";
 
-  text-align: center;
+  position: absolute;
 
-  border-top: 1px solid rgba(255, 255, 255, 0.07);
-}
+  right: 15px;
+  top: 11px;
 
-footer div {
-  margin-bottom: 8px;
+  color: rgba(212,156,255,.55);
 
-  color: var(--white);
-
-  font-size: 13px;
-  font-weight: 700;
-
-  letter-spacing: 0.25em;
-}
-
-footer div span {
-  color: var(--red);
-}
-
-footer small {
-  color: #686873;
   font-size: 10px;
+
+  opacity: .2;
+
+  animation: cardStar 3.5s ease-in-out infinite;
 }
 
 
-/* =========================================================
-TABLET
-========================================================= */
+.link-card:hover,
+.social-card:hover,
+.offer:hover {
+  transform: translateY(-5px);
 
-@media (max-width: 850px) {
+  border-color:
+    rgba(168,85,247,.42);
 
-  main {
-    width: min(100% - 26px, 700px);
-  }
-
-  .link-grid,
-  .social-grid,
-  .offer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .link-card {
-    min-height: auto;
-  }
-
-  .gallery {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .hero {
-    padding-top: 65px;
-  }
-
-  .section {
-    padding: 65px 0;
-  }
+  box-shadow:
+    0 25px 60px rgba(0,0,0,.38),
+    0 0 35px rgba(168,85,247,.08);
 }
 
 
-/* =========================================================
-MOBILE
-========================================================= */
+.link-card:hover::before,
+.social-card:hover::before,
+.offer:hover::before {
+  opacity: 1;
 
-@media (max-width: 560px) {
+  animation: cardShimmer 1.2s ease forwards;
+}
 
-  main {
-    width: calc(100% - 22px);
+
+@keyframes cardShimmer {
+  from {
+    left: -70%;
   }
 
-  .hero {
-    min-height: auto;
-    padding: 55px 0 70px;
-  }
-
-  .eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.25em;
-  }
-
-  .hero h1 {
-    margin-bottom: 25px;
-    font-size: clamp(43px, 14vw, 62px);
-  }
-
-  .intro-card {
-    padding: 23px 20px;
-    border-radius: 18px;
-  }
-
-  .intro-card h2 {
-    font-size: 28px;
-  }
-
-  .intro-card p {
-    font-size: 12px;
-  }
-
-  .portrait-wrap {
-    width: 280px;
-    height: 348px;
-
-    max-width: 280px;
-  }
-
-  .portrait-wrap img {
-    width: 272px !important;
-    height: 340px !important;
-
-    max-width: 272px !important;
-  }
-
-  .under-photo {
-    width: min(90vw, 600px);
-    font-size: 11px;
-  }
-
-  .section-title {
-    gap: 10px;
-    margin-bottom: 22px;
-  }
-
-  .section-title h2 {
-    font-size: 35px;
-  }
-
-  .link-card {
-    padding: 21px;
-
-    grid-template-columns: auto 1fr auto;
-
-    border-radius: 18px;
-  }
-
-  .link-card p {
-    font-size: 11px;
-  }
-
-  .social-grid a {
-    padding: 17px;
-  }
-
-  .offer {
-    min-height: auto;
-
-    padding: 27px;
-
-    border-radius: 19px;
-  }
-
-  .offer h3 {
-    font-size: 27px;
-  }
-
-  .contact {
-    margin: 20px 0 60px;
-
-    padding: 50px 20px;
-
-    border-radius: 23px;
-  }
-
-  .contact p {
-    font-size: 12px;
-  }
-
-  .contact-button {
-    width: 100%;
-
-    justify-content: center;
-
-    padding: 14px 16px;
-
-    font-size: 11px;
-  }
-
-  .gallery {
-    gap: 9px;
-  }
-
-  .gallery a {
-    border-radius: 13px;
-  }
-
-  footer {
-    padding-bottom: 25px;
-  }
-
-  .floating-cards span {
-    font-size: 31px;
+  to {
+    left: 150%;
   }
 }
 
 
-/* =========================================================
-REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-    scroll-behavior: auto;
+@keyframes cardStar {
+  0%,
+  100% {
+    opacity: .15;
+    transform: scale(.7) rotate(0deg);
   }
 
-  .floating-cards span {
-    animation: none;
-    opacity: 0.15;
-  }
-
-  .link-card,
-  .social-grid a,
-  .contact-button,
-  .gallery img {
-    transition: none;
+  50% {
+    opacity: .9;
+    transform: scale(1.25) rotate(20deg);
   }
 }
-/* =========================================================
-   OUTLINE IKONKI — TELEGRAM / SHOWUP / MAJTKOMAT / X / INSTAGRAM
-========================================================= */
 
-.link-card .link-icon {
+
+.link-icon {
   width: 42px;
   height: 42px;
 
   display: grid;
   place-items: center;
 
+  flex-shrink: 0;
+
   border-radius: 13px;
 
-  background: rgba(168, 85, 247, 0.12);
+  background:
+    rgba(168,85,247,.12);
 
   color: var(--purple-light);
-
-  flex-shrink: 0;
 }
 
-.link-card .link-icon svg {
+
+.link-icon svg {
   width: 23px;
   height: 23px;
 
   display: block;
 
   fill: none;
+
   stroke: currentColor;
+
   stroke-width: 1.55;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  color: var(--purple-light);
-
   transition:
-    transform 0.25s ease,
-    color 0.25s ease,
-    filter 0.25s ease;
+    transform .3s ease,
+    color .3s ease;
 }
+
 
 .link-card:hover .link-icon svg {
-  color: #ffffff;
+  color: #fff;
 
   transform: scale(1.08);
-
-  filter:
-    drop-shadow(0 0 7px rgba(168, 85, 247, 0.45));
 }
 
 
-/* =========================================================
-   X + INSTAGRAM
-========================================================= */
+.link-content {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.link-content strong {
+  color: var(--white);
+
+  font-size: 14px;
+
+  font-weight: 700;
+}
+
+
+.link-content small {
+  color: var(--muted);
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+.arrow {
+  margin-left: auto;
+
+  color: rgba(255,255,255,.4);
+
+  font-size: 16px;
+
+  transition:
+    transform .3s ease,
+    color .3s ease;
+}
+
+
+.link-card:hover .arrow {
+  color: var(--purple-light);
+
+  transform: translate(3px,-3px);
+}
+
+
+/* =========================
+   SOCIAL
+========================= */
+
+.social-grid {
+  margin-top: 12px;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+
+.social-card {
+  position: relative;
+
+  min-height: 78px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  padding: 16px 17px;
+
+  overflow: hidden;
+
+  color: inherit;
+  text-decoration: none;
+
+  background:
+    rgba(18,18,24,.78);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius: 18px;
+
+  transition:
+    transform .3s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.social-icon {
+  width: 39px;
+  height: 39px;
+
+  display: grid;
+  place-items: center;
+
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background:
+    rgba(255,255,255,.045);
+
+  color: #d9d9df;
+}
+
 
 .social-icon svg {
   width: 22px;
@@ -1157,716 +1011,744 @@ REDUCED MOTION
   display: block;
 
   fill: none;
+
   stroke: currentColor;
+
   stroke-width: 1.55;
+
   stroke-linecap: round;
   stroke-linejoin: round;
 
-  color: var(--white);
-
   transition:
-    transform 0.25s ease,
-    color 0.25s ease,
-    filter 0.25s ease;
+    transform .3s ease,
+    color .3s ease;
 }
 
-.social-grid a:hover .social-icon svg {
+
+.social-card > span:nth-child(2) {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+}
+
+
+.social-card strong {
+  color: var(--white);
+
+  font-size: 13px;
+}
+
+
+.social-card small {
+  color: var(--muted);
+
+  font-size: 10px;
+}
+
+
+.social-card b {
+  margin-left: auto;
+
+  color: rgba(255,255,255,.35);
+
+  font-size: 14px;
+}
+
+
+.social-card:hover .social-icon svg {
   color: var(--purple-light);
 
   transform: scale(1.08);
-
-  filter:
-    drop-shadow(0 0 7px rgba(168, 85, 247, 0.4));
 }
 
 
-/* =========================================================
-   MOBILE — IKONKI
-========================================================= */
+/* =========================
+   OFERTY
+========================= */
 
-@media (max-width: 560px) {
+.offer-grid {
+  display: grid;
 
-  .link-card .link-icon {
-    width: 42px;
-    height: 42px;
-  }
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
-  .link-card .link-icon svg {
-    width: 22px;
-    height: 22px;
-  }
-
-  .social-icon svg {
-    width: 21px;
-    height: 21px;
-  }
-
+  gap: 15px;
 }
-.social-grid {
-  margin-top: 12px;
-}
-/* =========================================================
-   ✨ LUXURY GLAMOUR — BLASK / BROKAT / SHIMMER
-========================================================= */
 
-/* Delikatny błysk całej strony */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 999;
+
+.offer {
+  position: relative;
+
+  min-height: 300px;
+
+  padding: 26px;
+
+  overflow: hidden;
 
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.055) 0 1px, transparent 2px),
-    radial-gradient(circle at 72% 18%, rgba(212,156,255,0.08) 0 1px, transparent 2px),
-    radial-gradient(circle at 82% 72%, rgba(255,255,255,0.045) 0 1px, transparent 2px),
-    radial-gradient(circle at 35% 82%, rgba(239,49,88,0.05) 0 1px, transparent 2px);
+    linear-gradient(
+      145deg,
+      rgba(27,27,35,.94),
+      rgba(15,15,20,.95)
+    );
 
-  background-size: 180px 180px, 240px 240px, 210px 210px, 260px 260px;
+  border:
+    1px solid var(--border);
 
-  animation: luxurySparkles 8s ease-in-out infinite alternate;
+  border-radius: var(--radius);
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,.25);
+
+  transition:
+    transform .35s ease,
+    border-color .35s ease,
+    box-shadow .35s ease;
 }
 
-@keyframes luxurySparkles {
-  from {
-    opacity: 0.45;
-  }
 
-  to {
-    opacity: 1;
-  }
-}
+/* FIOLETOWA POŚWIATA W ROGU */
 
-
-/* =========================================================
-   BŁYSK NA KAFELKACH
-========================================================= */
-
-.link-card,
-.social-grid a,
-.offer,
-.intro-card {
-  overflow: hidden;
-}
-
-.link-card::after,
-.social-grid a::after,
-.offer::after,
-.intro-card::after {
+.offer::after {
   content: "";
 
   position: absolute;
 
-  top: -120%;
-  left: -70%;
+  right: -80px;
+  bottom: -90px;
+
+  width: 180px;
+  height: 180px;
+
+  border-radius: 50%;
+
+  background:
+    rgba(168,85,247,.12);
+
+  filter: blur(35px);
+
+  pointer-events: none;
+
+  transition:
+    transform .5s ease,
+    opacity .5s ease;
+}
+
+
+.offer:hover::after {
+  transform: scale(1.25);
+
+  opacity: .9;
+}
+
+
+.offer-top {
+  display: flex;
+
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 26px;
+}
+
+
+.offer-number {
+  color: var(--purple-light);
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+}
+
+
+.offer-symbol {
+  color: rgba(255,255,255,.75);
+
+  font-size: 20px;
+
+  text-shadow:
+    0 0 15px rgba(168,85,247,.45);
+
+  animation:
+    symbolSparkle 3.5s ease-in-out infinite;
+}
+
+
+@keyframes symbolSparkle {
+  0%,
+  100% {
+    opacity: .55;
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.12) rotate(5deg);
+  }
+}
+
+
+.offer h3 {
+  position: relative;
+  z-index: 2;
+
+  margin:
+    0
+    0
+    15px;
+
+  color: var(--white);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 22px;
+
+  font-weight: 500;
+
+  line-height: 1.15;
+}
+
+
+.offer p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+
+  line-height: 1.75;
+}
+
+
+.offer-line {
+  position: absolute;
+
+  left: 26px;
+  bottom: 24px;
+
+  width: 38px;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--purple),
+      transparent
+    );
+
+  opacity: .8;
+}
+
+
+/* =========================
+   KONTAKT
+========================= */
+
+.contact-section {
+  position: relative;
+
+  margin:
+    35px 0
+    80px;
+
+  padding:
+    65px 30px;
+
+  overflow: hidden;
+
+  text-align: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(168,85,247,.13),
+      transparent 42%
+    ),
+    rgba(15,15,20,.82);
+
+  border:
+    1px solid rgba(168,85,247,.18);
+
+  border-radius: 30px;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.4);
+}
+
+
+.contact-glow {
+  position: absolute;
+
+  left: 50%;
+  top: -120px;
+
+  width: 280px;
+  height: 280px;
+
+  transform: translateX(-50%);
+
+  background:
+    rgba(168,85,247,.12);
+
+  filter: blur(70px);
+
+  pointer-events: none;
+
+  animation:
+    contactGlow 5s ease-in-out infinite;
+}
+
+
+@keyframes contactGlow {
+  0%,
+  100% {
+    opacity: .45;
+    transform: translateX(-50%) scale(.9);
+  }
+
+  50% {
+    opacity: .85;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+
+.contact-kicker {
+  position: relative;
+  z-index: 2;
+
+  color: var(--purple-light);
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: .28em;
+}
+
+
+.contact-section h2 {
+  position: relative;
+  z-index: 2;
+
+  margin:
+    15px 0
+    14px;
+
+  color: var(--white);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(34px, 5vw, 48px);
+
+  font-weight: 500;
+}
+
+
+.contact-section p {
+  position: relative;
+  z-index: 2;
+
+  max-width: 500px;
+
+  margin:
+    0 auto
+    28px;
+
+  color: var(--muted);
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+
+.contact-button {
+  position: relative;
+  z-index: 2;
+
+  display: inline-flex;
+  align-items: center;
+
+  gap: 16px;
+
+  padding:
+    14px 20px;
+
+  color: #fff;
+
+  text-decoration: none;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: .12em;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(168,85,247,.85),
+      rgba(239,49,88,.78)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.15);
+
+  border-radius: 999px;
+
+  box-shadow:
+    0 15px 40px rgba(168,85,247,.18);
+
+  overflow: hidden;
+
+  transition:
+    transform .3s ease,
+    box-shadow .3s ease;
+}
+
+
+.contact-button::before {
+  content: "";
+
+  position: absolute;
+
+  top: -80%;
+  left: -80%;
 
   width: 45%;
-  height: 340%;
+  height: 260%;
 
   background:
     linear-gradient(
       90deg,
       transparent,
-      rgba(255,255,255,0.045),
-      rgba(212,156,255,0.12),
-      rgba(255,255,255,0.045),
+      rgba(255,255,255,.4),
       transparent
     );
 
   transform: rotate(22deg);
-
-  pointer-events: none;
-
-  opacity: 0;
-
-  transition: opacity 0.3s ease;
 }
 
-.link-card:hover::after,
-.social-grid a:hover::after,
-.offer:hover::after,
-.intro-card:hover::after {
-  opacity: 1;
 
-  animation: luxurySweep 1.2s ease forwards;
+.contact-button:hover::before {
+  animation: buttonShimmer 1s ease forwards;
 }
 
-@keyframes luxurySweep {
+
+@keyframes buttonShimmer {
   from {
-    transform: translateX(-80%) rotate(22deg);
-  }
-
-  to {
-    transform: translateX(420%) rotate(22deg);
-  }
-}
-
-
-/* =========================================================
-   LUKSUSOWE OBRAMOWANIA
-========================================================= */
-
-.link-card:hover,
-.social-grid a:hover,
-.offer:hover {
-  border-color: rgba(212,156,255,0.5);
-
-  box-shadow:
-    0 20px 55px rgba(0,0,0,0.45),
-    0 0 25px rgba(168,85,247,0.12),
-    inset 0 0 25px rgba(168,85,247,0.025);
-}
-
-
-/* =========================================================
-   DELIKATNE PULSOWANIE IKONEK
-========================================================= */
-
-.link-icon,
-.social-icon {
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-}
-
-.link-card:hover .link-icon,
-.social-grid a:hover .social-icon {
-  transform: translateY(-2px);
-
-  box-shadow:
-    0 0 15px rgba(168,85,247,0.16),
-    inset 0 0 12px rgba(212,156,255,0.05);
-}
-
-
-/* =========================================================
-   BŁYSK 💎 NA ONLINE
-========================================================= */
-
-.online {
-  position: relative;
-  overflow: hidden;
-}
-
-.online::after {
-  content: "";
-
-  position: absolute;
-
-  top: 0;
-  left: -80%;
-
-  width: 40%;
-  height: 100%;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.25),
-      transparent
-    );
-
-  transform: skewX(-20deg);
-
-  animation: onlineShine 4s ease-in-out infinite;
-}
-
-@keyframes onlineShine {
-  0%,
-  65% {
     left: -80%;
   }
 
-  85%,
-  100% {
-    left: 140%;
+  to {
+    left: 150%;
   }
 }
 
 
-/* =========================================================
-   SERDUSZKO / 💋 — DELIKATNE ŚWIATŁO
-========================================================= */
+.contact-button:hover {
+  transform: translateY(-3px);
 
-.hero h1 span,
-.contact-symbol {
-  animation: kissGlow 3s ease-in-out infinite;
-}
-
-@keyframes kissGlow {
-  0%,
-  100% {
-    filter:
-      drop-shadow(0 0 8px rgba(239,49,88,0.25));
-  }
-
-  50% {
-    filter:
-      drop-shadow(0 0 18px rgba(239,49,88,0.5))
-      drop-shadow(0 0 30px rgba(168,85,247,0.15));
-  }
+  box-shadow:
+    0 20px 55px rgba(168,85,247,.3);
 }
 
 
-/* =========================================================
-   ZDJĘCIE — SUBTELNY GLAMOUR GLOW
-========================================================= */
-
-.portrait-wrap {
-  animation: portraitGlow 5s ease-in-out infinite;
-}
-
-@keyframes portraitGlow {
-  0%,
-  100% {
-    box-shadow:
-      0 25px 80px rgba(0,0,0,0.6),
-      0 0 50px rgba(168,85,247,0.10);
-  }
-
-  50% {
-    box-shadow:
-      0 25px 80px rgba(0,0,0,0.6),
-      0 0 70px rgba(168,85,247,0.20),
-      0 0 100px rgba(239,49,88,0.06);
-  }
+.contact-button b {
+  font-size: 14px;
 }
 
 
-/* =========================================================
-   DELIKATNE „DIAMENCIKI”
-========================================================= */
+/* =========================
+   GALERIA
+========================= */
 
-.portrait-wrap::after {
-  content: "✦";
-
-  position: absolute;
-
-  top: -12px;
-  right: -12px;
-
-  color: rgba(255,255,255,0.8);
-
-  font-size: 17px;
-
-  text-shadow:
-    0 0 7px rgba(255,255,255,0.8),
-    0 0 18px rgba(212,156,255,0.7);
-
-  animation: diamondTwinkle 2.8s ease-in-out infinite;
-}
-
-@keyframes diamondTwinkle {
-  0%,
-  100% {
-    opacity: 0.25;
-    transform: scale(0.7) rotate(0deg);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.2) rotate(25deg);
-  }
+.gallery-section {
+  padding-top: 0;
 }
 
 
-/* =========================================================
-   OFFER — LEKKI BLASK NUMERÓW
-========================================================= */
-
-.offer-number {
-  text-shadow:
-    0 0 12px rgba(239,49,88,0.25);
-}
-
-.offer-icon {
-  filter:
-    drop-shadow(0 0 7px rgba(239,49,88,0.12));
-}
-
-
-/* =========================================================
-   REDUKCJA ANIMACJI — SZANUJEMY USTAWIENIA SYSTEMU
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  body::before,
-  .portrait-wrap,
-  .hero h1 span,
-  .contact-symbol,
-  .online::after,
-  .portrait-wrap::after {
-    animation: none;
-  }
-
-}
-/* =========================================================
-   ✨✨ LUXURY SPARKLE OVERLAY — WIDOCZNE BŁYSKI
-========================================================= */
-
-/* Iskierki latające po całej stronie */
-body::after {
-  content:
-    "✦     ·        ✧              ·     ✦"
-    "        ✧          ·    ✦"
-    "   ·             ✦        ✧"
-    "        ✦    ·              ✧";
-
-  position: fixed;
-  inset: 0;
-
-  z-index: 1000;
-
-  pointer-events: none;
-
-  white-space: pre-wrap;
-
-  color: rgba(255,255,255,0.55);
-
-  font-size: 12px;
-  line-height: 110px;
-  letter-spacing: 18px;
-
-  opacity: 0.45;
-
-  text-shadow:
-    0 0 5px rgba(255,255,255,0.9),
-    0 0 12px rgba(212,156,255,0.8),
-    0 0 25px rgba(168,85,247,0.45);
-
-  animation:
-    sparkleFloat 7s ease-in-out infinite alternate,
-    sparklePulse 2.5s ease-in-out infinite;
-}
-
-@keyframes sparkleFloat {
-  0% {
-    transform: translate(0, 15px);
-  }
-
-  50% {
-    transform: translate(18px, -12px);
-  }
-
-  100% {
-    transform: translate(-12px, 8px);
-  }
-}
-
-@keyframes sparklePulse {
-  0%,
-  100% {
-    opacity: 0.2;
-  }
-
-  50% {
-    opacity: 0.75;
-  }
-}
-
-
-/* =========================================================
-   ✨ BŁYSKI NA KAFELKACH
-========================================================= */
-
-.link-card,
-.social-grid a,
-.offer {
+.gallery-placeholder {
   position: relative;
+
+  min-height: 240px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(25,25,32,.82),
+      rgba(14,14,19,.9)
+    );
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius: 24px;
+
   overflow: hidden;
 }
 
 
-/* szeroki refleks */
-
-.link-card::before,
-.social-grid a::before,
-.offer::before {
+.gallery-placeholder::before {
   content: "";
 
   position: absolute;
-
-  top: -100%;
-  left: -70%;
-
-  width: 35%;
-  height: 300%;
+  inset: 0;
 
   background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,0.04),
-      rgba(255,255,255,0.22),
-      rgba(212,156,255,0.15),
-      rgba(255,255,255,0.04),
-      transparent
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(168,85,247,.09),
+      transparent 50%
     );
-
-  transform: rotate(25deg);
-
-  opacity: 0;
-
-  pointer-events: none;
 }
 
 
-/* błysk przy wejściu myszką */
-
-.link-card:hover::before,
-.social-grid a:hover::before,
-.offer:hover::before {
-  opacity: 1;
-
-  animation: cardShimmer 1.1s ease forwards;
-}
-
-@keyframes cardShimmer {
-
-  0% {
-    left: -70%;
-  }
-
-  100% {
-    left: 150%;
-  }
-
-}
-
-
-/* =========================================================
-   💎 LOSOWE BŁYSKI NA KAFELKACH
-========================================================= */
-
-.link-card::after,
-.social-grid a::after,
-.offer::after {
-
-  content: "✦";
-
-  position: absolute;
-
-  right: 18px;
-  top: 14px;
-
-  width: auto;
-  height: auto;
-
-  background: none;
-
-  color: rgba(255,255,255,0.35);
-
-  font-size: 13px;
-
-  text-shadow:
-    0 0 5px rgba(255,255,255,0.9),
-    0 0 12px rgba(212,156,255,0.7),
-    0 0 22px rgba(168,85,247,0.45);
-
-  opacity: 0.35;
-
-  animation:
-    cardStar 3.5s ease-in-out infinite;
-}
-
-@keyframes cardStar {
-
-  0%,
-  100% {
-    opacity: 0.15;
-    transform: scale(0.7) rotate(0deg);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.35) rotate(25deg);
-  }
-
-}
-
-
-/* różne tempo dla poszczególnych kart */
-
-.link-card:nth-child(2)::after {
-  animation-delay: 1s;
-}
-
-.link-card:nth-child(3)::after {
-  animation-delay: 2s;
-}
-
-.social-grid a:nth-child(1)::after {
-  animation-delay: 0.6s;
-}
-
-.social-grid a:nth-child(2)::after {
-  animation-delay: 1.8s;
-}
-
-.social-grid a:nth-child(3)::after {
-  animation-delay: 2.7s;
-}
-
-.offer:nth-child(2)::after {
-  animation-delay: 1.3s;
-}
-
-.offer:nth-child(3)::after {
-  animation-delay: 2.2s;
-}
-
-
-/* =========================================================
-   ✨ BŁYSK NA OBRAMOWANIU ZDJĘCIA
-========================================================= */
-
-.portrait-wrap::before {
-
-  content: "";
-
-  position: absolute;
-
-  inset: -3px;
-
-  border-radius: 30px;
-
-  background:
-    linear-gradient(
-      120deg,
-      transparent 20%,
-      rgba(255,255,255,0.8) 45%,
-      rgba(212,156,255,0.7) 50%,
-      transparent 65%
-    );
-
-  background-size: 250% 250%;
-
-  z-index: 3;
-
-  pointer-events: none;
-
-  mix-blend-mode: screen;
-
-  animation: portraitShine 4s ease-in-out infinite;
-}
-
-@keyframes portraitShine {
-
-  0% {
-    background-position: 200% 50%;
-    opacity: 0;
-  }
-
-  20% {
-    opacity: 0;
-  }
-
-  45% {
-    opacity: 0.75;
-  }
-
-  65% {
-    background-position: -50% 50%;
-    opacity: 0;
-  }
-
-  100% {
-    background-position: -50% 50%;
-    opacity: 0;
-  }
-
-}
-
-
-/* =========================================================
-   💎 MAŁE ISKIERKI PRZY NAGŁÓWKACH
-========================================================= */
-
-.section-title h2 {
+.gallery-icon {
   position: relative;
-}
+  z-index: 2;
 
-.section-title h2::after {
-
-  content: "✦";
-
-  position: absolute;
-
-  margin-left: 10px;
+  margin-bottom: 10px;
 
   color: var(--purple-light);
 
-  font-size: 13px;
+  font-size: 28px;
 
   text-shadow:
-    0 0 8px rgba(212,156,255,0.9),
-    0 0 18px rgba(168,85,247,0.6);
+    0 0 20px rgba(168,85,247,.5);
 
-  animation: headingSpark 2s ease-in-out infinite;
+  animation:
+    gallerySparkle 3s ease-in-out infinite;
 }
 
-@keyframes headingSpark {
 
+@keyframes gallerySparkle {
   0%,
   100% {
-    opacity: 0.2;
-    transform: scale(0.7);
+    opacity: .55;
+    transform: scale(.9) rotate(0deg);
   }
 
   50% {
     opacity: 1;
-    transform: scale(1.25);
+    transform: scale(1.18) rotate(20deg);
+  }
+}
+
+
+.gallery-placeholder h3 {
+  position: relative;
+  z-index: 2;
+
+  margin:
+    0 0
+    8px;
+
+  color: var(--white);
+
+  font-family:
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 24px;
+
+  font-weight: 500;
+}
+
+
+.gallery-placeholder p {
+  position: relative;
+  z-index: 2;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  position: relative;
+
+  padding:
+    35px 0
+    55px;
+
+  text-align: center;
+}
+
+
+.footer-logo {
+  color: var(--white);
+
+  font-size: 13px;
+
+  font-weight: 800;
+
+  letter-spacing: .2em;
+}
+
+
+.footer-logo span {
+  color: var(--purple-light);
+}
+
+
+footer p {
+  margin: 10px 0 0;
+
+  color: #666672;
+
+  font-size: 10px;
+}
+
+
+.footer-kiss {
+  margin-top: 12px;
+
+  font-size: 14px;
+
+  opacity: .65;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 850px) {
+
+  .link-grid,
+  .social-grid,
+  .offer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+
+    padding:
+      60px 0
+      75px;
+  }
+
+  .portrait-wrap {
+    margin-top: 18px;
+  }
+
+  .section {
+    padding:
+      55px 0;
   }
 
 }
 
-
-/* =========================================================
-   💋 KONTAKT — ŚWIETLNY PULS
-========================================================= */
-
-.contact {
-
-  animation: contactGlow 4s ease-in-out infinite;
-}
-
-@keyframes contactGlow {
-
-  0%,
-  100% {
-    box-shadow:
-      var(--shadow),
-      0 0 40px rgba(168,85,247,0.05);
-  }
-
-  50% {
-    box-shadow:
-      var(--shadow),
-      0 0 65px rgba(168,85,247,0.14),
-      0 0 100px rgba(239,49,88,0.05);
-  }
-
-}
-
-
-/* =========================================================
-   📱 MOBILE — MNIEJSZE BŁYSKI
-========================================================= */
 
 @media (max-width: 560px) {
 
-  body::after {
-    font-size: 9px;
-    line-height: 90px;
-    letter-spacing: 12px;
+  main {
+    width:
+      min(100% - 22px, 1120px);
   }
 
-  .section-title h2::after {
+  .hero {
+    padding-top: 45px;
+  }
+
+  .hero h1 {
+    font-size: 39px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+
+    padding: 0 8px;
+  }
+
+  .portrait-wrap {
+    width: 280px;
+    height: 348px;
+  }
+
+  .link-card {
+    min-height: 118px;
+
+    padding: 18px;
+  }
+
+  .link-content small {
     font-size: 10px;
-    margin-left: 6px;
+  }
+
+  .offer {
+    min-height: 280px;
+
+    padding: 23px;
+  }
+
+  .contact-section {
+    margin:
+      20px 0
+      55px;
+
+    padding:
+      50px 20px;
+  }
+
+  .floating-card {
+    font-size: 20px;
+  }
+
+  .particle {
+    font-size: 10px;
+  }
+
+}
+
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+
+    scroll-behavior: auto !important;
+
+    transition-duration: 0.01ms !important;
   }
 
 }
