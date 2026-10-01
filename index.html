@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f4f0ea">
+<meta name="description" content="MavciaBunny — private luxury world and exclusive links.">
+<title>MAVCIABUNNY — Private Luxury</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500;600&display=swap');
+:root{--ivory:#f5f1eb;--cream:#ebe3d8;--white:#fffdfa;--silver:#b8b8b5;--silver2:#dedbd5;--charcoal:#242323;--muted:#77736d;--red:#8d1822;--red2:#b32631;--line:rgba(55,50,45,.16)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--charcoal);font-family:Montserrat,Arial,sans-serif;font-weight:300;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.18;background-image:radial-gradient(circle,#fff 0 1px,transparent 1.5px),radial-gradient(circle,#aaa 0 .8px,transparent 1.2px);background-size:90px 90px,137px 137px;z-index:20}
+a{color:inherit;text-decoration:none}.wrap{width:min(100%,920px);margin:auto;padding:0 20px}.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.hero{min-height:100svh;display:flex;align-items:center;padding:28px 0 46px;position:relative}.hero-card{width:100%;background:rgba(255,253,250,.66);border:1px solid var(--line);box-shadow:0 30px 90px rgba(65,55,45,.13);backdrop-filter:blur(12px);padding:14px}.hero-image{height:min(76svh,760px);min-height:520px;position:relative;overflow:hidden;background:#ddd}.hero-image img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block;filter:saturate(.92) contrast(.98)}.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.04),transparent 55%,rgba(0,0,0,.28));pointer-events:none}.spark{position:absolute;color:#fff;z-index:2;text-shadow:0 0 12px #fff;font-size:20px}.s1{top:12%;left:7%}.s2{top:24%;right:8%;font-size:13px}.s3{bottom:17%;left:9%;font-size:12px}.s4{bottom:27%;right:10%;font-size:22px}.kiss{position:absolute;right:18px;top:18px;z-index:3;color:#fff;font-size:25px;filter:drop-shadow(0 2px 7px rgba(0,0,0,.3))}
+.hero-copy{text-align:center;padding:30px 12px 20px}.eyebrow{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}.brand{font-size:clamp(39px,9vw,76px);font-weight:500;letter-spacing:8px;line-height:.9;margin:16px 0 12px}.tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#706c66}.intro{max-width:600px;margin:23px auto 27px;line-height:1.8;font-size:13px;color:#5e5a55}.cta{display:inline-flex;align-items:center;justify-content:center;min-width:230px;padding:16px 24px;background:var(--red);color:#fff;letter-spacing:2.5px;text-transform:uppercase;font-size:10px;font-weight:500;box-shadow:0 10px 28px rgba(141,24,34,.18);transition:.25s}.cta:hover{transform:translateY(-2px);background:var(--red2)}
+section{padding:100px 0}.heading{text-align:center}.kicker{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--muted)}h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:46px;letter-spacing:3px;margin:10px 0}.sub{max-width:530px;margin:0 auto 38px;text-align:center;line-height:1.8;color:#6f6a64;font-size:12px}
+.links{display:grid;gap:12px;max-width:650px;margin:auto}.link{position:relative;display:flex;align-items:center;justify-content:space-between;padding:22px 24px;background:rgba(255,253,250,.7);border:1px solid var(--line);letter-spacing:2px;text-transform:uppercase;font-size:11px;transition:.25s;box-shadow:0 7px 22px rgba(60,50,40,.04)}.link:after{content:'↗';font-size:15px;color:var(--muted)}.link:hover{transform:translateY(-2px);background:#fff;border-color:rgba(141,24,34,.28)}.link.primary{background:var(--red);color:#fff;border-color:var(--red)}.link.primary:after{color:#fff}
+.casino{position:relative;overflow:hidden;background:linear-gradient(135deg,#fffdf9,#e8e2da);border:1px solid var(--line);padding:68px 28px;text-align:center;box-shadow:0 24px 65px rgba(60,50,40,.08)}.casino:before{content:'♠  ♦  ♥  ♣';position:absolute;left:50%;top:18px;transform:translateX(-50%);font-size:13px;letter-spacing:15px;color:var(--silver)}.wheel{width:170px;height:170px;border:1px solid #bdb9b1;border-radius:50%;margin:0 auto 28px;display:grid;place-items:center;background:conic-gradient(from 0deg,#fff 0 8%,#ddd9d1 8% 16%,#fff 16% 24%,#c9c5bd 24% 32%,#fff 32% 40%,#ddd9d1 40% 48%,#fff 48% 56%,#c9c5bd 56% 64%,#fff 64% 72%,#ddd9d1 72% 80%,#fff 80% 88%,#c9c5bd 88% 96%,#fff 96%);box-shadow:inset 0 0 0 13px #f7f3ed,inset 0 0 0 14px #aaa69f}.wheel span{width:54px;height:54px;border-radius:50%;background:var(--red);border:4px solid #eee9e0;display:grid;place-items:center;color:#fff;font-size:18px}.casino h2{margin-top:0}.casino p{max-width:530px;margin:0 auto 28px;line-height:1.8;color:#66615b;font-size:12px}
+.gallery{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.photo{position:relative;overflow:hidden;background:#ddd}.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}.photo:hover img{transform:scale(1.025)}.photo.big{grid-row:span 2;min-height:690px}.photo.small{min-height:338px}.photo .label{position:absolute;left:16px;bottom:15px;color:#fff;font-size:9px;letter-spacing:3px;text-transform:uppercase;text-shadow:0 1px 8px #000}
+.quote{text-align:center;padding:100px 20px}.quote-mark{font-family:Georgia,serif;color:var(--red);font-size:38px}.quote p{font-family:'Cormorant Garamond',Georgia,serif;font-size:31px;line-height:1.2;max-width:680px;margin:10px auto 15px}.quote small{letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-size:9px}
+footer{border-top:1px solid var(--line);padding:55px 0 34px;text-align:center}.footer-brand{font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;letter-spacing:6px}.icons{margin:17px 0;color:var(--red);letter-spacing:8px}.age{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:#8b8781}
+@media(max-width:650px){.wrap{padding:0 13px}.hero{padding-top:12px}.hero-card{padding:8px}.hero-image{height:66svh;min-height:450px}.brand{letter-spacing:5px}.intro{font-size:12px}.links{gap:10px}.link{padding:20px 18px}.gallery{grid-template-columns:1fr 1fr;gap:8px}.photo.big{grid-row:span 2;min-height:520px}.photo.small{min-height:256px}section{padding:75px 0}.quote p{font-size:27px}}
+@media(max-width:430px){.gallery{grid-template-columns:1fr}.photo.big,.photo.small{min-height:470px;grid-row:auto}.hero-image{min-height:430px}.hero-copy{padding-top:25px}.brand{font-size:39px}}
+</style>
+</head>
+<body>
+<main>
+<div class="wrap">
+<section class="hero" id="home">
+  <div class="hero-card">
+    <div class="hero-image">
+      <img src="images/hero.jpeg" alt="MavciaBunny — luxury portrait">
+      <span class="spark s1">✦</span><span class="spark s2">✧</span><span class="spark s3">✦</span><span class="spark s4">✧</span><span class="kiss">💋</span>
+    </div>
+    <div class="hero-copy">
+      <div class="eyebrow">Welcome to my private world</div>
+      <h1 class="brand serif">MAVCIABUNNY</h1>
+      <div class="tag">Luxury · Exclusive · Tempting</div>
+      <p class="intro">A little glamour, a little temptation and a world reserved for those who know where to look.</p>
+      <a class="cta" href="#links">Enter my world</a>
+    </div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="heading"><div class="kicker">The private club</div><h2>Choose your destination</h2></div>
+  <p class="sub">Find me in my exclusive spaces. Replace these buttons with your real links when you're ready.</p>
+  <div class="links">
+    <a class="link primary" href="#">OnlyFans</a>
+    <a class="link" href="#">Fansly</a>
+    <a class="link" href="#">X / Twitter</a>
+    <a class="link" href="#">Telegram</a>
+  </div>
+</section>
+
+<section>
+  <div class="casino">
+    <div class="wheel"><span>♠</span></div>
+    <div class="kicker">A touch of chance</div>
+    <h2>Play your hand.</h2>
+    <p>Luxury doesn't need to shout. A hint of casino glamour, polished silver and a little red — just enough to keep you curious.</p>
+    <a class="cta" href="#gallery">Discover more</a>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="heading"><div class="kicker">Selected moments</div><h2>Private gallery</h2></div>
+  <p class="sub">A curated glimpse into the MavciaBunny aesthetic.</p>
+  <div class="gallery">
+    <div class="photo big"><img src="images/bunny.jpeg" alt="MavciaBunny bunny-inspired look"><span class="label">Bunny after dark</span></div>
+    <div class="photo small"><img src="images/hero.jpeg" alt="MavciaBunny white shirt look"><span class="label">Luxury mood</span></div>
+    <div class="photo small"><img src="images/bunny.jpeg" alt="MavciaBunny detail"><span class="label">Private view</span></div>
+  </div>
+</section>
+
+<section class="quote">
+  <div class="quote-mark">“</div>
+  <p>Not everything beautiful needs to be explained.</p>
+  <small>MavciaBunny</small>
+</section>
+</div>
+</main>
+<footer><div class="wrap"><div class="footer-brand">MAVCIABUNNY</div><div class="icons">💋　🐇　♠</div><div class="age">18+ · Private adult content</div></div></footer>
+</body>
+</html>
