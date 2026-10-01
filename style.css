@@ -1,31 +1,5 @@
 ```css
 /* =========================
-   RESET
-========================= */
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background:
-        radial-gradient(circle at 20% 10%, rgba(115, 0, 255, 0.12), transparent 30%),
-        radial-gradient(circle at 85% 40%, rgba(255, 0, 70, 0.10), transparent 30%),
-        linear-gradient(135deg, #050505, #111111 50%, #050505);
-    color: #fff;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
-
-
-/* =========================
    LATAJĄCE KARTY
 ========================= */
 
@@ -33,23 +7,17 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-
     width: 100vw;
     height: 100vh;
-
     overflow: hidden;
     pointer-events: none;
-
-    z-index: 1;
+    z-index: 999;
 }
 
 .floating-cards span {
     position: absolute;
-
     left: 0;
     top: 110vh;
-
-    display: block;
 
     font-family: Georgia, "Times New Roman", serif;
     font-size: 42px;
@@ -63,29 +31,23 @@ body {
         0 0 20px rgba(160,80,255,.20);
 
     animation-name: cardFly;
-    animation-duration: 14s;
+    animation-duration: 12s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
     will-change: transform, opacity;
 }
 
-
-/* CZERWONE KARTY */
-
 .floating-cards .red {
-    color: rgba(255, 35, 80, 0.42);
+    color: rgba(255, 35, 80, 0.40);
 
     text-shadow:
         0 0 8px rgba(255,30,80,.25),
         0 0 20px rgba(255,30,80,.20);
 }
 
-
-/* FIOLETOWE KARTY */
-
 .floating-cards .purple {
-    color: rgba(190, 120, 255, 0.40);
+    color: rgba(190, 120, 255, 0.38);
 
     text-shadow:
         0 0 8px rgba(160,70,255,.25),
@@ -93,9 +55,7 @@ body {
 }
 
 
-/* =========================
-   ANIMACJA KART
-========================= */
+/* GŁÓWNY RUCH */
 
 @keyframes cardFly {
 
@@ -150,6 +110,116 @@ body {
 }
 
 
-/* =========================
-   POZYCJE POS
+/* RÓŻNE POZYCJE */
+
+.floating-cards span:nth-child(1) {
+    left: 3%;
+    animation-duration: 14s;
+    animation-delay: -2s;
+}
+
+.floating-cards span:nth-child(2) {
+    left: 10%;
+    animation-duration: 18s;
+    animation-delay: -10s;
+    font-size: 32px;
+}
+
+.floating-cards span:nth-child(3) {
+    left: 17%;
+    animation-duration: 13s;
+    animation-delay: -6s;
+    font-size: 52px;
+}
+
+.floating-cards span:nth-child(4) {
+    left: 24%;
+    animation-duration: 20s;
+    animation-delay: -15s;
+    font-size: 30px;
+}
+
+.floating-cards span:nth-child(5) {
+    left: 31%;
+    animation-duration: 15s;
+    animation-delay: -4s;
+    font-size: 45px;
+}
+
+.floating-cards span:nth-child(6) {
+    left: 39%;
+    animation-duration: 19s;
+    animation-delay: -12s;
+    font-size: 35px;
+}
+
+.floating-cards span:nth-child(7) {
+    left: 47%;
+    animation-duration: 14s;
+    animation-delay: -8s;
+    font-size: 55px;
+}
+
+.floating-cards span:nth-child(8) {
+    left: 55%;
+    animation-duration: 17s;
+    animation-delay: -17s;
+    font-size: 30px;
+}
+
+.floating-cards span:nth-child(9) {
+    left: 63%;
+    animation-duration: 13s;
+    animation-delay: -3s;
+    font-size: 48px;
+}
+
+.floating-cards span:nth-child(10) {
+    left: 70%;
+    animation-duration: 19s;
+    animation-delay: -11s;
+    font-size: 34px;
+}
+
+.floating-cards span:nth-child(11) {
+    left: 77%;
+    animation-duration: 15s;
+    animation-delay: -7s;
+    font-size: 54px;
+}
+
+.floating-cards span:nth-child(12) {
+    left: 84%;
+    animation-duration: 21s;
+    animation-delay: -16s;
+    font-size: 31px;
+}
+
+.floating-cards span:nth-child(13) {
+    left: 91%;
+    animation-duration: 14s;
+    animation-delay: -5s;
+    font-size: 44px;
+}
+
+.floating-cards span:nth-child(14) {
+    left: 14%;
+    animation-duration: 22s;
+    animation-delay: -19s;
+    font-size: 27px;
+}
+
+.floating-cards span:nth-child(15) {
+    left: 52%;
+    animation-duration: 18s;
+    animation-delay: -13s;
+    font-size: 41px;
+}
+
+.floating-cards span:nth-child(16) {
+    left: 73%;
+    animation-duration: 16s;
+    animation-delay: -9s;
+    font-size: 36px;
+}
 ```
