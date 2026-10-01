@@ -1179,3 +1179,15 @@ transition: none;
 }
 
 }
+/* Mniejsze zdjęcie główne */
+.hero img {
+    width: 320px;
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin: 0 auto 30px;
+
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+}
