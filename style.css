@@ -1197,3 +1197,15 @@ transition: none;
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
+.portrait-wrap {
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.portrait-wrap img {
+    width: 100% !important;
+    max-width: none !important;
+}
