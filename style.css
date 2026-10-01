@@ -1216,4 +1216,26 @@ transition: none;
     margin-left: auto !important;
     margin-right: auto !important;
 }
+/* ===== FINAL PHOTO SIZE ===== */
 
+.portrait-wrap {
+    position: relative !important;
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 280px !important;
+    margin: 10px auto 30px !important;
+    padding: 4px !important;
+    box-sizing: border-box !important;
+}
+
+.portrait-wrap img {
+    display: block !important;
+    width: 272px !important;
+    max-width: 272px !important;
+    min-width: 272px !important;
+    height: 340px !important;
+    max-height: 340px !important;
+    object-fit: cover !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
