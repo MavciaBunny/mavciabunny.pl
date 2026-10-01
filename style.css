@@ -1209,4 +1209,11 @@ transition: none;
     margin-left: 50%;
     transform: translateX(-50%);
 }
-```
+.portrait-wrap {
+    width: 280px !important;
+    max-width: 280px !important;
+    min-width: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
