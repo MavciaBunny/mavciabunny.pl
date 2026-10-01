@@ -1185,18 +1185,7 @@ transition: none;
 }
 
 }
-/* Mniejsze zdjęcie główne */
-.hero img {
-    width: 320px;
-    max-width: 80%;
-    height: auto;
-    display: block;
-    margin: 0 auto 30px;
-
-    border-radius: 20px;
-    border: 1px solid var(--border);
-    box-shadow: var(--shadow);
-}
+```css
 .portrait-wrap {
     width: 280px !important;
     max-width: 280px !important;
@@ -1209,3 +1198,18 @@ transition: none;
     width: 100% !important;
     max-width: none !important;
 }
+
+/* Opis i status ONLINE pozostają niezależne od szerokości zdjęcia */
+.portrait-wrap .under-photo {
+    width: min(600px, 90vw);
+    max-width: 600px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.portrait-wrap .online {
+    width: max-content;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+```
