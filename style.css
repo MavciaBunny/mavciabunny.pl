@@ -334,33 +334,30 @@ color: var(--muted);
 font-size: 14px;
 }
 
+
 /* =========================================================
 PORTRAIT
 ========================================================= */
-```css
-/* =========================================================
-PORTRAIT
-========================================================= */
 
-.portrait-wrap {
-position: relative;
+.portrait-wrap img {
+    position: relative;
+    z-index: 2;
 
-width: min(280px, 80vw);
+    display: block;
 
-margin: 10px auto 30px;
+    width: 100% !important;
+    max-width: 280px !important;
+    height: auto;
 
-border-radius: 28px;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
 
-padding: 4px;
+    margin: 0 auto;
 
-background:
-linear-gradient(
-135deg,
-rgba(168, 85, 247, 0.8),
-rgba(239, 49, 88, 0.55),
-rgba(255, 255, 255, 0.2)
-);
+    border-radius: 25px;
 
+    background: #111116;
+}
 box-shadow:
 0 25px 80px rgba(0, 0, 0, 0.6),
 0 0 70px rgba(168, 85, 247, 0.12);
