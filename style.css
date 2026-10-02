@@ -38,19 +38,67 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  overflow-x: hidden;
-  color: var(--white);
+body::before {
+  content: "";
+  position: fixed;
+  inset: -25%;
+  z-index: 0;
+  pointer-events: none;
+
   background:
-    radial-gradient(circle at 12% 12%, rgba(255,255,255,.18), transparent 22%),
-    radial-gradient(circle at 88% 18%, rgba(220,225,230,.14), transparent 24%),
-    radial-gradient(circle at 50% 48%, rgba(190,195,202,.09), transparent 32%),
-    radial-gradient(circle at 15% 78%, rgba(230,235,240,.10), transparent 25%),
-    radial-gradient(circle at 85% 82%, rgba(170,175,182,.12), transparent 28%),
-    linear-gradient(145deg, #030303 0%, #0c0c0e 45%, #030303 100%);
-  font-family: "Inter", Arial, sans-serif;
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(255,255,255,.16),
+      transparent 18%
+    ),
+    radial-gradient(
+      circle at 80% 30%,
+      rgba(210,215,220,.13),
+      transparent 20%
+    ),
+    radial-gradient(
+      circle at 45% 75%,
+      rgba(255,255,255,.09),
+      transparent 22%
+    ),
+    repeating-radial-gradient(
+      ellipse at 30% 40%,
+      transparent 0,
+      transparent 70px,
+      rgba(255,255,255,.035) 73px,
+      transparent 78px,
+      transparent 150px
+    ),
+    repeating-linear-gradient(
+      115deg,
+      transparent 0,
+      transparent 110px,
+      rgba(255,255,255,.035) 114px,
+      transparent 120px,
+      transparent 230px
+    );
+
+  filter: blur(18px);
+  opacity: .85;
+  transform: rotate(-8deg);
+  animation: silverGlow 16s ease-in-out infinite alternate;
+}
+
+@keyframes silverGlow {
+  0% {
+    transform: translate3d(-2%, -1%, 0) rotate(-8deg) scale(1);
+    opacity: .62;
+  }
+
+  50% {
+    transform: translate3d(2%, 2%, 0) rotate(-5deg) scale(1.04);
+    opacity: .9;
+  }
+
+  100% {
+    transform: translate3d(-1%, 3%, 0) rotate(-10deg) scale(1.08);
+    opacity: .68;
+  }
 }
     repeating-linear-gradient(
       116deg,
