@@ -2,21 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --black: #08090a;
-  --deep: #111315;
-  --graphite: #1b1d20;
-  --silver-dark: #686d73;
-  --silver: #aeb3b9;
-  --silver-light: #d9dde1;
-  --pearl: #eceeef;
-  --white: #fafafa;
-  --muted: #777c82;
-  --red: #9d2834;
+  --black: #020202;
+  --black-soft: #080808;
+  --black-card: rgba(7,7,8,.78);
 
-  --line: rgba(230,234,238,.30);
-  --line-bright: rgba(245,247,249,.65);
+  --white: #ffffff;
+  --white-soft: #f4f4f4;
+  --silver: #c5c7ca;
+  --grey: #77797d;
 
-  --shadow: rgba(0,0,0,.45);
+  --line: rgba(255,255,255,.18);
+  --line-bright: rgba(255,255,255,.55);
+
+  --shadow: rgba(0,0,0,.75);
 }
 
 
@@ -30,7 +28,7 @@
 
 html {
   scroll-behavior: smooth;
-  background: #0c0d0f;
+  background: #000;
 }
 
 body {
@@ -44,57 +42,46 @@ body {
 
   background:
 
-    /* jasna perłowa poświata */
-    radial-gradient(
-      ellipse at 18% 8%,
-      rgba(245,247,249,.25),
-      transparent 24%
-    ),
+    /* CZARNE GŁĘBOKIE TŁO */
 
     radial-gradient(
-      ellipse at 85% 12%,
-      rgba(220,225,230,.22),
-      transparent 25%
-    ),
-
-    radial-gradient(
-      ellipse at 50% 35%,
-      rgba(175,181,188,.17),
-      transparent 34%
-    ),
-
-    radial-gradient(
-      ellipse at 12% 68%,
-      rgba(215,220,225,.15),
-      transparent 28%
-    ),
-
-    radial-gradient(
-      ellipse at 90% 78%,
-      rgba(190,196,202,.18),
+      ellipse at 50% 0%,
+      rgba(255,255,255,.055),
       transparent 30%
+    ),
+
+    radial-gradient(
+      ellipse at 12% 25%,
+      rgba(255,255,255,.035),
+      transparent 23%
+    ),
+
+    radial-gradient(
+      ellipse at 90% 55%,
+      rgba(255,255,255,.035),
+      transparent 25%
     ),
 
     linear-gradient(
       145deg,
-      #111315 0%,
-      #25282c 25%,
-      #151719 52%,
-      #30343a 76%,
-      #0b0c0e 100%
+      #000000 0%,
+      #070707 35%,
+      #010101 65%,
+      #090909 100%
     );
 }
 
 
 /* =========================================================
-   MARMUR / SREBRNE REFLEKSY
+   BIAŁY MARMUROWY BŁYSK
 ========================================================= */
 
 body::before {
   content: "";
 
   position: fixed;
-  inset: -35%;
+
+  inset: -40%;
 
   z-index: 0;
 
@@ -102,72 +89,131 @@ body::before {
 
   background:
 
-    repeating-radial-gradient(
-      ellipse at 25% 30%,
-      transparent 0,
-      transparent 100px,
-      rgba(255,255,255,.055) 104px,
-      transparent 110px,
-      transparent 210px
+    radial-gradient(
+      ellipse at 15% 18%,
+      rgba(255,255,255,.14),
+      transparent 14%
+    ),
+
+    radial-gradient(
+      ellipse at 85% 22%,
+      rgba(255,255,255,.10),
+      transparent 15%
+    ),
+
+    radial-gradient(
+      ellipse at 40% 72%,
+      rgba(255,255,255,.09),
+      transparent 17%
     ),
 
     repeating-linear-gradient(
       118deg,
       transparent 0,
-      transparent 150px,
-      rgba(255,255,255,.045) 153px,
-      transparent 160px,
-      transparent 300px
-    ),
-
-    radial-gradient(
-      ellipse at 30% 20%,
-      rgba(255,255,255,.18),
-      transparent 20%
-    ),
-
-    radial-gradient(
-      ellipse at 75% 65%,
-      rgba(255,255,255,.12),
-      transparent 25%
+      transparent 170px,
+      rgba(255,255,255,.025) 174px,
+      transparent 181px,
+      transparent 330px
     );
 
-  filter: blur(15px);
+  filter: blur(17px);
 
-  opacity: .9;
+  opacity: .8;
 
-  transform: rotate(-7deg);
+  transform: rotate(-8deg);
 
-  animation: marbleLight 18s ease-in-out infinite alternate;
+  animation:
+    whiteAmbient 15s ease-in-out infinite alternate;
 }
 
-@keyframes marbleLight {
+@keyframes whiteAmbient {
 
   0% {
     transform:
-      translate3d(-3%, -2%, 0)
-      rotate(-8deg)
+      translate3d(-5%, -4%, 0)
+      rotate(-9deg)
       scale(1);
 
-    opacity: .62;
+    opacity: .38;
   }
 
   50% {
     transform:
-      translate3d(3%, 3%, 0)
+      translate3d(4%, 3%, 0)
       rotate(-4deg)
-      scale(1.08);
+      scale(1.10);
 
-    opacity: 1;
+    opacity: .82;
   }
 
   100% {
     transform:
-      translate3d(-1%, 5%, 0)
-      rotate(-10deg)
+      translate3d(-2%, 6%, 0)
+      rotate(-11deg)
       scale(1.04);
 
-    opacity: .72;
+    opacity: .48;
+  }
+}
+
+
+/* =========================================================
+   BIAŁA SMUGA ŚWIATŁA
+========================================================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  width: 160%;
+  height: 35%;
+
+  left: -30%;
+  top: 35%;
+
+  z-index: 0;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 25%,
+      rgba(255,255,255,.025) 38%,
+      rgba(255,255,255,.11) 48%,
+      rgba(255,255,255,.025) 56%,
+      transparent 68%
+    );
+
+  filter: blur(24px);
+
+  transform: rotate(-10deg);
+
+  animation:
+    whiteSweep 19s ease-in-out infinite alternate;
+}
+
+@keyframes whiteSweep {
+
+  0% {
+    transform:
+      translateX(-18%)
+      rotate(-11deg);
+
+    opacity: .15;
+  }
+
+  50% {
+    opacity: .7;
+  }
+
+  100% {
+    transform:
+      translateX(18%)
+      rotate(-6deg);
+
+    opacity: .18;
   }
 }
 
@@ -211,21 +257,32 @@ body::before {
   text-align: center;
 }
 
-.hero-kicker {
-  margin-bottom: 17px;
 
-  color: #d5d8dc;
+/* mały napis */
+
+.hero-kicker {
+  margin-bottom: 18px;
+
+  color: rgba(255,255,255,.72);
 
   font-size: 9px;
+
   font-weight: 700;
 
   letter-spacing: .42em;
 
   text-shadow:
-    0 0 15px rgba(255,255,255,.15);
+    0 0 18px rgba(255,255,255,.35);
 }
 
+
+/* =========================================================
+   POWITANIE — MOCNY BIAŁY BLASK
+========================================================= */
+
 .hero h1 {
+  position: relative;
+
   margin: 0;
 
   max-width: 850px;
@@ -237,27 +294,63 @@ body::before {
 
   font-size: clamp(50px, 8vw, 90px);
 
-  font-weight: 500;
+  font-weight: 600;
 
   line-height: .9;
 
   letter-spacing: -.025em;
 
-  color: #f8f9fa;
+  color: #ffffff;
 
   text-shadow:
-    0 8px 30px rgba(0,0,0,.4),
-    0 0 35px rgba(255,255,255,.12);
+
+    0 0 5px rgba(255,255,255,.95),
+
+    0 0 18px rgba(255,255,255,.55),
+
+    0 0 40px rgba(255,255,255,.25),
+
+    0 12px 35px rgba(0,0,0,.8);
+
+  animation:
+    titleGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes titleGlow {
+
+  0% {
+    text-shadow:
+      0 0 5px rgba(255,255,255,.9),
+      0 0 18px rgba(255,255,255,.4),
+      0 0 35px rgba(255,255,255,.15),
+      0 12px 35px rgba(0,0,0,.8);
+  }
+
+  100% {
+    text-shadow:
+      0 0 7px rgba(255,255,255,1),
+      0 0 25px rgba(255,255,255,.7),
+      0 0 55px rgba(255,255,255,.3),
+      0 12px 35px rgba(0,0,0,.8);
+  }
 }
 
 .hero h1 span {
   font-size: .48em;
 
   vertical-align: middle;
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,.6));
 }
 
+
+/* =========================================================
+   LINIA
+========================================================= */
+
 .hero-line {
-  width: 120px;
+  width: 125px;
 
   height: 1px;
 
@@ -267,14 +360,21 @@ body::before {
     linear-gradient(
       90deg,
       transparent,
-      #f0f2f4,
-      #aeb3b9,
+      #ffffff,
+      #cfd1d4,
+      #ffffff,
       transparent
     );
 
   box-shadow:
-    0 0 20px rgba(255,255,255,.3);
+    0 0 14px rgba(255,255,255,.7),
+    0 0 30px rgba(255,255,255,.25);
 }
+
+
+/* =========================================================
+   INTRO
+========================================================= */
 
 .hero-subtitle {
   position: relative;
@@ -285,7 +385,7 @@ body::before {
 
   padding: 22px 28px;
 
-  color: #d2d5d9;
+  color: rgba(255,255,255,.82);
 
   font-size: 13px;
 
@@ -294,16 +394,20 @@ body::before {
   background:
 
     linear-gradient(
-      135deg,
-      rgba(255,255,255,.14),
-      rgba(255,255,255,.045)
+      145deg,
+      rgba(255,255,255,.075),
+      rgba(255,255,255,.018)
     );
 
-  border: 1px solid rgba(240,243,246,.30);
+  border: 1px solid rgba(255,255,255,.24);
 
   box-shadow:
-    0 20px 55px rgba(0,0,0,.35),
-    inset 0 1px 0 rgba(255,255,255,.13);
+
+    0 25px 65px rgba(0,0,0,.65),
+
+    inset 0 1px 0 rgba(255,255,255,.09),
+
+    0 0 35px rgba(255,255,255,.025);
 
   backdrop-filter: blur(10px);
 }
@@ -314,12 +418,12 @@ body::before {
 
   position: absolute;
 
-  color: rgba(255,255,255,.7);
+  color: #ffffff;
 
   font-size: 10px;
 
   text-shadow:
-    0 0 12px rgba(255,255,255,.4);
+    0 0 12px rgba(255,255,255,.8);
 }
 
 .hero-subtitle::before {
@@ -351,19 +455,22 @@ body::before {
 
     linear-gradient(
       135deg,
-      #f5f6f7,
-      #858b92,
-      #e8eaec,
-      #676c72,
-      #f5f6f7
+      #ffffff 0%,
+      #77797d 28%,
+      #ffffff 48%,
+      #5b5d61 72%,
+      #ffffff 100%
     );
 
   border-radius: 4px;
 
   box-shadow:
-    0 30px 70px rgba(0,0,0,.55),
-    0 0 40px rgba(255,255,255,.13),
-    0 0 90px rgba(220,225,230,.10);
+
+    0 35px 80px rgba(0,0,0,.8),
+
+    0 0 25px rgba(255,255,255,.18),
+
+    0 0 70px rgba(255,255,255,.08);
 }
 
 .portrait-wrap img {
@@ -376,7 +483,7 @@ body::before {
 
   border-radius: 2px;
 
-  background: #17191b;
+  background: #050505;
 }
 
 
@@ -395,7 +502,7 @@ body::before {
 
   padding: 8px 15px;
 
-  color: #d9f5e2;
+  color: #ffffff;
 
   font-size: 9px;
 
@@ -404,14 +511,14 @@ body::before {
   letter-spacing: .18em;
 
   background:
-    rgba(24,45,32,.72);
+    rgba(0,0,0,.72);
 
-  border: 1px solid rgba(135,240,165,.38);
+  border: 1px solid rgba(255,255,255,.30);
 
   border-radius: 999px;
 
   box-shadow:
-    0 0 25px rgba(110,255,155,.08);
+    0 0 22px rgba(255,255,255,.06);
 }
 
 .online i {
@@ -420,10 +527,11 @@ body::before {
 
   border-radius: 50%;
 
-  background: #76e998;
+  background: #ffffff;
 
   box-shadow:
-    0 0 12px rgba(118,233,152,.9);
+    0 0 8px #ffffff,
+    0 0 18px rgba(255,255,255,.8);
 
   animation:
     onlinePulse 2.5s ease-in-out infinite;
@@ -439,7 +547,7 @@ body::before {
 
   50% {
     opacity: 1;
-    transform: scale(1.15);
+    transform: scale(1.2);
   }
 }
 
@@ -448,7 +556,7 @@ body::before {
 
   margin: 0 auto;
 
-  color: #c3c6ca;
+  color: rgba(255,255,255,.62);
 
   font-size: 12px;
 
@@ -460,17 +568,15 @@ body::before {
 
   font-size: 18px;
 
-  opacity: .9;
+  opacity: .95;
 
   filter:
-    drop-shadow(
-      0 0 10px rgba(255,255,255,.2)
-    );
+    drop-shadow(0 0 9px rgba(255,255,255,.5));
 }
 
 
 /* =========================================================
-   NAGŁÓWKI
+   NAGŁÓWKI SEKCJI
 ========================================================= */
 
 .section-heading {
@@ -484,7 +590,7 @@ body::before {
 }
 
 .section-number {
-  color: #c0c4c8;
+  color: rgba(255,255,255,.55);
 
   font-size: 10px;
 
@@ -496,7 +602,7 @@ body::before {
 .section-heading h2 {
   margin: 0;
 
-  color: #f3f4f5;
+  color: #ffffff;
 
   font-family:
     "Cormorant Garamond",
@@ -507,15 +613,14 @@ body::before {
 
   font-weight: 500;
 
-  letter-spacing: -.015em;
-
   text-shadow:
-    0 0 25px rgba(255,255,255,.12);
+    0 0 8px rgba(255,255,255,.5),
+    0 0 30px rgba(255,255,255,.15);
 }
 
 
 /* =========================================================
-   LINKI
+   KARTY
 ========================================================= */
 
 .link-grid {
@@ -529,6 +634,8 @@ body::before {
 .offer-card {
   position: relative;
 
+  overflow: hidden;
+
   color: inherit;
 
   text-decoration: none;
@@ -537,23 +644,63 @@ body::before {
 
     linear-gradient(
       145deg,
-      rgba(255,255,255,.16),
-      rgba(255,255,255,.045)
+      rgba(255,255,255,.065),
+      rgba(0,0,0,.62) 45%,
+      rgba(255,255,255,.025)
     );
 
-  border: 1px solid var(--line);
+  border: 1px solid rgba(255,255,255,.20);
 
   box-shadow:
-    0 18px 45px rgba(0,0,0,.32),
-    inset 0 1px 0 rgba(255,255,255,.10);
 
-  backdrop-filter: blur(9px);
+    0 22px 60px rgba(0,0,0,.65),
+
+    inset 0 1px 0 rgba(255,255,255,.06);
+
+  backdrop-filter: blur(10px);
 
   transition:
     transform .3s ease,
     border-color .3s ease,
-    box-shadow .3s ease,
-    background .3s ease;
+    box-shadow .3s ease;
+}
+
+
+/* BIAŁY REFLEKS NA KARTACH */
+
+.link-card::before,
+.social-card::before,
+.offer-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: -80%;
+
+  left: -55%;
+
+  width: 35%;
+
+  height: 260%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.16),
+      transparent
+    );
+
+  transform: rotate(20deg);
+
+  transition:
+    left .8s ease;
+}
+
+.link-card:hover::before,
+.social-card:hover::before,
+.offer-card:hover::before {
+  left: 125%;
 }
 
 .link-card:hover,
@@ -561,19 +708,16 @@ body::before {
 .offer-card:hover {
   transform: translateY(-4px);
 
-  border-color: var(--line-bright);
-
-  background:
-    linear-gradient(
-      145deg,
-      rgba(255,255,255,.22),
-      rgba(255,255,255,.07)
-    );
+  border-color:
+    rgba(255,255,255,.48);
 
   box-shadow:
-    0 25px 65px rgba(0,0,0,.42),
-    0 0 35px rgba(255,255,255,.08),
-    inset 0 1px 0 rgba(255,255,255,.15);
+
+    0 28px 70px rgba(0,0,0,.75),
+
+    0 0 35px rgba(255,255,255,.07),
+
+    inset 0 1px 0 rgba(255,255,255,.12);
 }
 
 .link-card {
@@ -598,17 +742,15 @@ body::before {
 
   place-items: center;
 
-  color: #f0f1f2;
+  color: #ffffff;
 
-  border: 1px solid rgba(235,238,241,.35);
+  border: 1px solid rgba(255,255,255,.34);
 
   background:
-    rgba(255,255,255,.055);
-
-  font-size: 15px;
+    rgba(255,255,255,.035);
 
   box-shadow:
-    inset 0 0 15px rgba(255,255,255,.035);
+    0 0 18px rgba(255,255,255,.05);
 }
 
 .link-card h3,
@@ -616,7 +758,7 @@ body::before {
 .offer-card h3 {
   margin: 0 0 5px;
 
-  color: #f4f5f6;
+  color: #ffffff;
 
   font-size: 14px;
 
@@ -630,7 +772,7 @@ body::before {
 .offer-card p {
   margin: 0;
 
-  color: #c0c4c8;
+  color: rgba(255,255,255,.58);
 
   font-size: 11px;
 
@@ -638,11 +780,14 @@ body::before {
 }
 
 .arrow {
-  color: #e0e3e6;
+  color: #ffffff;
 
   font-size: 17px;
 
   text-align: right;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,.55);
 }
 
 
@@ -676,7 +821,7 @@ body::before {
 .social-name {
   margin-bottom: 6px;
 
-  color: #f1f2f3 !important;
+  color: #ffffff !important;
 
   font-size: 12px;
 
@@ -710,7 +855,7 @@ body::before {
 
   margin-bottom: 48px;
 
-  color: #b0b4b8;
+  color: rgba(255,255,255,.5);
 
   font-size: 9px;
 
@@ -719,8 +864,6 @@ body::before {
 
 .offer-card h3 {
   margin-bottom: 14px;
-
-  color: #f5f6f7;
 
   font-family:
     "Cormorant Garamond",
@@ -732,15 +875,18 @@ body::before {
   font-weight: 500;
 
   line-height: 1;
+
+  text-shadow:
+    0 0 12px rgba(255,255,255,.25);
 }
 
 .offer-card p {
-  color: #c2c6ca;
+  color: rgba(255,255,255,.60);
 }
 
 
 /* =========================================================
-   ZDJĘCIE
+   SZEROKIE ZDJĘCIE
 ========================================================= */
 
 .featured-photo-section {
@@ -767,15 +913,18 @@ body::before {
     linear-gradient(
       90deg,
       transparent,
-      #d8dce0
+      #ffffff
     );
+
+  box-shadow:
+    0 0 10px rgba(255,255,255,.5);
 }
 
 .featured-label span:last-child {
   background:
     linear-gradient(
       90deg,
-      #d8dce0,
+      #ffffff,
       transparent
     );
 }
@@ -783,13 +932,16 @@ body::before {
 .featured-label p {
   margin: 0;
 
-  color: #d3d6da;
+  color: #ffffff;
 
   font-size: 8px;
 
   font-weight: 700;
 
   letter-spacing: .28em;
+
+  text-shadow:
+    0 0 10px rgba(255,255,255,.4);
 }
 
 .featured-photo {
@@ -802,18 +954,20 @@ body::before {
 
     linear-gradient(
       135deg,
-      #f4f5f6,
-      #737980,
-      #e7e9eb,
-      #696e75,
-      #f4f5f6
+      #ffffff,
+      #3d3f42,
+      #ffffff,
+      #55575b,
+      #ffffff
     );
 
   border-radius: 4px;
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,.48),
-    0 0 55px rgba(255,255,255,.11);
+
+    0 35px 90px rgba(0,0,0,.78),
+
+    0 0 40px rgba(255,255,255,.10);
 
   overflow: hidden;
 }
@@ -830,7 +984,7 @@ body::before {
 
   border-radius: 2px;
 
-  background: #161719;
+  background: #000;
 }
 
 
@@ -845,6 +999,8 @@ body::before {
 .contact-card {
   position: relative;
 
+  overflow: hidden;
+
   padding: 68px 30px;
 
   text-align: center;
@@ -853,29 +1009,29 @@ body::before {
 
     radial-gradient(
       ellipse at 50% 0%,
-      rgba(255,255,255,.20),
+      rgba(255,255,255,.13),
       transparent 42%
     ),
 
     linear-gradient(
       145deg,
-      rgba(255,255,255,.15),
-      rgba(255,255,255,.045)
+      rgba(255,255,255,.07),
+      rgba(0,0,0,.65)
     );
 
-  border: 1px solid rgba(235,238,241,.34);
+  border: 1px solid rgba(255,255,255,.27);
 
   box-shadow:
-    0 30px 80px rgba(0,0,0,.38),
-    inset 0 1px 0 rgba(255,255,255,.13);
 
-  backdrop-filter: blur(10px);
+    0 35px 90px rgba(0,0,0,.75),
+
+    inset 0 1px 0 rgba(255,255,255,.10);
 }
 
 .contact-kicker {
   margin: 0 0 10px;
 
-  color: #d0d3d7;
+  color: rgba(255,255,255,.62);
 
   font-size: 9px;
 
@@ -887,7 +1043,7 @@ body::before {
 .contact-card h2 {
   margin: 0;
 
-  color: #f8f9fa;
+  color: #ffffff;
 
   font-family:
     "Cormorant Garamond",
@@ -899,7 +1055,12 @@ body::before {
   font-weight: 500;
 
   text-shadow:
-    0 0 30px rgba(255,255,255,.12);
+
+    0 0 6px rgba(255,255,255,.9),
+
+    0 0 22px rgba(255,255,255,.45),
+
+    0 0 50px rgba(255,255,255,.15);
 }
 
 .contact-text {
@@ -907,7 +1068,7 @@ body::before {
 
   margin: 20px auto 28px;
 
-  color: #c8ccd0;
+  color: rgba(255,255,255,.62);
 
   font-size: 12px;
 
@@ -923,15 +1084,15 @@ body::before {
 
   padding: 15px 23px;
 
-  color: #101113;
+  color: #000000;
 
   background:
 
     linear-gradient(
       135deg,
       #ffffff,
-      #d8dce0,
-      #aeb4ba
+      #eeeeee,
+      #ffffff
     );
 
   border: 1px solid #ffffff;
@@ -945,8 +1106,10 @@ body::before {
   letter-spacing: .18em;
 
   box-shadow:
-    0 15px 35px rgba(0,0,0,.42),
-    0 0 25px rgba(255,255,255,.08);
+
+    0 15px 40px rgba(0,0,0,.7),
+
+    0 0 25px rgba(255,255,255,.15);
 
   transition:
     transform .25s ease,
@@ -957,8 +1120,10 @@ body::before {
   transform: translateY(-3px);
 
   box-shadow:
-    0 20px 45px rgba(0,0,0,.5),
-    0 0 35px rgba(255,255,255,.13);
+
+    0 20px 50px rgba(0,0,0,.8),
+
+    0 0 45px rgba(255,255,255,.28);
 }
 
 .contact-button span {
@@ -983,18 +1148,22 @@ body::before {
   margin-bottom: 24px;
 
   background:
+
     linear-gradient(
       90deg,
       transparent,
-      rgba(235,238,241,.35),
+      rgba(255,255,255,.45),
       transparent
     );
+
+  box-shadow:
+    0 0 10px rgba(255,255,255,.15);
 }
 
 .footer p {
   margin: 0 0 7px;
 
-  color: #d0d3d7;
+  color: rgba(255,255,255,.72);
 
   font-size: 9px;
 
@@ -1004,14 +1173,14 @@ body::before {
 }
 
 .footer span {
-  color: #9b9fa4;
+  color: rgba(255,255,255,.38);
 
   font-size: 8px;
 }
 
 
 /* =========================================================
-   LATAJĄCE KRÓLICZE MASKI
+   KRÓLICZE MASKI
 ========================================================= */
 
 .bunny-bg {
@@ -1027,7 +1196,7 @@ body::before {
 }
 
 
-/* DUŻA SREBRNA POŚWIATA */
+/* BIAŁE ŚWIATŁO */
 
 .bunny-bg::before {
   content: "";
@@ -1039,123 +1208,61 @@ body::before {
   background:
 
     radial-gradient(
-      circle at 15% 18%,
-      rgba(255,255,255,.25),
+      circle at 15% 20%,
+      rgba(255,255,255,.15),
+      transparent 17%
+    ),
+
+    radial-gradient(
+      circle at 82% 27%,
+      rgba(255,255,255,.13),
       transparent 18%
     ),
 
     radial-gradient(
-      circle at 82% 25%,
-      rgba(240,243,246,.20),
+      circle at 45% 72%,
+      rgba(255,255,255,.11),
       transparent 20%
-    ),
-
-    radial-gradient(
-      circle at 42% 65%,
-      rgba(255,255,255,.18),
-      transparent 23%
-    ),
-
-    radial-gradient(
-      circle at 85% 82%,
-      rgba(220,225,230,.20),
-      transparent 19%
     );
 
-  filter: blur(48px);
+  filter: blur(42px);
 
-  opacity: .82;
+  opacity: .72;
 
   animation:
-    ambientSilver 14s ease-in-out infinite alternate;
+    bunnyAmbient 14s ease-in-out infinite alternate;
 }
 
-@keyframes ambientSilver {
+@keyframes bunnyAmbient {
 
   0% {
     transform:
-      translate(-6%, -4%)
-      scale(.94);
+      translate(-5%, -3%)
+      scale(.95);
 
-    opacity: .48;
+    opacity: .38;
   }
 
   50% {
     transform:
       translate(5%, 4%)
-      scale(1.10);
+      scale(1.1);
 
-    opacity: .92;
+    opacity: .8;
   }
 
   100% {
     transform:
-      translate(-2%, 7%)
-      scale(1.02);
+      translate(-2%, 6%)
+      scale(1);
 
-    opacity: .60;
-  }
-}
-
-
-/* SREBRNY REFLEKS */
-
-.bunny-bg::after {
-  content: "";
-
-  position: absolute;
-
-  width: 190%;
-  height: 48%;
-
-  left: -45%;
-  top: 25%;
-
-  background:
-
-    linear-gradient(
-      115deg,
-      transparent 18%,
-      rgba(255,255,255,.04) 33%,
-      rgba(255,255,255,.13) 45%,
-      rgba(255,255,255,.04) 51%,
-      transparent 60%
-    );
-
-  filter: blur(25px);
-
-  transform: rotate(-11deg);
-
-  animation:
-    silverSweep 17s ease-in-out infinite alternate;
-}
-
-@keyframes silverSweep {
-
-  0% {
-    transform:
-      translateX(-18%)
-      rotate(-12deg);
-
-    opacity: .2;
-  }
-
-  50% {
-    opacity: .75;
-  }
-
-  100% {
-    transform:
-      translateX(18%)
-      rotate(-6deg);
-
-    opacity: .25;
+    opacity: .48;
   }
 }
 
 
 /* =========================================================
-   POJEDYNCZA MASKA
+   MASKA
 ========================================================= */
 
 .bunny-float {
@@ -1168,15 +1275,15 @@ body::before {
   filter:
 
     drop-shadow(
-      0 0 7px rgba(255,255,255,.28)
+      0 0 8px rgba(255,255,255,.4)
     )
 
     drop-shadow(
-      0 0 18px rgba(230,235,240,.20)
+      0 0 22px rgba(255,255,255,.22)
     )
 
     drop-shadow(
-      0 0 35px rgba(255,255,255,.10)
+      0 0 42px rgba(255,255,255,.10)
     );
 
   animation:
@@ -1203,12 +1310,12 @@ body::before {
 
 
 /* =========================================================
-   MASKI
+   ROZMIESZCZENIE MASEK
 ========================================================= */
 
 .bunny-1 {
   --size: 88px;
-  --opacity: .30;
+  --opacity: .34;
   --duration: 18s;
   --shine-duration: 5s;
   --delay: -4s;
@@ -1219,7 +1326,7 @@ body::before {
 
 .bunny-2 {
   --size: 50px;
-  --opacity: .38;
+  --opacity: .42;
   --duration: 15s;
   --shine-duration: 4s;
   --delay: -13s;
@@ -1230,7 +1337,7 @@ body::before {
 
 .bunny-3 {
   --size: 120px;
-  --opacity: .20;
+  --opacity: .22;
   --duration: 23s;
   --shine-duration: 7s;
   --delay: -8s;
@@ -1241,7 +1348,7 @@ body::before {
 
 .bunny-4 {
   --size: 62px;
-  --opacity: .34;
+  --opacity: .37;
   --duration: 17s;
   --shine-duration: 5s;
   --delay: -17s;
@@ -1252,7 +1359,7 @@ body::before {
 
 .bunny-5 {
   --size: 100px;
-  --opacity: .23;
+  --opacity: .27;
   --duration: 25s;
   --shine-duration: 6s;
   --delay: -22s;
@@ -1263,7 +1370,7 @@ body::before {
 
 .bunny-6 {
   --size: 46px;
-  --opacity: .40;
+  --opacity: .44;
   --duration: 14s;
   --shine-duration: 4s;
   --delay: -9s;
@@ -1274,7 +1381,7 @@ body::before {
 
 .bunny-7 {
   --size: 78px;
-  --opacity: .30;
+  --opacity: .34;
   --duration: 19s;
   --shine-duration: 6s;
   --delay: -20s;
@@ -1285,7 +1392,7 @@ body::before {
 
 .bunny-8 {
   --size: 132px;
-  --opacity: .18;
+  --opacity: .20;
   --duration: 27s;
   --shine-duration: 8s;
   --delay: -6s;
@@ -1296,7 +1403,7 @@ body::before {
 
 .bunny-9 {
   --size: 55px;
-  --opacity: .37;
+  --opacity: .40;
   --duration: 16s;
   --shine-duration: 4s;
   --delay: -15s;
@@ -1307,7 +1414,7 @@ body::before {
 
 .bunny-10 {
   --size: 84px;
-  --opacity: .27;
+  --opacity: .30;
   --duration: 21s;
   --shine-duration: 6s;
   --delay: -27s;
@@ -1318,7 +1425,7 @@ body::before {
 
 .bunny-11 {
   --size: 48px;
-  --opacity: .40;
+  --opacity: .44;
   --duration: 15s;
   --shine-duration: 5s;
   --delay: -11s;
@@ -1329,7 +1436,7 @@ body::before {
 
 .bunny-12 {
   --size: 112px;
-  --opacity: .20;
+  --opacity: .22;
   --duration: 26s;
   --shine-duration: 7s;
   --delay: -19s;
@@ -1340,7 +1447,7 @@ body::before {
 
 .bunny-13 {
   --size: 68px;
-  --opacity: .32;
+  --opacity: .36;
   --duration: 18s;
   --shine-duration: 5s;
   --delay: -24s;
@@ -1351,7 +1458,7 @@ body::before {
 
 .bunny-14 {
   --size: 96px;
-  --opacity: .24;
+  --opacity: .27;
   --duration: 24s;
   --shine-duration: 7s;
   --delay: -16s;
@@ -1362,7 +1469,7 @@ body::before {
 
 .bunny-15 {
   --size: 53px;
-  --opacity: .36;
+  --opacity: .40;
   --duration: 16s;
   --shine-duration: 4s;
   --delay: -7s;
@@ -1373,7 +1480,7 @@ body::before {
 
 .bunny-16 {
   --size: 126px;
-  --opacity: .18;
+  --opacity: .20;
   --duration: 28s;
   --shine-duration: 8s;
   --delay: -29s;
@@ -1384,7 +1491,7 @@ body::before {
 
 .bunny-17 {
   --size: 61px;
-  --opacity: .32;
+  --opacity: .36;
   --duration: 17s;
   --shine-duration: 5s;
   --delay: -18s;
@@ -1395,7 +1502,7 @@ body::before {
 
 .bunny-18 {
   --size: 74px;
-  --opacity: .27;
+  --opacity: .30;
   --duration: 22s;
   --shine-duration: 6s;
   --delay: -31s;
@@ -1406,7 +1513,7 @@ body::before {
 
 
 /* =========================================================
-   RUCH MASEK
+   LOT MASEK
 ========================================================= */
 
 @keyframes bunnyFly {
@@ -1456,7 +1563,7 @@ body::before {
 
 
 /* =========================================================
-   POŁYSK MASEK
+   BŁYSK MASEK
 ========================================================= */
 
 @keyframes bunnyShine {
@@ -1464,49 +1571,50 @@ body::before {
   0% {
     filter:
       drop-shadow(
-        0 0 7px rgba(255,255,255,.18)
+        0 0 7px rgba(255,255,255,.25)
       )
       drop-shadow(
-        0 0 18px rgba(225,230,235,.12)
+        0 0 18px rgba(255,255,255,.12)
       );
   }
 
   50% {
     filter:
       drop-shadow(
-        0 0 14px rgba(255,255,255,.42)
+        0 0 14px rgba(255,255,255,.75)
       )
       drop-shadow(
-        0 0 32px rgba(235,240,245,.30)
+        0 0 32px rgba(255,255,255,.38)
       )
       drop-shadow(
-        0 0 60px rgba(255,255,255,.14)
+        0 0 60px rgba(255,255,255,.15)
       );
   }
 
   100% {
     filter:
       drop-shadow(
-        0 0 9px rgba(255,255,255,.25)
+        0 0 9px rgba(255,255,255,.32)
       )
       drop-shadow(
-        0 0 27px rgba(225,230,235,.18)
+        0 0 25px rgba(255,255,255,.16)
       );
   }
 }
 
 
 /* =========================================================
-   TELEFON
+   MOBILE
 ========================================================= */
 
 @media (max-width: 720px) {
 
   .site-shell {
-    width: min(
-      100% - 22px,
-      620px
-    );
+    width:
+      min(
+        100% - 22px,
+        620px
+      );
   }
 
   .section {
@@ -1548,17 +1656,7 @@ body::before {
   .bunny-8,
   .bunny-12,
   .bunny-16 {
-    opacity: .13;
-  }
-
-  .bunny-float {
-    filter:
-      drop-shadow(
-        0 0 8px rgba(255,255,255,.24)
-      )
-      drop-shadow(
-        0 0 20px rgba(230,235,240,.15)
-      );
+    opacity: .14;
   }
 }
 
@@ -1604,7 +1702,7 @@ body::before {
 
 
 /* =========================================================
-   REDUKCJA RUCHU
+   REDUKCJA ANIMACJI
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
