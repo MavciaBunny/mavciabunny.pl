@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000">
-<defs><linearGradient id="g" x1="0" x2="1"><stop stop-color="#17171b"/><stop offset=".5" stop-color="#30263d"/><stop offset="1" stop-color="#24151c"/></linearGradient></defs>
-<rect width="800" height="1000" fill="url(#g)"/>
-<circle cx="400" cy="420" r="145" fill="none" stroke="#8d55ff" stroke-width="2" opacity=".6"/>
-<text x="400" y="415" text-anchor="middle" fill="#eee" font-family="Georgia" font-size="54">MavciaBunny</text>
-<text x="400" y="475" text-anchor="middle" fill="#aaa" font-family="Arial" font-size="24">WSTAW SWOJE ZDJĘCIE</text>
-</svg>
