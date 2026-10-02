@@ -38,22 +38,20 @@ body {
   font-family: "Inter", Arial, sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: -30%;
-  z-index: 0;
-  pointer-events: none;
-  opacity: .18;
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--white);
   background:
-    repeating-radial-gradient(
-      ellipse at 20% 30%,
-      transparent 0,
-      transparent 78px,
-      rgba(255,255,255,.035) 80px,
-      transparent 84px,
-      transparent 155px
-    ),
+    radial-gradient(circle at 12% 12%, rgba(255,255,255,.18), transparent 22%),
+    radial-gradient(circle at 88% 18%, rgba(220,225,230,.14), transparent 24%),
+    radial-gradient(circle at 50% 48%, rgba(190,195,202,.09), transparent 32%),
+    radial-gradient(circle at 15% 78%, rgba(230,235,240,.10), transparent 25%),
+    radial-gradient(circle at 85% 82%, rgba(170,175,182,.12), transparent 28%),
+    linear-gradient(145deg, #030303 0%, #0c0c0e 45%, #030303 100%);
+  font-family: "Inter", Arial, sans-serif;
+}
     repeating-linear-gradient(
       116deg,
       transparent 0,
