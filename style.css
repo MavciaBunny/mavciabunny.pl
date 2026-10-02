@@ -1566,45 +1566,7 @@ font-size: 14px;
 }
 
 
-/* =========================================================
-   NUMER ZDJĘCIA
-========================================================= */
 
-.gallery-number {
-  position: absolute;
-
-  left: 14px;
-  bottom: 13px;
-
-  z-index: 5;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 34px;
-  height: 34px;
-
-  background:
-    rgba(5,5,8,.72);
-
-  border:
-    1px solid rgba(255,255,255,.16);
-
-  border-radius: 50%;
-
-  color: rgba(255,255,255,.85);
-
-  font-size: 9px;
-  font-weight: 700;
-
-  letter-spacing: .1em;
-
-  backdrop-filter: blur(8px);
-
-  box-shadow:
-    0 8px 25px rgba(0,0,0,.35);
-}
 
 
 /* =========================================================
