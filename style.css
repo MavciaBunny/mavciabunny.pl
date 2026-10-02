@@ -210,14 +210,12 @@ body::before {
 
 
 /* =========================================================
-   FLOATING CARD SUITS
+   FLOATING CARD SUITS — MORE VISIBLE
 ========================================================= */
 
 .floating-suits {
   position: fixed;
   inset: 0;
-  width: 100%;
-  height: 100%;
   overflow: hidden;
   pointer-events: none;
   z-index: 0;
@@ -231,191 +229,116 @@ body::before {
   font-weight: 700;
   line-height: 1;
 
-  color: rgba(215, 195, 255, 0.48);
+  color: rgba(210, 190, 255, 0.42);
 
   text-shadow:
-    0 0 8px rgba(195, 145, 255, 0.8),
-    0 0 18px rgba(160, 90, 240, 0.65),
-    0 0 35px rgba(125, 55, 210, 0.4);
+    0 0 8px rgba(190, 130, 255, 0.65),
+    0 0 20px rgba(145, 80, 220, 0.45),
+    0 0 38px rgba(145, 80, 220, 0.25);
 
-  opacity: 0.8;
+  opacity: 0.75;
 
   animation:
-    floatingSuitMove 18s ease-in-out infinite alternate,
-    floatingSuitPulse 4s ease-in-out infinite alternate;
+    floatingSuit 16s ease-in-out infinite alternate,
+    floatingSuitGlow 4s ease-in-out infinite alternate;
 }
 
-/* =========================================================
-   POZYCJE
-========================================================= */
+/* różne pozycje i wielkości */
 
 .floating-suit:nth-child(1) {
-  left: 3%;
-  top: 8%;
-  font-size: 78px;
+  left: 4%;
+  top: 12%;
+  font-size: 72px;
   animation-delay: -2s;
 }
 
 .floating-suit:nth-child(2) {
-  left: 14%;
-  top: 32%;
-  font-size: 52px;
+  left: 17%;
+  top: 68%;
+  font-size: 46px;
   animation-delay: -8s;
 }
 
 .floating-suit:nth-child(3) {
-  left: 27%;
-  top: 12%;
-  font-size: 92px;
+  left: 31%;
+  top: 25%;
+  font-size: 90px;
   animation-delay: -5s;
 }
 
 .floating-suit:nth-child(4) {
-  left: 40%;
-  top: 42%;
-  font-size: 58px;
+  left: 46%;
+  top: 78%;
+  font-size: 55px;
   animation-delay: -11s;
 }
 
 .floating-suit:nth-child(5) {
-  left: 53%;
-  top: 8%;
-  font-size: 70px;
-  animation-delay: -4s;
+  left: 62%;
+  top: 14%;
+  font-size: 64px;
+  animation-delay: -7s;
 }
 
 .floating-suit:nth-child(6) {
-  left: 68%;
-  top: 26%;
-  font-size: 96px;
-  animation-delay: -9s;
+  left: 76%;
+  top: 48%;
+  font-size: 94px;
+  animation-delay: -3s;
 }
 
 .floating-suit:nth-child(7) {
-  left: 84%;
-  top: 10%;
-  font-size: 55px;
-  animation-delay: -13s;
+  left: 90%;
+  top: 18%;
+  font-size: 52px;
+  animation-delay: -10s;
 }
 
 .floating-suit:nth-child(8) {
-  left: 94%;
-  top: 42%;
-  font-size: 82px;
+  left: 84%;
+  top: 76%;
+  font-size: 70px;
   animation-delay: -6s;
 }
 
 .floating-suit:nth-child(9) {
-  left: 6%;
-  top: 58%;
-  font-size: 50px;
-  animation-delay: -12s;
+  left: 8%;
+  top: 42%;
+  font-size: 48px;
+  animation-delay: -13s;
 }
 
 .floating-suit:nth-child(10) {
-  left: 20%;
-  top: 76%;
-  font-size: 86px;
-  animation-delay: -7s;
-}
-
-.floating-suit:nth-child(11) {
-  left: 34%;
-  top: 64%;
-  font-size: 48px;
-  animation-delay: -15s;
-}
-
-.floating-suit:nth-child(12) {
-  left: 48%;
-  top: 82%;
-  font-size: 74px;
-  animation-delay: -3s;
-}
-
-.floating-suit:nth-child(13) {
-  left: 61%;
-  top: 58%;
-  font-size: 53px;
-  animation-delay: -10s;
-}
-
-.floating-suit:nth-child(14) {
-  left: 74%;
-  top: 78%;
-  font-size: 90px;
-  animation-delay: -14s;
-}
-
-.floating-suit:nth-child(15) {
-  left: 88%;
-  top: 62%;
-  font-size: 48px;
-  animation-delay: -5s;
-}
-
-.floating-suit:nth-child(16) {
-  left: 12%;
-  top: 90%;
-  font-size: 62px;
+  left: 55%;
+  top: 42%;
+  font-size: 43px;
   animation-delay: -9s;
 }
 
-.floating-suit:nth-child(17) {
-  left: 38%;
-  top: 22%;
-  font-size: 42px;
-  animation-delay: -16s;
-}
-
-.floating-suit:nth-child(18) {
-  left: 57%;
-  top: 34%;
-  font-size: 45px;
-  animation-delay: -6s;
-}
-
-.floating-suit:nth-child(19) {
-  left: 79%;
-  top: 52%;
-  font-size: 60px;
-  animation-delay: -12s;
-}
-
-.floating-suit:nth-child(20) {
-  left: 91%;
-  top: 88%;
-  font-size: 72px;
-  animation-delay: -8s;
-}
-
-/* =========================================================
-   RUCH
-========================================================= */
-
-@keyframes floatingSuitMove {
+@keyframes floatingSuit {
   0% {
     transform: translate3d(0, 0, 0) rotate(-8deg);
   }
 
   50% {
-    transform: translate3d(22px, -34px, 0) rotate(8deg);
+    transform: translate3d(20px, -35px, 0) rotate(8deg);
   }
 
   100% {
-    transform: translate3d(-20px, 24px, 0) rotate(-6deg);
+    transform: translate3d(-18px, 20px, 0) rotate(-5deg);
   }
 }
 
-@keyframes floatingSuitPulse {
+@keyframes floatingSuitGlow {
   0% {
     opacity: 0.48;
   }
 
   100% {
-    opacity: 0.92;
+    opacity: 0.9;
   }
 }
+
 
 /* =========================================================
    MAIN
