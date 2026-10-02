@@ -666,41 +666,28 @@ body::before {
   animation-delay: var(--delay);
 }
 
+.bunny-float {
+  position: absolute;
+  width: var(--size);
+  opacity: var(--opacity);
+
+  filter:
+    drop-shadow(0 0 8px rgba(255,255,255,.20))
+    drop-shadow(0 0 22px rgba(220,225,230,.16))
+    drop-shadow(0 0 45px rgba(255,255,255,.07));
+
+  animation:
+    bunnyFly var(--duration) ease-in-out infinite,
+    bunnyShine var(--shine-duration) ease-in-out infinite alternate;
+
+  animation-delay: var(--delay);
+  will-change: transform;
+}
+
 .bunny-float img {
   width: 100%;
   height: auto;
   display: block;
-}
-
-.bunny-1  { --size: 82px;  --opacity:.10; --duration:23s; --rotation-duration:9s;  --delay:-4s;  left:2%;  top:8%; }
-.bunny-2  { --size: 46px;  --opacity:.16; --duration:29s; --rotation-duration:11s; --delay:-13s; left:17%; top:17%; }
-.bunny-3  { --size: 115px; --opacity:.045;--duration:34s; --rotation-duration:15s; --delay:-8s;  left:70%; top:6%; }
-.bunny-4  { --size: 58px;  --opacity:.13; --duration:25s; --rotation-duration:8s;  --delay:-17s; left:91%; top:22%; }
-.bunny-5  { --size: 95px;  --opacity:.055;--duration:36s; --rotation-duration:14s; --delay:-22s; left:7%;  top:35%; }
-.bunny-6  { --size: 42px;  --opacity:.18; --duration:21s; --rotation-duration:7s;  --delay:-9s;  left:33%; top:29%; }
-.bunny-7  { --size: 72px;  --opacity:.085;--duration:28s; --rotation-duration:10s; --delay:-20s; left:56%; top:38%; }
-.bunny-8  { --size: 125px; --opacity:.035;--duration:40s; --rotation-duration:16s; --delay:-6s;  left:84%; top:43%; }
-.bunny-9  { --size: 51px;  --opacity:.15; --duration:24s; --rotation-duration:9s;  --delay:-15s; left:4%;  top:56%; }
-.bunny-10 { --size: 78px;  --opacity:.07; --duration:31s; --rotation-duration:13s; --delay:-27s; left:26%; top:60%; }
-.bunny-11 { --size: 44px;  --opacity:.17; --duration:22s; --rotation-duration:8s;  --delay:-11s; left:49%; top:53%; }
-.bunny-12 { --size: 105px; --opacity:.045;--duration:37s; --rotation-duration:15s; --delay:-19s; left:76%; top:64%; }
-.bunny-13 { --size: 64px;  --opacity:.095;--duration:27s; --rotation-duration:10s; --delay:-24s; left:11%; top:77%; }
-.bunny-14 { --size: 90px;  --opacity:.055;--duration:35s; --rotation-duration:13s; --delay:-16s; left:39%; top:79%; }
-.bunny-15 { --size: 49px;  --opacity:.14; --duration:23s; --rotation-duration:9s;  --delay:-7s;  left:67%; top:82%; }
-.bunny-16 { --size: 120px; --opacity:.035;--duration:41s; --rotation-duration:17s; --delay:-29s; left:91%; top:74%; }
-.bunny-17 { --size: 57px;  --opacity:.11; --duration:26s; --rotation-duration:12s; --delay:-18s; left:47%; top:11%; }
-.bunny-18 { --size: 70px;  --opacity:.065;--duration:32s; --rotation-duration:11s; --delay:-31s; left:22%; top:88%; }
-
-@keyframes bunnyDrift {
-  0%, 100% { transform: translate3d(0,0,0) scale(1); }
-  25% { transform: translate3d(24px,-35px,0) scale(1.04); }
-  50% { transform: translate3d(-17px,-70px,0) scale(.96); }
-  75% { transform: translate3d(28px,-32px,0) scale(1.03); }
-}
-
-@keyframes bunnyRotate {
-  from { rotate: -7deg; }
-  to { rotate: 7deg; }
 }
 
 /* RESPONSIVE */
