@@ -666,24 +666,25 @@ body::before {
   animation-delay: var(--delay);
 }
 
-.bunny-float {
-  position: absolute;
-  width: var(--size);
-  opacity: var(--opacity);
 
-  filter:
-    drop-shadow(0 0 8px rgba(255,255,255,.20))
-    drop-shadow(0 0 22px rgba(220,225,230,.16))
-    drop-shadow(0 0 45px rgba(255,255,255,.07));
-
-  animation:
-    bunnyFly var(--duration) ease-in-out infinite,
-    bunnyShine var(--shine-duration) ease-in-out infinite alternate;
-
-  animation-delay: var(--delay);
-  will-change: transform;
-}
-
+.bunny-1  { --size: 82px;  --opacity:.20; --duration:18s; --shine-duration:5s; --delay:-4s;  left:2%;  top:8%; }
+.bunny-2  { --size: 46px;  --opacity:.28; --duration:15s; --shine-duration:4s; --delay:-13s; left:17%; top:17%; }
+.bunny-3  { --size: 115px; --opacity:.12; --duration:23s; --shine-duration:7s; --delay:-8s;  left:70%; top:6%; }
+.bunny-4  { --size: 58px;  --opacity:.23; --duration:17s; --shine-duration:5s; --delay:-17s; left:91%; top:22%; }
+.bunny-5  { --size: 95px;  --opacity:.15; --duration:25s; --shine-duration:6s; --delay:-22s; left:7%;  top:35%; }
+.bunny-6  { --size: 42px;  --opacity:.30; --duration:14s; --shine-duration:4s; --delay:-9s;  left:33%; top:29%; }
+.bunny-7  { --size: 72px;  --opacity:.20; --duration:19s; --shine-duration:6s; --delay:-20s; left:56%; top:38%; }
+.bunny-8  { --size: 125px; --opacity:.10; --duration:27s; --shine-duration:8s; --delay:-6s;  left:84%; top:43%; }
+.bunny-9  { --size: 51px;  --opacity:.27; --duration:16s; --shine-duration:4s; --delay:-15s; left:4%;  top:56%; }
+.bunny-10 { --size: 78px;  --opacity:.18; --duration:21s; --shine-duration:6s; --delay:-27s; left:26%; top:60%; }
+.bunny-11 { --size: 44px;  --opacity:.30; --duration:15s; --shine-duration:5s; --delay:-11s; left:49%; top:53%; }
+.bunny-12 { --size: 105px; --opacity:.12; --duration:26s; --shine-duration:7s; --delay:-19s; left:76%; top:64%; }
+.bunny-13 { --size: 64px;  --opacity:.22; --duration:18s; --shine-duration:5s; --delay:-24s; left:11%; top:77%; }
+.bunny-14 { --size: 90px;  --opacity:.15; --duration:24s; --shine-duration:7s; --delay:-16s; left:39%; top:79%; }
+.bunny-15 { --size: 49px;  --opacity:.26; --duration:16s; --shine-duration:4s; --delay:-7s;  left:67%; top:82%; }
+.bunny-16 { --size: 120px; --opacity:.10; --duration:28s; --shine-duration:8s; --delay:-29s; left:91%; top:74%; }
+.bunny-17 { --size: 57px;  --opacity:.23; --duration:17s; --shine-duration:5s; --delay:-18s; left:47%; top:11%; }
+.bunny-18 { --size: 70px;  --opacity:.18; --duration:22s; --shine-duration:6s; --delay:-31s; left:22%; top:88%; }
 .bunny-float img {
   width: 100%;
   height: auto;
