@@ -1,5 +1,5 @@
 ```css
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
 
 :root {
   --black: #020202;
@@ -277,15 +277,162 @@ body::after {
 
 
 /* =========================================================
-   POWITANIE — MOCNY BIAŁY BLASK
+   POWITANIE — STARA ELEGANCKA KALIGRAFIA
 ========================================================= */
 
-/* =========================================================
-   NOWE POWITANIE — SMUKŁY NEON / CHROME
-========================================================= */
-/* =========================================================
-   POWITANIE — EDITORIAL CHROME NEON
-========================================================= */
+.hero h1 {
+  position: relative;
+  display: inline-block;
+
+  margin: 0;
+  max-width: 1000px;
+
+  font-family: "Great Vibes", "Cormorant Garamond", cursive;
+
+  font-size: clamp(58px, 8vw, 105px);
+
+  font-weight: 400;
+  font-style: normal;
+
+  line-height: .9;
+
+  letter-spacing: .015em;
+
+  color: #fff;
+
+  /* delikatny srebrzysty połysk */
+  background:
+    linear-gradient(
+      105deg,
+      #ffffff 0%,
+      #ffffff 35%,
+      #c9cbd0 48%,
+      #ffffff 57%,
+      #ffffff 100%
+    );
+
+  background-size: 180% 100%;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  filter:
+    drop-shadow(0 0 1px rgba(255,255,255,.95))
+    drop-shadow(0 0 5px rgba(255,255,255,.45))
+    drop-shadow(0 0 13px rgba(255,255,255,.12));
+
+  animation: elegantShine 7s ease-in-out infinite;
+}
+
+
+@keyframes elegantShine {
+
+  0%,
+  55% {
+    background-position: 120% 0;
+
+    filter:
+      drop-shadow(0 0 1px rgba(255,255,255,.95))
+      drop-shadow(0 0 5px rgba(255,255,255,.4))
+      drop-shadow(0 0 12px rgba(255,255,255,.1));
+  }
+
+  70% {
+    background-position: 0% 0;
+
+    filter:
+      drop-shadow(0 0 2px rgba(255,255,255,1))
+      drop-shadow(0 0 7px rgba(255,255,255,.65))
+      drop-shadow(0 0 16px rgba(255,255,255,.18));
+  }
+
+  100% {
+    background-position: -20% 0;
+  }
+}
+
+
+/* pocałunek jako osobny elegancki akcent */
+
+.hero h1 span {
+  display: inline-block;
+
+  margin-left: 8px;
+
+  font-family: "Cormorant Garamond", serif;
+
+  font-size: .42em;
+
+  font-style: normal;
+
+  color: #fff;
+
+  -webkit-text-fill-color: #fff;
+
+  filter:
+    drop-shadow(0 0 2px #fff)
+    drop-shadow(0 0 7px rgba(255,255,255,.55));
+
+  animation: kissElegant 3.5s ease-in-out infinite;
+}
+
+
+@keyframes kissElegant {
+
+  0%,
+  100% {
+    transform: rotate(-5deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(3deg) translateY(-3px);
+  }
+}
+
+
+/* delikatna ozdobna kreska */
+
+.hero h1::after {
+  content: "";
+
+  position: absolute;
+
+  left: 12%;
+  right: 4%;
+
+  bottom: -20px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.2),
+      rgba(255,255,255,.8),
+      rgba(255,255,255,.15),
+      transparent
+    );
+
+  box-shadow:
+    0 0 8px rgba(255,255,255,.25);
+
+  opacity: .7;
+}
+
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: clamp(55px, 15vw, 78px);
+    line-height: .9;
+  }
+
+  .hero h1 span {
+    margin-left: 3px;
+  }
+}
 
 .hero h1 {
   position: relative;
