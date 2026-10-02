@@ -1,19 +1,32 @@
-```css
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+/* =========================================================
+   MAVCIABUNNY — STYLE.CSS
+   BLACK / WHITE / SILVER / BUBBLE CHROME
+========================================================= */
+
+
+/* =========================================================
+   ZMIENNE
+========================================================= */
+
 :root {
-  --black: #020202;
-  --black-soft: #080808;
-  --black-card: rgba(7,7,8,.78);
+  --black: #000000;
+  --black-soft: #050505;
+  --black-card: rgba(7, 7, 8, .78);
 
   --white: #ffffff;
-  --white-soft: #f4f4f4;
-  --silver: #c5c7ca;
-  --grey: #77797d;
+  --white-soft: #f7f7f7;
+
+  /* srebro — używane w elementach strony */
+  --silver: #cbd2d6;
+  --silver-light: #edf3f5;
+  --silver-dark: #68737a;
+
+  --grey: #777b7f;
 
   --line: rgba(255,255,255,.18);
   --line-bright: rgba(255,255,255,.55);
 
-  --shadow: rgba(0,0,0,.75);
+  --shadow: rgba(0,0,0,.80);
 }
 
 
@@ -33,15 +46,17 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
+
   overflow-x: hidden;
 
   color: var(--white);
 
-  font-family: "Inter", Arial, sans-serif;
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
 
   background:
-
-    /* CZARNE GŁĘBOKIE TŁO */
 
     radial-gradient(
       ellipse at 50% 0%,
@@ -226,7 +241,11 @@ body::after {
 
   z-index: 3;
 
-  width: min(980px, calc(100% - 32px));
+  width:
+    min(
+      980px,
+      calc(100% - 32px)
+    );
 
   margin: 0 auto;
 }
@@ -248,16 +267,20 @@ body::after {
   padding-top: 65px;
 
   display: flex;
+
   flex-direction: column;
 
   align-items: center;
+
   justify-content: center;
 
   text-align: center;
 }
 
 
-/* mały napis */
+/* =========================================================
+   MAŁY NAPIS NAD POWITANIEM
+========================================================= */
 
 .hero-kicker {
   margin-bottom: 18px;
@@ -274,34 +297,54 @@ body::after {
     0 0 18px rgba(255,255,255,.35);
 }
 
+
 /* =========================================================
-   POWITANIE — LUXURY 3D CHROME
+   RAŻĄCY BUBBLE CHROME
 ========================================================= */
 
 .hero h1 {
   position: relative;
+
   display: inline-block;
 
   margin: 0;
-  max-width: 1000px;
 
-  font-family: "Inter", Arial, sans-serif !important;
+  max-width: 100%;
 
-  /* grube, ciężkie litery */
-  font-size: clamp(46px, 7vw, 88px) !important;
+  font-family:
+    "Arial Rounded MT Bold",
+    "Arial Black",
+    "Inter",
+    Arial,
+    sans-serif !important;
+
+  font-size:
+    clamp(
+      48px,
+      7.8vw,
+      92px
+    ) !important;
+
   font-weight: 900 !important;
+
   font-style: normal !important;
 
-  line-height: .9 !important;
-  letter-spacing: -.055em !important;
+  line-height: .88 !important;
+
+  letter-spacing: -.065em !important;
+
+  text-align: center;
 
   color: transparent !important;
+
   -webkit-text-fill-color: transparent !important;
 
   /*
-     CHROM:
-     bardzo jasne odbicia przeplatane ciemniejszym metalem
+  =========================================================
+  POLEROWANE SREBRO
+  =========================================================
   */
+
   background:
     linear-gradient(
       180deg,
@@ -309,91 +352,101 @@ body::after {
       #ffffff 0%,
       #ffffff 7%,
 
-      #dfe1e4 13%,
-      #8b8f94 21%,
+      #edf5f8 12%,
+      #ffffff 17%,
 
-      #45494e 28%,
-      #f9f9f9 37%,
+      #a7b2b8 23%,
+      #e9f0f3 28%,
 
-      #ffffff 44%,
-      #c7c9cc 49%,
+      #ffffff 34%,
+      #ffffff 40%,
 
-      #686c72 57%,
-      #34383d 64%,
+      #9aa5ab 46%,
+      #dce5e9 50%,
 
-      #e5e7e9 72%,
+      #ffffff 56%,
+      #ffffff 63%,
+
+      #b5c0c5 68%,
+      #f1f6f8 73%,
+
       #ffffff 79%,
+      #ffffff 85%,
 
-      #aeb2b7 87%,
-      #555960 93%,
-
+      #b7c2c7 91%,
+      #ffffff 96%,
       #ffffff 100%
     );
 
-  background-size: 100% 240%;
+  background-size: 100% 260%;
+
   background-position: 50% 0%;
 
   -webkit-background-clip: text;
   background-clip: text;
 
   /*
-     delikatna jasna krawędź
+  =========================================================
+  BARDZO JASNA METALOWA KRAWĘDŹ
+  =========================================================
   */
-  -webkit-text-stroke: 1px rgba(255,255,255,.38);
+
+  -webkit-text-stroke:
+    1.5px rgba(255,255,255,.98);
 
   /*
-     głęboki cień — bez neonowego glow
+  =========================================================
+  WYPUKLENIE
+  =========================================================
   */
+
+  text-shadow:
+
+    0 -1px 0 #ffffff,
+
+    0 2px 0 #edf5f7,
+
+    0 4px 0 #b7c2c7,
+
+    0 6px 0 #7c878d,
+
+    0 9px 0 #424b50,
+
+    0 12px 0 #1d2225,
+
+    0 17px 17px rgba(0,0,0,.98),
+
+    0 27px 35px rgba(0,0,0,.82);
+
   filter:
-    drop-shadow(0 3px 0 rgba(255,255,255,.18))
-    drop-shadow(0 5px 0 rgba(45,47,50,.95))
-    drop-shadow(0 8px 0 rgba(18,19,21,.95))
-    drop-shadow(0 13px 13px rgba(0,0,0,.90));
+    drop-shadow(
+      0 0 2px
+      rgba(255,255,255,1)
+    )
+    drop-shadow(
+      0 0 8px
+      rgba(255,255,255,.42)
+    );
 
-  animation: luxuryChrome 7s ease-in-out infinite;
+  transform:
+    perspective(900px)
+    rotateX(4deg);
+
+  transform-origin:
+    center bottom;
+
+  z-index: 5;
+
+  animation:
+    bubbleChromeMove
+    6s
+    ease-in-out
+    infinite;
 }
 
 
 /* =========================================================
-   METALICZNY RUCH ŚWIATŁA
-========================================================= */
-
-@keyframes luxuryChrome {
-
-  0%,
-  100% {
-    background-position: 50% 0%;
-
-    filter:
-      drop-shadow(0 3px 0 rgba(255,255,255,.18))
-      drop-shadow(0 5px 0 rgba(45,47,50,.95))
-      drop-shadow(0 8px 0 rgba(18,19,21,.95))
-      drop-shadow(0 13px 13px rgba(0,0,0,.90));
-  }
-
-  42% {
-    background-position: 50% 42%;
-  }
-
-  55% {
-    background-position: 50% 65%;
-
-    filter:
-      drop-shadow(0 3px 0 rgba(255,255,255,.28))
-      drop-shadow(0 5px 0 rgba(45,47,50,.95))
-      drop-shadow(0 8px 0 rgba(18,19,21,.95))
-      drop-shadow(0 13px 16px rgba(0,0,0,.92));
-  }
-
-  68% {
-    background-position: 50% 100%;
-  }
-}
-
-
-/* =========================================================
-   GŁĘBOKA METALOWA WARSTWA
-   robi efekt "napompowania"
+   3D — CIEMNY METAL POD NAPISEM
 ========================================================= */
 
 .hero h1::before {
@@ -401,37 +454,64 @@ body::after {
 
   position: absolute;
 
-  left: 0;
-  top: 0;
+  inset: 0;
 
-  width: 100%;
-  height: 100%;
-
-  z-index: -1;
+  z-index: -2;
 
   pointer-events: none;
 
-  color: #34373b;
+  font: inherit;
 
-  -webkit-text-fill-color: #34373b;
+  font-weight: inherit;
 
-  -webkit-text-stroke: 1px #151619;
+  letter-spacing: inherit;
+
+  line-height: inherit;
+
+  text-align: center;
+
+  color: #68747a;
+
+  -webkit-text-fill-color: #68747a;
+
+  /*
+  GRUBA KRAWĘDŹ
+  */
+
+  -webkit-text-stroke:
+    5px #242a2e;
+
+  /*
+  WYSUNIĘCIE DO PRZODU
+  */
 
   transform:
-    translate3d(0, 8px, 0)
-    scaleX(.995);
+    translateY(13px)
+    scaleY(1.025);
 
-  opacity: .95;
+  /*
+  GŁĘBIA METALU
+  */
+
+  text-shadow:
+
+    0 2px 0 #111416,
+
+    0 5px 0 #0b0d0e,
+
+    0 9px 0 #050606,
+
+    0 14px 0 #000000,
+
+    0 20px 22px rgba(0,0,0,1);
 
   filter:
-    blur(.15px)
-    drop-shadow(0 5px 2px rgba(0,0,0,.95))
-    drop-shadow(0 10px 10px rgba(0,0,0,.85));
+    blur(.15px);
 }
 
 
 /* =========================================================
-   GÓRNA KRAWĘDŹ — BIAŁE ODBICIE
+   RAŻĄCE ODBICIA NA POWIERZCHNI CHROMU
 ========================================================= */
 
 .hero h1::after {
@@ -441,9 +521,19 @@ body::after {
 
   inset: 0;
 
-  z-index: 2;
+  z-index: 4;
 
   pointer-events: none;
+
+  font: inherit;
+
+  font-weight: inherit;
+
+  letter-spacing: inherit;
+
+  line-height: inherit;
+
+  text-align: center;
 
   color: transparent;
 
@@ -451,24 +541,111 @@ body::after {
 
   background:
     linear-gradient(
-      180deg,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.75) 5%,
+      165deg,
+
+      transparent 0%,
       transparent 18%,
+
+      rgba(255,255,255,.10) 23%,
+
+      rgba(255,255,255,1) 27%,
+      rgba(255,255,255,1) 32%,
+
+      rgba(255,255,255,.14) 37%,
+
+      transparent 42%,
+      transparent 51%,
+
+      rgba(255,255,255,.08) 56%,
+
+      rgba(255,255,255,1) 60%,
+      rgba(255,255,255,1) 65%,
+
+      rgba(255,255,255,.12) 70%,
+
+      transparent 76%,
       transparent 100%
     );
 
   -webkit-background-clip: text;
+
   background-clip: text;
 
-  opacity: .95;
+  opacity: .98;
 
   mix-blend-mode: screen;
+
+  animation:
+    chromeFlash
+    4.5s
+    ease-in-out
+    infinite;
 }
 
 
 /* =========================================================
-   BUZIA — NIE NEON
+   RUCH METALICZNEGO ŚWIATŁA
+========================================================= */
+
+@keyframes bubbleChromeMove {
+
+  0%,
+  100% {
+    background-position: 50% 0%;
+  }
+
+  25% {
+    background-position: 50% 18%;
+  }
+
+  50% {
+    background-position: 50% 43%;
+  }
+
+  75% {
+    background-position: 50% 70%;
+  }
+}
+
+
+/* =========================================================
+   PRZESUWAJĄCY SIĘ REFLEKS
+========================================================= */
+
+@keyframes chromeFlash {
+
+  0% {
+    opacity: .55;
+
+    transform:
+      translateX(-7%);
+  }
+
+  40% {
+    opacity: 1;
+
+    transform:
+      translateX(0%);
+  }
+
+  65% {
+    opacity: .95;
+
+    transform:
+      translateX(7%);
+  }
+
+  100% {
+    opacity: .55;
+
+    transform:
+      translateX(-7%);
+  }
+}
+
+
+/* =========================================================
+   💋 KISS — OSOBNY ELEMENT
 ========================================================= */
 
 .hero h1 span {
@@ -476,150 +653,62 @@ body::after {
 
   position: relative;
 
-  margin-left: 7px;
+  margin-left: .08em;
 
-  font-family: Arial, sans-serif !important;
+  font-family:
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    sans-serif !important;
 
-  font-size: .40em !important;
-  font-weight: 900 !important;
+  font-size: .68em !important;
+
+  font-weight: normal !important;
 
   line-height: 1;
 
-  color: #ffffff !important;
+  color: initial !important;
 
-  -webkit-text-fill-color: #ffffff !important;
+  -webkit-text-fill-color: initial !important;
 
   background: none !important;
 
   -webkit-background-clip: initial !important;
+
   background-clip: initial !important;
 
   -webkit-text-stroke: 0 !important;
 
+  text-shadow:
+    0 4px 4px rgba(0,0,0,.9),
+    0 8px 10px rgba(0,0,0,.65) !important;
+
   filter:
-    drop-shadow(0 2px 1px rgba(0,0,0,.95))
-    drop-shadow(0 5px 4px rgba(0,0,0,.75)) !important;
+    drop-shadow(
+      0 2px 2px
+      rgba(0,0,0,.95)
+    ) !important;
+
+  transform:
+    translateY(.04em)
+    rotate(-7deg);
 
   animation: none !important;
+
+  z-index: 10;
 }
 
 
 /* =========================================================
-   LINIA POD LOGO
+   LINIA POD POWITANIEM
 ========================================================= */
 
 .hero h1 + .hero-line {
-  margin-top: 34px;
+  margin-top: 38px;
 }
 
 
 /* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .hero h1 {
-    font-size: clamp(40px, 11vw, 68px) !important;
-
-    letter-spacing: -.045em !important;
-
-    -webkit-text-stroke: .7px rgba(255,255,255,.38);
-  }
-
-  .hero h1::before {
-    transform:
-      translate3d(0, 6px, 0)
-      scaleX(.995);
-  }
-
-  .hero h1 span {
-    margin-left: 4px;
-  }
-}
-
-
-/* =========================================================
-   BARDZO MAŁY TELEFON
-========================================================= */
-
-@media (max-width: 420px) {
-
-  .hero h1 {
-    font-size: 43px !important;
-  }
-}
-
-
-/* =========================================================
-   REDUKCJA RUCHU
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .hero h1 {
-    animation: none !important;
-
-    background-position: 50% 0%;
-  }
-}
-
-/* =========================================================
-   DELIKATNA LINIA POD POWITANIEM
-========================================================= */
-
-.hero h1::after {
-  content: "";
-
-  position: absolute;
-
-  left: 8%;
-  right: 8%;
-  bottom: -18px;
-
-  height: 1px;
-
-  background:
-    linear-gradient(
-      90deg,
-      transparent,
-      rgba(255,255,255,.15),
-      rgba(255,255,255,.9),
-      rgba(255,255,255,.15),
-      transparent
-    );
-
-  box-shadow:
-    0 0 5px rgba(255,255,255,.5),
-    0 0 14px rgba(255,255,255,.15);
-
-  opacity: .8;
-}
-
-
-/* =========================================================
-   TELEFON
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .hero h1 {
-    font-size: clamp(38px, 10vw, 58px);
-    letter-spacing: .035em;
-  }
-
-  .hero h1 span {
-    margin-left: 4px;
-  }
-
-  .hero h1::after {
-    left: 5%;
-    right: 5%;
-    bottom: -14px;
-  }
-}
-/* =========================================================
-   LINIA
+   GŁÓWNA LINIA
 ========================================================= */
 
 .hero-line {
@@ -627,7 +716,8 @@ body::after {
 
   height: 1px;
 
-  margin: 28px auto 25px;
+  margin:
+    28px auto 25px;
 
   background:
     linear-gradient(
@@ -652,37 +742,49 @@ body::after {
 .hero-subtitle {
   position: relative;
 
-  width: min(680px, 100%);
+  width:
+    min(
+      680px,
+      100%
+    );
 
-  margin: 0 auto 32px;
+  margin:
+    0 auto 32px;
 
-  padding: 22px 28px;
+  padding:
+    22px 28px;
 
-  color: rgba(255,255,255,.82);
+  color:
+    rgba(255,255,255,.82);
 
   font-size: 13px;
 
   line-height: 1.8;
 
   background:
-
     linear-gradient(
       145deg,
       rgba(255,255,255,.075),
       rgba(255,255,255,.018)
     );
 
-  border: 1px solid rgba(255,255,255,.24);
+  border:
+    1px solid
+    rgba(255,255,255,.24);
 
   box-shadow:
 
-    0 25px 65px rgba(0,0,0,.65),
+    0 25px 65px
+    rgba(0,0,0,.65),
 
-    inset 0 1px 0 rgba(255,255,255,.09),
+    inset 0 1px 0
+    rgba(255,255,255,.09),
 
-    0 0 35px rgba(255,255,255,.025);
+    0 0 35px
+    rgba(255,255,255,.025);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter:
+    blur(10px);
 }
 
 .hero-subtitle::before,
@@ -696,7 +798,8 @@ body::after {
   font-size: 10px;
 
   text-shadow:
-    0 0 12px rgba(255,255,255,.8);
+    0 0 12px
+    rgba(255,255,255,.8);
 }
 
 .hero-subtitle::before {
@@ -718,14 +821,15 @@ body::after {
   position: relative;
 
   width: 280px;
+
   height: 348px;
 
-  margin: 0 auto 19px;
+  margin:
+    0 auto 19px;
 
   padding: 4px;
 
   background:
-
     linear-gradient(
       135deg,
       #ffffff 0%,
@@ -739,15 +843,19 @@ body::after {
 
   box-shadow:
 
-    0 35px 80px rgba(0,0,0,.8),
+    0 35px 80px
+    rgba(0,0,0,.8),
 
-    0 0 25px rgba(255,255,255,.18),
+    0 0 25px
+    rgba(255,255,255,.18),
 
-    0 0 70px rgba(255,255,255,.08);
+    0 0 70px
+    rgba(255,255,255,.08);
 }
 
 .portrait-wrap img {
   width: 272px;
+
   height: 340px;
 
   display: block;
@@ -771,9 +879,11 @@ body::after {
 
   gap: 9px;
 
-  margin: 0 auto 13px;
+  margin:
+    0 auto 13px;
 
-  padding: 8px 15px;
+  padding:
+    8px 15px;
 
   color: #ffffff;
 
@@ -786,16 +896,20 @@ body::after {
   background:
     rgba(0,0,0,.72);
 
-  border: 1px solid rgba(255,255,255,.30);
+  border:
+    1px solid
+    rgba(255,255,255,.30);
 
   border-radius: 999px;
 
   box-shadow:
-    0 0 22px rgba(255,255,255,.06);
+    0 0 22px
+    rgba(255,255,255,.06);
 }
 
 .online i {
   width: 7px;
+
   height: 7px;
 
   border-radius: 50%;
@@ -804,10 +918,14 @@ body::after {
 
   box-shadow:
     0 0 8px #ffffff,
-    0 0 18px rgba(255,255,255,.8);
+    0 0 18px
+    rgba(255,255,255,.8);
 
   animation:
-    onlinePulse 2.5s ease-in-out infinite;
+    onlinePulse
+    2.5s
+    ease-in-out
+    infinite;
 }
 
 @keyframes onlinePulse {
@@ -815,12 +933,16 @@ body::after {
   0%,
   100% {
     opacity: .55;
-    transform: scale(.9);
+
+    transform:
+      scale(.9);
   }
 
   50% {
     opacity: 1;
-    transform: scale(1.2);
+
+    transform:
+      scale(1.2);
   }
 }
 
@@ -829,7 +951,8 @@ body::after {
 
   margin: 0 auto;
 
-  color: rgba(255,255,255,.62);
+  color:
+    rgba(255,255,255,.62);
 
   font-size: 12px;
 
@@ -844,7 +967,10 @@ body::after {
   opacity: .95;
 
   filter:
-    drop-shadow(0 0 9px rgba(255,255,255,.5));
+    drop-shadow(
+      0 0 9px
+      rgba(255,255,255,.5)
+    );
 }
 
 
@@ -863,7 +989,8 @@ body::after {
 }
 
 .section-number {
-  color: rgba(255,255,255,.55);
+  color:
+    rgba(255,255,255,.55);
 
   font-size: 10px;
 
@@ -882,13 +1009,21 @@ body::after {
     Georgia,
     serif;
 
-  font-size: clamp(36px, 5vw, 54px);
+  font-size:
+    clamp(
+      36px,
+      5vw,
+      54px
+    );
 
   font-weight: 500;
 
   text-shadow:
-    0 0 8px rgba(255,255,255,.5),
-    0 0 30px rgba(255,255,255,.15);
+    0 0 8px
+    rgba(255,255,255,.5),
+
+    0 0 30px
+    rgba(255,255,255,.15);
 }
 
 
@@ -914,7 +1049,6 @@ body::after {
   text-decoration: none;
 
   background:
-
     linear-gradient(
       145deg,
       rgba(255,255,255,.065),
@@ -922,15 +1056,20 @@ body::after {
       rgba(255,255,255,.025)
     );
 
-  border: 1px solid rgba(255,255,255,.20);
+  border:
+    1px solid
+    rgba(255,255,255,.20);
 
   box-shadow:
 
-    0 22px 60px rgba(0,0,0,.65),
+    0 22px 60px
+    rgba(0,0,0,.65),
 
-    inset 0 1px 0 rgba(255,255,255,.06);
+    inset 0 1px 0
+    rgba(255,255,255,.06);
 
-  backdrop-filter: blur(10px);
+  backdrop-filter:
+    blur(10px);
 
   transition:
     transform .3s ease,
@@ -939,7 +1078,9 @@ body::after {
 }
 
 
-/* BIAŁY REFLEKS NA KARTACH */
+/* =========================================================
+   BIAŁY REFLEKS NA KARTACH
+========================================================= */
 
 .link-card::before,
 .social-card::before,
@@ -964,7 +1105,8 @@ body::after {
       transparent
     );
 
-  transform: rotate(20deg);
+  transform:
+    rotate(20deg);
 
   transition:
     left .8s ease;
@@ -979,18 +1121,22 @@ body::after {
 .link-card:hover,
 .social-card:hover,
 .offer-card:hover {
-  transform: translateY(-4px);
+  transform:
+    translateY(-4px);
 
   border-color:
     rgba(255,255,255,.48);
 
   box-shadow:
 
-    0 28px 70px rgba(0,0,0,.75),
+    0 28px 70px
+    rgba(0,0,0,.75),
 
-    0 0 35px rgba(255,255,255,.07),
+    0 0 35px
+    rgba(255,255,255,.07),
 
-    inset 0 1px 0 rgba(255,255,255,.12);
+    inset 0 1px 0
+    rgba(255,255,255,.12);
 }
 
 .link-card {
@@ -998,17 +1144,20 @@ body::after {
 
   display: grid;
 
-  grid-template-columns: 42px 1fr 30px;
+  grid-template-columns:
+    42px 1fr 30px;
 
   align-items: center;
 
   gap: 14px;
 
-  padding: 18px 20px;
+  padding:
+    18px 20px;
 }
 
 .card-icon {
   width: 36px;
+
   height: 36px;
 
   display: grid;
@@ -1017,19 +1166,23 @@ body::after {
 
   color: #ffffff;
 
-  border: 1px solid rgba(255,255,255,.34);
+  border:
+    1px solid
+    rgba(255,255,255,.34);
 
   background:
     rgba(255,255,255,.035);
 
   box-shadow:
-    0 0 18px rgba(255,255,255,.05);
+    0 0 18px
+    rgba(255,255,255,.05);
 }
 
 .link-card h3,
 .social-card h3,
 .offer-card h3 {
-  margin: 0 0 5px;
+  margin:
+    0 0 5px;
 
   color: #ffffff;
 
@@ -1045,7 +1198,8 @@ body::after {
 .offer-card p {
   margin: 0;
 
-  color: rgba(255,255,255,.58);
+  color:
+    rgba(255,255,255,.58);
 
   font-size: 11px;
 
@@ -1060,7 +1214,8 @@ body::after {
   text-align: right;
 
   text-shadow:
-    0 0 10px rgba(255,255,255,.55);
+    0 0 10px
+    rgba(255,255,255,.55);
 }
 
 
@@ -1120,7 +1275,8 @@ body::after {
 .offer-card {
   min-height: 290px;
 
-  padding: 28px 24px;
+  padding:
+    28px 24px;
 }
 
 .offer-index {
@@ -1128,7 +1284,8 @@ body::after {
 
   margin-bottom: 48px;
 
-  color: rgba(255,255,255,.5);
+  color:
+    rgba(255,255,255,.5);
 
   font-size: 9px;
 
@@ -1150,11 +1307,13 @@ body::after {
   line-height: 1;
 
   text-shadow:
-    0 0 12px rgba(255,255,255,.25);
+    0 0 12px
+    rgba(255,255,255,.25);
 }
 
 .offer-card p {
-  color: rgba(255,255,255,.60);
+  color:
+    rgba(255,255,255,.60);
 }
 
 
@@ -1180,6 +1339,7 @@ body::after {
 
 .featured-label span {
   width: 55px;
+
   height: 1px;
 
   background:
@@ -1190,7 +1350,8 @@ body::after {
     );
 
   box-shadow:
-    0 0 10px rgba(255,255,255,.5);
+    0 0 10px
+    rgba(255,255,255,.5);
 }
 
 .featured-label span:last-child {
@@ -1214,17 +1375,18 @@ body::after {
   letter-spacing: .28em;
 
   text-shadow:
-    0 0 10px rgba(255,255,255,.4);
+    0 0 10px
+    rgba(255,255,255,.4);
 }
 
 .featured-photo {
   width: 100%;
+
   height: 340px;
 
   padding: 4px;
 
   background:
-
     linear-gradient(
       135deg,
       #ffffff,
@@ -1238,15 +1400,18 @@ body::after {
 
   box-shadow:
 
-    0 35px 90px rgba(0,0,0,.78),
+    0 35px 90px
+    rgba(0,0,0,.78),
 
-    0 0 40px rgba(255,255,255,.10);
+    0 0 40px
+    rgba(255,255,255,.10);
 
   overflow: hidden;
 }
 
 .featured-photo img {
   width: 100%;
+
   height: 100%;
 
   display: block;
@@ -1274,7 +1439,8 @@ body::after {
 
   overflow: hidden;
 
-  padding: 68px 30px;
+  padding:
+    68px 30px;
 
   text-align: center;
 
@@ -1292,19 +1458,25 @@ body::after {
       rgba(0,0,0,.65)
     );
 
-  border: 1px solid rgba(255,255,255,.27);
+  border:
+    1px solid
+    rgba(255,255,255,.27);
 
   box-shadow:
 
-    0 35px 90px rgba(0,0,0,.75),
+    0 35px 90px
+    rgba(0,0,0,.75),
 
-    inset 0 1px 0 rgba(255,255,255,.10);
+    inset 0 1px 0
+    rgba(255,255,255,.10);
 }
 
 .contact-kicker {
-  margin: 0 0 10px;
+  margin:
+    0 0 10px;
 
-  color: rgba(255,255,255,.62);
+  color:
+    rgba(255,255,255,.62);
 
   font-size: 9px;
 
@@ -1323,25 +1495,35 @@ body::after {
     Georgia,
     serif;
 
-  font-size: clamp(42px, 7vw, 70px);
+  font-size:
+    clamp(
+      42px,
+      7vw,
+      70px
+    );
 
   font-weight: 500;
 
   text-shadow:
 
-    0 0 6px rgba(255,255,255,.9),
+    0 0 6px
+    rgba(255,255,255,.9),
 
-    0 0 22px rgba(255,255,255,.45),
+    0 0 22px
+    rgba(255,255,255,.45),
 
-    0 0 50px rgba(255,255,255,.15);
+    0 0 50px
+    rgba(255,255,255,.15);
 }
 
 .contact-text {
   max-width: 530px;
 
-  margin: 20px auto 28px;
+  margin:
+    20px auto 28px;
 
-  color: rgba(255,255,255,.62);
+  color:
+    rgba(255,255,255,.62);
 
   font-size: 12px;
 
@@ -1355,12 +1537,12 @@ body::after {
 
   gap: 13px;
 
-  padding: 15px 23px;
+  padding:
+    15px 23px;
 
   color: #000000;
 
   background:
-
     linear-gradient(
       135deg,
       #ffffff,
@@ -1368,7 +1550,8 @@ body::after {
       #ffffff
     );
 
-  border: 1px solid #ffffff;
+  border:
+    1px solid #ffffff;
 
   text-decoration: none;
 
@@ -1380,9 +1563,11 @@ body::after {
 
   box-shadow:
 
-    0 15px 40px rgba(0,0,0,.7),
+    0 15px 40px
+    rgba(0,0,0,.7),
 
-    0 0 25px rgba(255,255,255,.15);
+    0 0 25px
+    rgba(255,255,255,.15);
 
   transition:
     transform .25s ease,
@@ -1390,13 +1575,16 @@ body::after {
 }
 
 .contact-button:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
   box-shadow:
 
-    0 20px 50px rgba(0,0,0,.8),
+    0 20px 50px
+    rgba(0,0,0,.8),
 
-    0 0 45px rgba(255,255,255,.28);
+    0 0 45px
+    rgba(255,255,255,.28);
 }
 
 .contact-button span {
@@ -1409,19 +1597,20 @@ body::after {
 ========================================================= */
 
 .footer {
-  padding: 0 0 40px;
+  padding:
+    0 0 40px;
 
   text-align: center;
 }
 
 .footer-line {
   width: 100%;
+
   height: 1px;
 
   margin-bottom: 24px;
 
   background:
-
     linear-gradient(
       90deg,
       transparent,
@@ -1430,13 +1619,16 @@ body::after {
     );
 
   box-shadow:
-    0 0 10px rgba(255,255,255,.15);
+    0 0 10px
+    rgba(255,255,255,.15);
 }
 
 .footer p {
-  margin: 0 0 7px;
+  margin:
+    0 0 7px;
 
-  color: rgba(255,255,255,.72);
+  color:
+    rgba(255,255,255,.72);
 
   font-size: 9px;
 
@@ -1446,7 +1638,8 @@ body::after {
 }
 
 .footer span {
-  color: rgba(255,255,255,.38);
+  color:
+    rgba(255,255,255,.38);
 
   font-size: 8px;
 }
@@ -1469,7 +1662,9 @@ body::after {
 }
 
 
-/* BIAŁE ŚWIATŁO */
+/* =========================================================
+   ŚWIATŁO ZA MASKAMI
+========================================================= */
 
 .bunny-bg::before {
   content: "";
@@ -1503,7 +1698,11 @@ body::after {
   opacity: .72;
 
   animation:
-    bunnyAmbient 14s ease-in-out infinite alternate;
+    bunnyAmbient
+    14s
+    ease-in-out
+    infinite
+    alternate;
 }
 
 @keyframes bunnyAmbient {
@@ -1535,7 +1734,7 @@ body::after {
 
 
 /* =========================================================
-   MASKA
+   MASKI
 ========================================================= */
 
 .bunny-float {
@@ -1548,26 +1747,35 @@ body::after {
   filter:
 
     drop-shadow(
-      0 0 8px rgba(255,255,255,.4)
+      0 0 8px
+      rgba(255,255,255,.4)
     )
 
     drop-shadow(
-      0 0 22px rgba(255,255,255,.22)
+      0 0 22px
+      rgba(255,255,255,.22)
     )
 
     drop-shadow(
-      0 0 42px rgba(255,255,255,.10)
+      0 0 42px
+      rgba(255,255,255,.10)
     );
 
   animation:
 
-    bunnyFly var(--duration)
-    ease-in-out infinite,
+    bunnyFly
+    var(--duration)
+    ease-in-out
+    infinite,
 
-    bunnyShine var(--shine-duration)
-    ease-in-out infinite alternate;
+    bunnyShine
+    var(--shine-duration)
+    ease-in-out
+    infinite
+    alternate;
 
-  animation-delay: var(--delay);
+  animation-delay:
+    var(--delay);
 
   will-change:
     transform,
@@ -1576,6 +1784,7 @@ body::after {
 
 .bunny-float img {
   width: 100%;
+
   height: auto;
 
   display: block;
@@ -1843,41 +2052,55 @@ body::after {
 
   0% {
     filter:
+
       drop-shadow(
-        0 0 7px rgba(255,255,255,.25)
+        0 0 7px
+        rgba(255,255,255,.25)
       )
+
       drop-shadow(
-        0 0 18px rgba(255,255,255,.12)
+        0 0 18px
+        rgba(255,255,255,.12)
       );
   }
 
   50% {
     filter:
+
       drop-shadow(
-        0 0 14px rgba(255,255,255,.75)
+        0 0 14px
+        rgba(255,255,255,.75)
       )
+
       drop-shadow(
-        0 0 32px rgba(255,255,255,.38)
+        0 0 32px
+        rgba(255,255,255,.38)
       )
+
       drop-shadow(
-        0 0 60px rgba(255,255,255,.15)
+        0 0 60px
+        rgba(255,255,255,.15)
       );
   }
 
   100% {
     filter:
+
       drop-shadow(
-        0 0 9px rgba(255,255,255,.32)
+        0 0 9px
+        rgba(255,255,255,.32)
       )
+
       drop-shadow(
-        0 0 25px rgba(255,255,255,.16)
+        0 0 25px
+        rgba(255,255,255,.16)
       );
   }
 }
 
 
 /* =========================================================
-   MOBILE
+   TABLET / MOBILE
 ========================================================= */
 
 @media (max-width: 720px) {
@@ -1885,7 +2108,7 @@ body::after {
   .site-shell {
     width:
       min(
-        100% - 22px,
+        calc(100% - 22px),
         620px
       );
   }
@@ -1900,11 +2123,13 @@ body::after {
 
   .portrait-wrap {
     width: 260px;
+
     height: 326px;
   }
 
   .portrait-wrap img {
     width: 252px;
+
     height: 318px;
   }
 
@@ -1938,25 +2163,82 @@ body::after {
    MAŁY TELEFON
 ========================================================= */
 
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size:
+      clamp(
+        39px,
+        11vw,
+        67px
+      ) !important;
+
+    letter-spacing:
+      -.055em !important;
+
+    -webkit-text-stroke:
+      1px rgba(255,255,255,.98);
+
+    text-shadow:
+
+      0 -1px 0 #ffffff,
+
+      0 2px 0 #edf5f7,
+
+      0 4px 0 #b7c2c7,
+
+      0 7px 0 #69757b,
+
+      0 10px 0 #202528,
+
+      0 15px 17px
+      rgba(0,0,0,.98),
+
+      0 23px 28px
+      rgba(0,0,0,.8);
+  }
+
+  .hero h1::before {
+    transform:
+      translateY(10px)
+      scaleY(1.025);
+
+    -webkit-text-stroke:
+      3.5px #242a2e;
+  }
+
+  .hero h1 span {
+    margin-left: .06em;
+  }
+}
+
+
+/* =========================================================
+   BARDZO MAŁY TELEFON
+========================================================= */
+
 @media (max-width: 420px) {
 
   .hero h1 {
-    font-size: 47px;
+    font-size: 43px !important;
   }
 
   .hero-subtitle {
-    padding: 18px 19px;
+    padding:
+      18px 19px;
 
     font-size: 12px;
   }
 
   .portrait-wrap {
     width: 240px;
+
     height: 302px;
   }
 
   .portrait-wrap img {
     width: 232px;
+
     height: 294px;
   }
 
@@ -1965,7 +2247,8 @@ body::after {
   }
 
   .contact-card {
-    padding: 50px 20px;
+    padding:
+      50px 20px;
   }
 
   .section-heading h2 {
@@ -1975,7 +2258,7 @@ body::after {
 
 
 /* =========================================================
-   REDUKCJA ANIMACJI
+   REDUKCJA RUCHU
 ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
@@ -1988,8 +2271,16 @@ body::after {
   *::before,
   *::after {
     animation-duration: .01ms !important;
+
     animation-iteration-count: 1 !important;
+
     transition-duration: .01ms !important;
   }
-}
 
+  .hero h1 {
+    animation: none !important;
+
+    background-position:
+      50% 0%;
+  }
+}
