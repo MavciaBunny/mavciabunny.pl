@@ -283,114 +283,207 @@ body::after {
 /* =========================================================
    NOWE POWITANIE — SMUKŁY NEON / CHROME
 ========================================================= */
+/* =========================================================
+   POWITANIE — EDITORIAL CHROME NEON
+========================================================= */
 
 .hero h1 {
   position: relative;
+  display: inline-block;
 
   margin: 0;
+  max-width: 1000px;
 
-  max-width: 900px;
+  font-family: "Inter", Arial, sans-serif;
 
-  font-family:
-    "Inter",
-    Arial,
-    sans-serif;
-
-  font-size: clamp(44px, 7vw, 82px);
-
+  font-size: clamp(42px, 7vw, 86px);
   font-weight: 300;
-
   line-height: .95;
 
-  letter-spacing: .035em;
+  letter-spacing: .055em;
+  text-transform: none;
 
-  color: #ffffff;
+  color: #fff;
 
-  /* subtelny chromowany efekt */
+  /* metaliczna powierzchnia liter */
   background:
     linear-gradient(
-      180deg,
+      105deg,
       #ffffff 0%,
-      #ffffff 38%,
-      #d7d9dc 55%,
-      #ffffff 72%,
-      #bfc2c6 100%
+      #ffffff 22%,
+      #bfc3c8 34%,
+      #ffffff 43%,
+      #ffffff 50%,
+      #d9dce0 58%,
+      #ffffff 70%,
+      #aeb3b9 84%,
+      #ffffff 100%
     );
+
+  background-size: 220% 100%;
+  background-position: 100% 0;
 
   -webkit-background-clip: text;
   background-clip: text;
-
   -webkit-text-fill-color: transparent;
 
-  /* NEON — cienki, a nie wielka poświata */
+  /* cienki neon zamiast grubej poświaty */
   filter:
-    drop-shadow(0 0 2px rgba(255,255,255,.95))
-    drop-shadow(0 0 7px rgba(255,255,255,.55))
-    drop-shadow(0 0 18px rgba(255,255,255,.18));
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 4px rgba(255,255,255,.8))
+    drop-shadow(0 0 12px rgba(255,255,255,.25));
 
-  animation: neonChrome 4.5s ease-in-out infinite;
+  animation:
+    chromeSweep 6s cubic-bezier(.4,0,.2,1) infinite;
 }
 
 
-@keyframes neonChrome {
+/* przechodzący błysk po napisie */
 
-  0%,
+@keyframes chromeSweep {
+
+  0% {
+    background-position: 120% 0;
+
+    filter:
+      drop-shadow(0 0 1px #fff)
+      drop-shadow(0 0 4px rgba(255,255,255,.65))
+      drop-shadow(0 0 10px rgba(255,255,255,.18));
+  }
+
+  35% {
+    background-position: 0% 0;
+
+    filter:
+      drop-shadow(0 0 1px #fff)
+      drop-shadow(0 0 7px rgba(255,255,255,.9))
+      drop-shadow(0 0 17px rgba(255,255,255,.3));
+  }
+
+  55% {
+    background-position: -20% 0;
+
+    filter:
+      drop-shadow(0 0 2px #fff)
+      drop-shadow(0 0 5px rgba(255,255,255,.7))
+      drop-shadow(0 0 12px rgba(255,255,255,.2));
+  }
+
   100% {
-    filter:
-      drop-shadow(0 0 2px rgba(255,255,255,.9))
-      drop-shadow(0 0 7px rgba(255,255,255,.45))
-      drop-shadow(0 0 16px rgba(255,255,255,.12));
-  }
+    background-position: -20% 0;
 
-  50% {
     filter:
-      drop-shadow(0 0 2px rgba(255,255,255,1))
-      drop-shadow(0 0 9px rgba(255,255,255,.72))
-      drop-shadow(0 0 23px rgba(255,255,255,.25));
+      drop-shadow(0 0 1px #fff)
+      drop-shadow(0 0 4px rgba(255,255,255,.65))
+      drop-shadow(0 0 10px rgba(255,255,255,.15));
   }
 }
 
+
+/* =========================================================
+   BUZIA — MAŁY NEONOWY AKCENT
+========================================================= */
 
 .hero h1 span {
+  position: relative;
+
   display: inline-block;
 
-  font-size: .55em;
+  margin-left: 8px;
 
-  margin-left: 5px;
+  font-size: .52em;
+  line-height: 1;
 
   -webkit-text-fill-color: initial;
 
-  color: #ffffff;
+  color: #fff;
 
   filter:
-    drop-shadow(0 0 3px #ffffff)
-    drop-shadow(0 0 9px rgba(255,255,255,.65));
+    drop-shadow(0 0 1px #fff)
+    drop-shadow(0 0 5px #fff)
+    drop-shadow(0 0 13px rgba(255,255,255,.5));
 
-  animation:
-    kissNeon 3s ease-in-out infinite alternate;
+  animation: kissPulse 2.8s ease-in-out infinite;
 }
 
 
-@keyframes kissNeon {
+@keyframes kissPulse {
 
-  from {
-    transform: translateY(0) rotate(-3deg);
+  0%,
+  100% {
+    transform: translateY(0) rotate(-3deg) scale(1);
 
     filter:
-      drop-shadow(0 0 3px #ffffff)
-      drop-shadow(0 0 8px rgba(255,255,255,.5));
+      drop-shadow(0 0 1px #fff)
+      drop-shadow(0 0 5px #fff)
+      drop-shadow(0 0 12px rgba(255,255,255,.4));
   }
 
-  to {
-    transform: translateY(-2px) rotate(2deg);
+  50% {
+    transform: translateY(-3px) rotate(2deg) scale(1.05);
 
     filter:
-      drop-shadow(0 0 4px #ffffff)
-      drop-shadow(0 0 13px rgba(255,255,255,.8));
+      drop-shadow(0 0 2px #fff)
+      drop-shadow(0 0 7px #fff)
+      drop-shadow(0 0 18px rgba(255,255,255,.65));
   }
 }
 
 
+/* =========================================================
+   DELIKATNA LINIA POD POWITANIEM
+========================================================= */
+
+.hero h1::after {
+  content: "";
+
+  position: absolute;
+
+  left: 8%;
+  right: 8%;
+  bottom: -18px;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255,255,255,.15),
+      rgba(255,255,255,.9),
+      rgba(255,255,255,.15),
+      transparent
+    );
+
+  box-shadow:
+    0 0 5px rgba(255,255,255,.5),
+    0 0 14px rgba(255,255,255,.15);
+
+  opacity: .8;
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .hero h1 {
+    font-size: clamp(38px, 10vw, 58px);
+    letter-spacing: .035em;
+  }
+
+  .hero h1 span {
+    margin-left: 4px;
+  }
+
+  .hero h1::after {
+    left: 5%;
+    right: 5%;
+    bottom: -14px;
+  }
+}
 /* =========================================================
    LINIA
 ========================================================= */
