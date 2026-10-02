@@ -210,132 +210,130 @@ body::before {
 
 
 /* =========================================================
-   FLOATING CARD SUITS — MORE VISIBLE
+   PŁYWAJĄCE SYMBOLE KART
 ========================================================= */
 
-.floating-suits {
+.floating-cards {
   position: fixed;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   overflow: hidden;
   pointer-events: none;
+
   z-index: 1;
 }
 
-.floating-suit {
+.floating-card {
   position: absolute;
+
   display: block;
 
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
   line-height: 1;
 
-  color: rgba(210, 190, 255, 0.42);
+  color: rgba(225, 210, 255, 0.55);
 
   text-shadow:
-    0 0 8px rgba(190, 130, 255, 0.65),
-    0 0 20px rgba(145, 80, 220, 0.45),
-    0 0 38px rgba(145, 80, 220, 0.25);
+    0 0 10px rgba(190, 130, 255, 0.8),
+    0 0 25px rgba(145, 80, 220, 0.65),
+    0 0 55px rgba(145, 80, 220, 0.35);
 
-  opacity: 0.75;
+  opacity: 0.65;
 
   animation:
-    floatingSuit 16s ease-in-out infinite alternate,
-    floatingSuitGlow 4s ease-in-out infinite alternate;
+    floatingCardMove 18s ease-in-out infinite alternate,
+    floatingCardGlow 4s ease-in-out infinite alternate;
 }
 
-/* różne pozycje i wielkości */
 
-.floating-suit:nth-child(1) {
-  left: 4%;
-  top: 12%;
-  font-size: 72px;
-  animation-delay: -2s;
-}
+/* =========================================================
+   POZYCJE 16 SYMBOLI
+========================================================= */
 
-.floating-suit:nth-child(2) {
-  left: 17%;
-  top: 68%;
-  font-size: 46px;
-  animation-delay: -8s;
-}
+.fc1  { left: 3%;  top: 8%;  font-size: 85px; animation-delay: -2s; }
+.fc2  { left: 15%; top: 25%; font-size: 55px; animation-delay: -7s; }
+.fc3  { left: 29%; top: 12%; font-size: 105px; animation-delay: -11s; }
+.fc4  { left: 44%; top: 30%; font-size: 65px; animation-delay: -5s; }
 
-.floating-suit:nth-child(3) {
-  left: 31%;
-  top: 25%;
-  font-size: 90px;
-  animation-delay: -5s;
-}
+.fc5  { left: 60%; top: 7%;  font-size: 80px; animation-delay: -13s; }
+.fc6  { left: 76%; top: 22%; font-size: 110px; animation-delay: -4s; }
+.fc7  { left: 91%; top: 10%; font-size: 60px; animation-delay: -9s; }
+.fc8  { left: 84%; top: 48%; font-size: 85px; animation-delay: -15s; }
 
-.floating-suit:nth-child(4) {
-  left: 46%;
-  top: 78%;
-  font-size: 55px;
-  animation-delay: -11s;
-}
+.fc9  { left: 5%;  top: 48%; font-size: 60px; animation-delay: -6s; }
+.fc10 { left: 20%; top: 68%; font-size: 95px; animation-delay: -12s; }
+.fc11 { left: 38%; top: 55%; font-size: 55px; animation-delay: -3s; }
+.fc12 { left: 53%; top: 75%; font-size: 90px; animation-delay: -17s; }
 
-.floating-suit:nth-child(5) {
-  left: 62%;
-  top: 14%;
-  font-size: 64px;
-  animation-delay: -7s;
-}
+.fc13 { left: 67%; top: 62%; font-size: 65px; animation-delay: -8s; }
+.fc14 { left: 79%; top: 78%; font-size: 100px; animation-delay: -14s; }
+.fc15 { left: 92%; top: 65%; font-size: 58px; animation-delay: -10s; }
+.fc16 { left: 47%; top: 10%; font-size: 48px; animation-delay: -19s; }
 
-.floating-suit:nth-child(6) {
-  left: 76%;
-  top: 48%;
-  font-size: 94px;
-  animation-delay: -3s;
-}
 
-.floating-suit:nth-child(7) {
-  left: 90%;
-  top: 18%;
-  font-size: 52px;
-  animation-delay: -10s;
-}
+/* =========================================================
+   RUCH PO CAŁYM TLE
+========================================================= */
 
-.floating-suit:nth-child(8) {
-  left: 84%;
-  top: 76%;
-  font-size: 70px;
-  animation-delay: -6s;
-}
+@keyframes floatingCardMove {
 
-.floating-suit:nth-child(9) {
-  left: 8%;
-  top: 42%;
-  font-size: 48px;
-  animation-delay: -13s;
-}
-
-.floating-suit:nth-child(10) {
-  left: 55%;
-  top: 42%;
-  font-size: 43px;
-  animation-delay: -9s;
-}
-
-@keyframes floatingSuit {
   0% {
-    transform: translate3d(0, 0, 0) rotate(-8deg);
+    transform:
+      translate3d(-20px, 20px, 0)
+      rotate(-12deg)
+      scale(0.9);
+  }
+
+  25% {
+    transform:
+      translate3d(90px, -80px, 0)
+      rotate(15deg)
+      scale(1.08);
   }
 
   50% {
-    transform: translate3d(20px, -35px, 0) rotate(8deg);
+    transform:
+      translate3d(-70px, -130px, 0)
+      rotate(-8deg)
+      scale(0.95);
+  }
+
+  75% {
+    transform:
+      translate3d(120px, 90px, 0)
+      rotate(18deg)
+      scale(1.12);
   }
 
   100% {
-    transform: translate3d(-18px, 20px, 0) rotate(-5deg);
+    transform:
+      translate3d(-100px, 150px, 0)
+      rotate(-15deg)
+      scale(1);
   }
 }
 
-@keyframes floatingSuitGlow {
+
+/* =========================================================
+   MIGOTANIE / FIOLETOWY BLASK
+========================================================= */
+
+@keyframes floatingCardGlow {
+
   0% {
-    opacity: 0.48;
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 0.85;
   }
 
   100% {
-    opacity: 0.9;
+    opacity: 0.45;
   }
 }
 
