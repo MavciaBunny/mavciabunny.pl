@@ -210,114 +210,212 @@ body::before {
 
 
 /* =========================================================
-   PŁYWAJĄCE SYMBOLE KART
+   FLOATING CARD SUITS
 ========================================================= */
 
-.floating-cards {
+.floating-suits {
   position: fixed;
   inset: 0;
-
-  z-index: 0;
-  pointer-events: none;
-
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.floating-card {
+.floating-suit {
   position: absolute;
+  display: block;
 
-  font-family: Georgia, serif;
-  font-size: 26px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  line-height: 1;
 
-  opacity: 0.1;
+  color: rgba(215, 195, 255, 0.48);
 
-  filter:
-    drop-shadow(0 0 8px rgba(168, 85, 247, 0.35));
+  text-shadow:
+    0 0 8px rgba(195, 145, 255, 0.8),
+    0 0 18px rgba(160, 90, 240, 0.65),
+    0 0 35px rgba(125, 55, 210, 0.4);
+
+  opacity: 0.8;
 
   animation:
-    cardFloat 13s linear infinite;
+    floatingSuitMove 18s ease-in-out infinite alternate,
+    floatingSuitPulse 4s ease-in-out infinite alternate;
 }
 
-.card-heart {
-  color: #ef3158;
+/* =========================================================
+   POZYCJE
+========================================================= */
+
+.floating-suit:nth-child(1) {
+  left: 3%;
+  top: 8%;
+  font-size: 78px;
+  animation-delay: -2s;
 }
 
-.card-diamond {
-  color: #d49cff;
+.floating-suit:nth-child(2) {
+  left: 14%;
+  top: 32%;
+  font-size: 52px;
+  animation-delay: -8s;
 }
 
-.card-spade,
-.card-club {
-  color: #ffffff;
+.floating-suit:nth-child(3) {
+  left: 27%;
+  top: 12%;
+  font-size: 92px;
+  animation-delay: -5s;
 }
 
-.fc1  { left: 4%;  bottom: -60px; animation-delay: 0s; }
-.fc2  { left: 12%; bottom: -70px; animation-delay: 3s; }
-.fc3  { left: 20%; bottom: -55px; animation-delay: 6s; }
-.fc4  { left: 29%; bottom: -80px; animation-delay: 9s; }
-
-.fc5  { left: 37%; bottom: -60px; animation-delay: 2s; }
-.fc6  { left: 45%; bottom: -70px; animation-delay: 7s; }
-.fc7  { left: 53%; bottom: -55px; animation-delay: 4s; }
-.fc8  { left: 61%; bottom: -80px; animation-delay: 11s; }
-
-.fc9  { left: 69%; bottom: -60px; animation-delay: 5s; }
-.fc10 { left: 77%; bottom: -70px; animation-delay: 1s; }
-.fc11 { left: 84%; bottom: -55px; animation-delay: 8s; }
-.fc12 { left: 92%; bottom: -80px; animation-delay: 12s; }
-
-.fc13 {
-  left: 16%;
-  bottom: -40px;
-  font-size: 18px;
-  animation-delay: 10s;
+.floating-suit:nth-child(4) {
+  left: 40%;
+  top: 42%;
+  font-size: 58px;
+  animation-delay: -11s;
 }
 
-.fc14 {
+.floating-suit:nth-child(5) {
+  left: 53%;
+  top: 8%;
+  font-size: 70px;
+  animation-delay: -4s;
+}
+
+.floating-suit:nth-child(6) {
+  left: 68%;
+  top: 26%;
+  font-size: 96px;
+  animation-delay: -9s;
+}
+
+.floating-suit:nth-child(7) {
+  left: 84%;
+  top: 10%;
+  font-size: 55px;
+  animation-delay: -13s;
+}
+
+.floating-suit:nth-child(8) {
+  left: 94%;
+  top: 42%;
+  font-size: 82px;
+  animation-delay: -6s;
+}
+
+.floating-suit:nth-child(9) {
+  left: 6%;
+  top: 58%;
+  font-size: 50px;
+  animation-delay: -12s;
+}
+
+.floating-suit:nth-child(10) {
+  left: 20%;
+  top: 76%;
+  font-size: 86px;
+  animation-delay: -7s;
+}
+
+.floating-suit:nth-child(11) {
   left: 34%;
-  bottom: -45px;
-  font-size: 20px;
-  animation-delay: 5s;
+  top: 64%;
+  font-size: 48px;
+  animation-delay: -15s;
 }
 
-.fc15 {
-  left: 70%;
-  bottom: -45px;
-  font-size: 19px;
-  animation-delay: 1.5s;
+.floating-suit:nth-child(12) {
+  left: 48%;
+  top: 82%;
+  font-size: 74px;
+  animation-delay: -3s;
 }
 
-.fc16 {
+.floating-suit:nth-child(13) {
+  left: 61%;
+  top: 58%;
+  font-size: 53px;
+  animation-delay: -10s;
+}
+
+.floating-suit:nth-child(14) {
+  left: 74%;
+  top: 78%;
+  font-size: 90px;
+  animation-delay: -14s;
+}
+
+.floating-suit:nth-child(15) {
   left: 88%;
-  bottom: -40px;
-  font-size: 18px;
-  animation-delay: 7.5s;
+  top: 62%;
+  font-size: 48px;
+  animation-delay: -5s;
 }
 
-@keyframes cardFloat {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0;
-  }
+.floating-suit:nth-child(16) {
+  left: 12%;
+  top: 90%;
+  font-size: 62px;
+  animation-delay: -9s;
+}
 
-  12% {
-    opacity: 0.12;
+.floating-suit:nth-child(17) {
+  left: 38%;
+  top: 22%;
+  font-size: 42px;
+  animation-delay: -16s;
+}
+
+.floating-suit:nth-child(18) {
+  left: 57%;
+  top: 34%;
+  font-size: 45px;
+  animation-delay: -6s;
+}
+
+.floating-suit:nth-child(19) {
+  left: 79%;
+  top: 52%;
+  font-size: 60px;
+  animation-delay: -12s;
+}
+
+.floating-suit:nth-child(20) {
+  left: 91%;
+  top: 88%;
+  font-size: 72px;
+  animation-delay: -8s;
+}
+
+/* =========================================================
+   RUCH
+========================================================= */
+
+@keyframes floatingSuitMove {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-8deg);
   }
 
   50% {
-    opacity: 0.18;
-  }
-
-  88% {
-    opacity: 0.08;
+    transform: translate3d(22px, -34px, 0) rotate(8deg);
   }
 
   100% {
-    transform: translateY(-115vh) rotate(180deg);
-    opacity: 0;
+    transform: translate3d(-20px, 24px, 0) rotate(-6deg);
   }
 }
 
+@keyframes floatingSuitPulse {
+  0% {
+    opacity: 0.48;
+  }
+
+  100% {
+    opacity: 0.92;
+  }
+}
 
 /* =========================================================
    MAIN
