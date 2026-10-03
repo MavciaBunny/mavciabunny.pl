@@ -1617,7 +1617,7 @@ footer p {
 
 }
 /* =========================================================
-   INTRO — FIOLETOWA NIEREGULARNA RAMKA
+   INTRO — ELEGANCKA CIEMNA KARTA
 ========================================================= */
 
 .intro-description {
@@ -1625,7 +1625,7 @@ footer p {
 
   max-width: 720px;
   margin: 28px auto 0;
-  padding: 28px 32px;
+  padding: 28px 34px;
 
   color: rgba(255, 255, 255, 0.88);
 
@@ -1635,27 +1635,26 @@ footer p {
 
   background:
     linear-gradient(
-      145deg,
+      135deg,
       rgba(255, 255, 255, 0.045),
-      rgba(90, 35, 140, 0.10),
-      rgba(8, 8, 13, 0.94)
+      rgba(95, 45, 135, 0.08),
+      rgba(5, 5, 8, 0.92)
     );
 
-  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
 
-  border: 2px solid #a855f7;
+  border-radius: 18px;
 
   box-shadow:
-    0 0 8px rgba(168, 85, 247, 0.75),
-    0 0 22px rgba(168, 85, 247, 0.35),
-    0 20px 55px rgba(0, 0, 0, 0.5);
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 0 35px rgba(112, 55, 170, 0.12);
 
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(16px);
 }
 
 
 /* =========================================================
-   NIEREGULARNA ZEWNĘTRZNA OBWÓDKA
+   DELIKATNA FIOLETOWA LINIA
 ========================================================= */
 
 .intro-description::before {
@@ -1663,59 +1662,54 @@ footer p {
 
   position: absolute;
 
-  inset: -5px;
-
-  border: 1px solid rgba(212, 156, 255, 0.75);
-
-  border-radius:
-    27px 19px 25px 21px;
-
-  pointer-events: none;
-
-  box-shadow:
-    0 0 10px rgba(168, 85, 247, 0.65),
-    0 0 25px rgba(168, 85, 247, 0.25);
-
-  transform: rotate(0.15deg);
-
-  z-index: 2;
-}
-
-
-/* =========================================================
-   MAŁE NIEREGULARNE AKCENTY
-========================================================= */
-
-.intro-description::after {
-  content: "";
-
-  position: absolute;
-
-  width: 90px;
-  height: 14px;
-
-  top: -7px;
+  top: -1px;
   left: 18%;
+  right: 18%;
+
+  height: 1px;
 
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(212, 156, 255, 0.9),
-    rgba(168, 85, 247, 0.55),
+    rgba(185, 115, 255, 0.85),
     transparent
   );
 
-  border-radius: 50%;
+  box-shadow:
+    0 0 8px rgba(168, 85, 247, 0.5);
 
-  filter: blur(2px);
-
-  opacity: 0.85;
+  opacity: 0.8;
 
   pointer-events: none;
+}
 
-  transform: rotate(-1deg);
 
-  z-index: 3;
+/* =========================================================
+   MAŁY ELEGANCKI AKCENT
+========================================================= */
+
+.intro-description::after {
+  content: "✦";
+
+  position: absolute;
+
+  bottom: -13px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  padding: 0 10px;
+
+  color: rgba(190, 125, 255, 0.9);
+
+  background: #050505;
+
+  font-size: 13px;
+
+  text-shadow:
+    0 0 8px rgba(168, 85, 247, 0.8);
+
+  pointer-events: none;
 }
 
 
@@ -1726,30 +1720,28 @@ footer p {
 @media (max-width: 560px) {
 
   .intro-description {
-    padding: 20px;
+    padding: 21px 20px;
     font-size: 13px;
     line-height: 1.7;
-    border-radius: 20px;
+    border-radius: 16px;
   }
 
-  .intro-description::before {
-    border-radius: 24px 18px 22px 19px;
-  }
 }
+
+
+/* =========================================================
+   POWITANIE — BERKSHIRE SWASH
+========================================================= */
+
 #hero-title {
- font-family: "Lobster", cursive;
+  font-family: "Berkshire Swash", cursive;
   font-weight: 400;
-  letter-spacing: 0;
+  letter-spacing: 0.5px;
 
   color: #ffffff;
 
   text-shadow:
-    -1px -1px 0 rgba(168, 85, 247, 0.85),
-     1px -1px 0 rgba(168, 85, 247, 0.85),
-    -1px  1px 0 rgba(168, 85, 247, 0.85),
-     1px  1px 0 rgba(168, 85, 247, 0.85),
-
-    0 0 8px rgba(168, 85, 247, 0.95),
-    0 0 20px rgba(168, 85, 247, 0.55),
-    0 0 38px rgba(168, 85, 247, 0.25);
+    0 0 2px rgba(255, 255, 255, 0.9),
+    0 0 10px rgba(168, 85, 247, 0.65),
+    0 0 24px rgba(168, 85, 247, 0.35);
 }
