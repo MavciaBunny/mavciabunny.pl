@@ -115,5 +115,115 @@
 
   .offer-grid small {
     font-size: 7.5px;
+     /* =========================================================
+   MAVCIABUNNY — POPRAWA CZYTELNOŚCI MAŁYCH NAPISÓW
+========================================================= */
+
+
+/* ---------------------------------------------------------
+   JUŻ NIE MUSISZ MNIE SZUKAĆ
+   ZAMÓWIENIA SPECJALNIE DLA CIEBIE
+   POZNAJ MNIE BLIŻEJ
+--------------------------------------------------------- */
+
+.section-heading .eyebrow,
+.about-card .eyebrow,
+.about-copy .eyebrow,
+.about-section .eyebrow {
+  font-size: 11px;
+  line-height: 1.4;
+  letter-spacing: 0.20em;
+}
+
+
+/* ---------------------------------------------------------
+   MOJE WSZYSTKIE PLATFORMY
+   PRZYGOTOWANE SPECJALNIE DLA CIEBIE
+--------------------------------------------------------- */
+
+.section-heading > p {
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+
+/* ---------------------------------------------------------
+   LINKI / OFERTA / TELEGRAM
+--------------------------------------------------------- */
+
+.link-card small,
+.link-card .label,
+.offer-grid small,
+.about-card small,
+.contact-card small,
+.contact-card .label {
+  font-size: 10px;
+  line-height: 1.4;
+  letter-spacing: 0.20em;
+}
+
+
+/* ---------------------------------------------------------
+   DZIĘKUJĘ, ŻE TU JESTEŚ
+--------------------------------------------------------- */
+
+.footer p,
+footer p {
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 800px) {
+
+  /* JUŻ NIE MUSISZ MNIE SZUKAĆ
+     ZAMÓWIENIA SPECJALNIE DLA CIEBIE
+     POZNAJ MNIE BLIŻEJ */
+
+  .section-heading .eyebrow,
+  .about-card .eyebrow,
+  .about-copy .eyebrow,
+  .about-section .eyebrow {
+    font-size: 10px;
+    line-height: 1.4;
+    letter-spacing: 0.17em;
+  }
+
+
+  /* MOJE WSZYSTKIE PLATFORMY
+     PRZYGOTOWANE SPECJALNIE DLA CIEBIE */
+
+  .section-heading > p {
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+
+  /* LINKI / OFERTA / TELEGRAM */
+
+  .link-card small,
+  .link-card .label,
+  .offer-grid small,
+  .about-card small,
+  .contact-card small,
+  .contact-card .label {
+    font-size: 9px;
+    line-height: 1.4;
+    letter-spacing: 0.17em;
+  }
+
+
+  /* DZIĘKUJĘ, ŻE TU JESTEŚ */
+
+  .footer p,
+  footer p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}
   }
 }
