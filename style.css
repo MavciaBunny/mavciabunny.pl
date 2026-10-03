@@ -1616,5 +1616,261 @@ footer p {
   }
 
 }
+/* =========================================================
+   INTRO — PRAWdziWY FIOLETOWY DRIP
+========================================================= */
 
+.intro-description {
+  position: relative;
+
+  max-width: 720px;
+  margin: 28px auto 0;
+  padding: 28px 32px;
+
+  color: rgba(255, 255, 255, 0.84);
+
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.045),
+      rgba(75, 25, 120, 0.10),
+      rgba(8, 8, 13, 0.94)
+    );
+
+  border: 1px solid rgba(168, 85, 247, 0.28);
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 65px rgba(0, 0, 0, 0.5),
+    0 0 35px rgba(168, 85, 247, 0.10),
+    inset 0 0 35px rgba(168, 85, 247, 0.04);
+
+  backdrop-filter: blur(14px);
+
+  overflow: visible;
+}
+
+
+/* =========================================================
+   FIOLETOWA GÓRNA KRAWĘDŹ
+========================================================= */
+
+.intro-description::before {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  top: -2px;
+
+  height: 5px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #6d28d9,
+      #a855f7,
+      #d49cff,
+      #a855f7,
+      #7c3aed,
+      #c084fc,
+      #6d28d9
+    );
+
+  box-shadow:
+    0 0 8px rgba(168, 85, 247, 0.95),
+    0 0 25px rgba(168, 85, 247, 0.45);
+
+  z-index: 5;
+}
+
+
+/* =========================================================
+   KAŻDA KROPLA
+========================================================= */
+
+.drip {
+  position: absolute;
+
+  top: -1px;
+
+  width: 13px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #d49cff 0%,
+      #a855f7 35%,
+      #7c3aed 75%,
+      #5b21b6 100%
+    );
+
+  border-radius:
+    0 0 50% 50%;
+
+  box-shadow:
+    0 0 8px rgba(168, 85, 247, 0.9),
+    0 4px 15px rgba(168, 85, 247, 0.45);
+
+  z-index: 4;
+
+  transform-origin: top center;
+
+  animation:
+    dripPulse 4s ease-in-out infinite;
+}
+
+
+/* okrągłe zakończenie kropli */
+
+.drip::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -6px;
+
+  width: 13px;
+  height: 13px;
+
+  transform: translateX(-50%);
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #d9a7ff,
+      #a855f7 45%,
+      #6d28d9 100%
+    );
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 9px rgba(168, 85, 247, 0.8);
+}
+
+
+/* =========================================================
+   RÓŻNE DŁUGOŚCI I POZYCJE
+========================================================= */
+
+.drip-1 {
+  left: 13%;
+  height: 30px;
+  width: 11px;
+  animation-delay: -1.2s;
+}
+
+.drip-2 {
+  left: 28%;
+  height: 48px;
+  width: 15px;
+  animation-delay: -3s;
+}
+
+.drip-3 {
+  left: 46%;
+  height: 22px;
+  width: 10px;
+  animation-delay: -0.5s;
+}
+
+.drip-4 {
+  left: 64%;
+  height: 63px;
+  width: 17px;
+  animation-delay: -2.2s;
+}
+
+.drip-5 {
+  left: 79%;
+  height: 34px;
+  width: 12px;
+  animation-delay: -3.6s;
+}
+
+.drip-6 {
+  left: 91%;
+  height: 19px;
+  width: 9px;
+  animation-delay: -1.8s;
+}
+
+
+/* =========================================================
+   DELIKATNE PORUSZANIE KROPEL
+========================================================= */
+
+@keyframes dripPulse {
+
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+
+  50% {
+    transform: scaleX(1.08);
+  }
+}
+
+
+/* =========================================================
+   DROBNE FIOLETOWE ZACIEKI NA BOKACH
+========================================================= */
+
+.intro-description {
+  border-left: 2px solid rgba(168, 85, 247, 0.55);
+  border-right: 2px solid rgba(168, 85, 247, 0.45);
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 560px) {
+
+  .intro-description {
+    padding: 20px;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    border-radius: 20px;
+  }
+
+  .drip-1 {
+    left: 12%;
+  }
+
+  .drip-2 {
+    left: 30%;
+  }
+
+  .drip-3 {
+    left: 47%;
+  }
+
+  .drip-4 {
+    left: 64%;
+  }
+
+  .drip-5 {
+    left: 80%;
+  }
+
+  .drip-6 {
+    left: 91%;
+  }
+}
 
