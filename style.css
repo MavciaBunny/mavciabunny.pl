@@ -19,3 +19,101 @@
 .hero>.playboy-mark{left:44%;bottom:5%;width:74px;height:94px;transform:rotate(-8deg)}
 .about-copy>.playboy-mark{right:7%;top:9%;width:62px;height:79px;transform:rotate(7deg);opacity:.72}
 @media(max-width:800px){.hero>.playboy-mark{left:auto;right:7%;bottom:29%;width:61px;height:78px}.about-copy>.playboy-mark{right:5%;top:10%;width:52px;height:66px}}
+/* =========================================================
+   ZNAJDZIESZ U MNIE — WIĘKSZE I CZYTELNIEJSZE KAFELKI
+========================================================= */
+
+.offer-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.offer-grid article {
+  height: 235px;
+  padding: 20px 18px;
+  justify-content: flex-end;
+  border-radius: 10px;
+}
+
+/* Mocniejsze przyciemnienie pod tekstem */
+.offer-grid article::before {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(5, 2, 8, 0.98) 0%,
+      rgba(7, 3, 11, 0.88) 30%,
+      rgba(8, 4, 12, 0.28) 68%,
+      rgba(8, 4, 12, 0.08) 100%
+    ),
+    var(--bg) center / cover;
+}
+
+/* Fioletowa poświata zdjęcia */
+.offer-grid article::after {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(125, 55, 215, 0.30),
+      transparent 58%
+    );
+}
+
+.offer-grid small {
+  font-size: 8px;
+  letter-spacing: .27em;
+  margin-bottom: 7px;
+  color: #cbb5e5;
+}
+
+.offer-grid strong {
+  font-size: 25px;
+  line-height: 1.05;
+  color: #eadcff;
+  max-width: 100%;
+}
+
+.offer-grid p {
+  position: relative;
+  z-index: 1;
+
+  margin: 10px 0 0;
+  max-width: 100%;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: #d0c5d8;
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .offer-grid article {
+    height: 185px;
+    padding: 18px;
+  }
+
+  .offer-grid strong {
+    font-size: 23px;
+    max-width: 95%;
+  }
+
+  .offer-grid p {
+    font-size: 10.5px;
+    line-height: 1.5;
+    max-width: 95%;
+  }
+
+  .offer-grid small {
+    font-size: 7.5px;
+  }
+}
