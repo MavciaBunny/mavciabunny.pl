@@ -16,16 +16,104 @@
   <span class="playboy-mark" aria-hidden="true"><svg viewBox="0 0 220 280" role="img"><g fill="none" stroke="currentColor" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"><path d="M101 100C72 62 45 40 19 27c2 40 20 78 66 99-37 8-58 30-58 60 0 35 30 55 76 58l-2 26 25-18 22 18-2-29c31-10 47-35 45-70-2-31-13-50-33-63 25-29 35-61 32-96-31 18-52 49-61 94-6 29-6 53-4 72-8-18-16-44-24-78Z"/><circle cx="71" cy="169" r="7" fill="currentColor" stroke="none"/><path d="M91 246l-29 17 29 16v-33Zm37 0 29 17-29 16v-33Zm-37 17h37M158 258l36-9"/></g></svg></span>
 </section>
 
-<section class="section links reveal" id="links">
- <div class="section-head"><div><small>JUŻ NIE MUSISZ SZUKAĆ</small><h2>Gdzie mnie znaleźć? <i>♡</i></h2></div><p>MOJE WSZYSTKIE PLATFORMY</p></div>
- <div class="link-grid">
-  <a class="link-card" href="#"><span>◉</span><strong>ShowUp</strong><em>→</em></a>
-  <a class="link-card" href="#"><span>◎</span><strong>Instagram</strong><em>→</em></a>
-  <a class="link-card" href="#"><span>𝕏</span><strong>X</strong><em>→</em></a>
-  <a class="link-card" href="https://t.me/mavciabunny" target="_blank" rel="noopener"><span>➤</span><strong>Telegram</strong><em>→</em></a>
-  <a class="link-card" href="#"><span>♢</span><strong>Majtkomat</strong><em>→</em></a>
- </div>
-</section>
+/* =========================================================
+   ZNAJDZIESZ U MNIE — WIĘKSZE I CZYTELNIEJSZE KAFELKI
+========================================================= */
+
+.offer-grid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.offer-grid article {
+  height: 235px;
+  padding: 20px 18px;
+  justify-content: flex-end;
+  border-radius: 10px;
+}
+
+/* Mocniejsze przyciemnienie pod tekstem */
+.offer-grid article::before {
+  background:
+    linear-gradient(
+      0deg,
+      rgba(5, 2, 8, 0.98) 0%,
+      rgba(7, 3, 11, 0.88) 30%,
+      rgba(8, 4, 12, 0.28) 68%,
+      rgba(8, 4, 12, 0.08) 100%
+    ),
+    var(--bg) center / cover;
+}
+
+/* Fioletowa poświata zdjęcia */
+.offer-grid article::after {
+  background:
+    linear-gradient(
+      135deg,
+      rgba(125, 55, 215, 0.30),
+      transparent 58%
+    );
+}
+
+.offer-grid small {
+  font-size: 8px;
+  letter-spacing: .27em;
+  margin-bottom: 7px;
+  color: #cbb5e5;
+}
+
+.offer-grid strong {
+  font-size: 25px;
+  line-height: 1.05;
+  color: #eadcff;
+  max-width: 100%;
+}
+
+.offer-grid p {
+  position: relative;
+  z-index: 1;
+
+  margin: 10px 0 0;
+  max-width: 100%;
+
+  font-size: 11px;
+  line-height: 1.55;
+
+  color: #d0c5d8;
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .offer-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .offer-grid article {
+    height: 185px;
+    padding: 18px;
+  }
+
+  .offer-grid strong {
+    font-size: 23px;
+    max-width: 95%;
+  }
+
+  .offer-grid p {
+    font-size: 10.5px;
+    line-height: 1.5;
+    max-width: 95%;
+  }
+
+  .offer-grid small {
+    font-size: 7.5px;
+  }
+}
 
 <section class="section live reveal" id="live">
  <div class="section-head"><div><small>ZAMÓWIENIE SPECJALNIE DLA CIEBIE</small><h2>Znajdziesz u mnie <i>♡</i></h2></div><p>PRZYGOTOWANE ZGODNIE Z TWOIM ŻYCZENIEM</p></div>
