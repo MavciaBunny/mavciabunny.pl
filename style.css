@@ -220,11 +220,101 @@ footer p {
   }
 
 
-  /* DZIĘKUJĘ, ŻE TU JESTEŚ */
+  /* MIŁO MI, ŻE TU JESTEŚ */
 
   .footer p,
   footer p {
     font-size: 12px;
     line-height: 1.5;
+  }
+}
+/* =========================================================
+   SOCIAL MEDIA — 3 + 3
+========================================================= */
+
+.social-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+/* GÓRNY RZĄD — SHOWUP / MAJTKOMAT / TELEGRAM */
+
+.social-main {
+  grid-column: span 2;
+  height: 112px;
+  align-items: flex-start;
+  padding: 17px;
+}
+
+.social-main > div {
+  flex: 1;
+}
+
+.social-main strong {
+  display: block;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+
+.social-main p {
+  margin: 0;
+  max-width: 250px;
+  font-size: 9.5px;
+  line-height: 1.5;
+  color: #aFA4b8;
+}
+
+.social-main em {
+  margin-top: 2px;
+}
+
+
+/* DOLNY RZĄD — INSTAGRAM / X / WISHLIST */
+
+.social-small {
+  grid-column: span 2;
+  height: 64px;
+}
+
+.social-small strong {
+  font-size: 14px;
+}
+
+
+/* TELEFON */
+
+@media (max-width: 800px) {
+
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .social-main {
+    grid-column: 1 / -1;
+    height: auto;
+    min-height: 105px;
+    padding: 16px;
+  }
+
+  .social-main strong {
+    font-size: 17px;
+  }
+
+  .social-main p {
+    font-size: 10px;
+    line-height: 1.5;
+    max-width: 90%;
+  }
+
+  .social-small {
+    grid-column: auto;
+    height: 62px;
+  }
+
+  /* Wishlist jako szeroki ostatni kafelek */
+  .social-small:last-child {
+    grid-column: 1 / -1;
   }
 }
