@@ -1,6 +1,5 @@
 /* =========================================================
-   MAVCIABUNNY — FINAL STYLE
-   BLACK / VIOLET / DARK FEMININE
+   MAVCIABUNNY — FINAL
 ========================================================= */
 
 :root {
@@ -10,7 +9,7 @@
   --violet2: #c7a6ff;
   --ink: #fffaff;
   --muted: #a79daf;
-  --line: rgba(181, 137, 255, .28);
+  --line: rgba(181,137,255,.28);
 }
 
 
@@ -40,8 +39,6 @@ a {
   text-decoration: none;
 }
 
-/* Tylko zwykłe zdjęcia mają wypełniać kontener.
-   bunny-logo jest wyłączone z tej reguły. */
 .hero-photo img,
 .about-photo img {
   display: block;
@@ -92,12 +89,9 @@ a {
 
 .hero {
   position: relative;
-
   max-width: 1180px;
   height: 470px;
-
   margin: auto;
-
   overflow: hidden;
 
   background: #060408;
@@ -122,7 +116,6 @@ a {
 
 .hero-photo::after {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -130,7 +123,7 @@ a {
     linear-gradient(
       90deg,
       #050306 0%,
-      rgba(5,3,7,.90) 20%,
+      rgba(5,3,7,.9) 20%,
       rgba(5,3,7,.15) 66%
     ),
     linear-gradient(
@@ -149,7 +142,6 @@ a {
 
 .hero::after {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -165,7 +157,7 @@ a {
 
 
 /* =========================================================
-   HERO TEXT
+   HERO COPY
 ========================================================= */
 
 .hero-copy {
@@ -175,9 +167,9 @@ a {
   left: 5%;
   top: 50%;
 
-  width: 61%;
-
   transform: translateY(-50%);
+
+  width: 61%;
 }
 
 .eyebrow {
@@ -202,7 +194,7 @@ a {
 .hero h1 {
   margin: 14px 0 12px;
 
-  font-size: clamp(62px, 7.2vw, 103px);
+  font-size: clamp(62px,7.2vw,103px);
   line-height: .82;
 
   letter-spacing: -.07em;
@@ -260,7 +252,7 @@ a {
 
   padding: 10px 12px 10px 20px;
 
-  border: 1px solid rgba(190,144,255,.70);
+  border: 1px solid rgba(190,144,255,.7);
   border-radius: 999px;
 
   background:
@@ -296,68 +288,65 @@ a {
 
 
 /* =========================================================
-   KRÓLICZKI
-   WAŻNE: NIE PODLEGAJĄ REGULE ZWYKŁYCH IMG
+   NEONOWY KRÓLIK SVG
 ========================================================= */
 
-img.bunny-logo {
+.bunny-logo {
   position: absolute;
+  z-index: 20;
 
-  display: block;
-
-  height: auto;
-  max-width: none;
-
-  object-fit: contain;
-
-  z-index: 10;
+  color: #c06cff;
 
   pointer-events: none;
 
   filter:
-    drop-shadow(0 0 4px rgba(205,145,255,.72))
-    drop-shadow(0 0 12px rgba(151,70,255,.40));
+    drop-shadow(0 0 2px rgba(232,184,255,.95))
+    drop-shadow(0 0 7px rgba(193,103,255,.85))
+    drop-shadow(0 0 15px rgba(142,55,255,.55));
+}
+
+.bunny-logo svg {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  overflow: visible;
 }
 
 
-/* KRÓLIK HERO */
+/* HERO BUNNY */
 
-img.bunny-logo-hero {
-  width: 76px;
-  height: auto;
+.bunny-logo-hero {
+  width: 78px;
+  height: 99px;
 
-  left: auto;
-  right: 6%;
-
-  top: 12%;
-  bottom: auto;
+  right: 5%;
+  top: 10%;
 
   transform: rotate(5deg);
 
-  opacity: .90;
+  opacity: .94;
 }
 
 
-/* KRÓLIK KIM JESTEM */
+/* ABOUT BUNNY */
 
-img.bunny-logo-about {
-  width: 58px;
-  height: auto;
+.bunny-logo-about {
+  width: 57px;
+  height: 73px;
 
-  left: auto;
   right: 6%;
-
   top: 8%;
-  bottom: auto;
 
   transform: rotate(5deg);
 
-  opacity: .80;
+  opacity: .82;
 }
 
 
 /* =========================================================
-   GŁÓWNE SEKCJE
+   SECTIONS
 ========================================================= */
 
 .section {
@@ -413,13 +402,13 @@ img.bunny-logo-about {
 
 
 /* =========================================================
-   SOCIAL MEDIA
+   SOCIALS
 ========================================================= */
 
 .social-grid {
   display: grid;
 
-  grid-template-columns: repeat(6, minmax(0,1fr));
+  grid-template-columns: repeat(6,minmax(0,1fr));
 
   gap: 11px;
 }
@@ -446,17 +435,15 @@ img.bunny-logo-about {
 .link-card:hover {
   transform: translateY(-3px);
 
-  border-color: rgba(205,169,255,.70);
+  border-color: rgba(205,169,255,.7);
 
   box-shadow:
     0 8px 24px rgba(0,0,0,.35),
-    0 0 20px rgba(145,76,255,.10);
+    0 0 20px rgba(145,76,255,.1);
 }
 
 
-/* =========================================================
-   SHOWUP / MAJTKOMAT / TELEGRAM
-========================================================= */
+/* MAIN SOCIALS */
 
 .social-main {
   grid-column: span 2;
@@ -491,7 +478,7 @@ img.bunny-logo-about {
 
   margin: 0 0 7px;
 
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Bodoni Moda',serif;
 
   font-size: 17px;
   line-height: 1.1;
@@ -510,7 +497,7 @@ img.bunny-logo-about {
   margin: 0;
   padding: 0;
 
-  font-family: Montserrat, Arial, sans-serif;
+  font-family: Montserrat,Arial,sans-serif;
 
   font-size: 9.5px;
   line-height: 1.55;
@@ -538,9 +525,7 @@ img.bunny-logo-about {
 }
 
 
-/* =========================================================
-   INSTAGRAM / X / WISHLIST
-========================================================= */
+/* SMALL SOCIALS */
 
 .social-small {
   grid-column: span 2;
@@ -564,7 +549,7 @@ img.bunny-logo-about {
 .social-small strong {
   min-width: 0;
 
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Bodoni Moda',serif;
 
   font-size: 15px;
   font-weight: 400;
@@ -584,7 +569,7 @@ img.bunny-logo-about {
 
 
 /* =========================================================
-   OFERTA
+   OFFER
 ========================================================= */
 
 .live {
@@ -595,7 +580,7 @@ img.bunny-logo-about {
 .schedule {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3,minmax(0,1fr));
 
   gap: 14px;
 }
@@ -633,7 +618,7 @@ img.bunny-logo-about {
       rgba(8,4,12,.28) 68%,
       rgba(8,4,12,.08) 100%
     ),
-    var(--bg) center / cover;
+    var(--bg) center/cover;
 
   filter:
     grayscale(.18)
@@ -659,7 +644,6 @@ img.bunny-logo-about {
 
 .schedule article > * {
   position: relative;
-
   z-index: 1;
 }
 
@@ -676,7 +660,7 @@ img.bunny-logo-about {
 .offer-grid strong {
   max-width: 100%;
 
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Bodoni Moda',serif;
 
   font-size: 25px;
   font-weight: 400;
@@ -699,7 +683,7 @@ img.bunny-logo-about {
 
 
 /* =========================================================
-   KIM JESTEM
+   ABOUT
 ========================================================= */
 
 .about {
@@ -720,7 +704,7 @@ img.bunny-logo-about {
 }
 
 
-/* bunnybed.webp */
+/* BUNNYBED */
 
 .about-photo {
   position: relative;
@@ -787,7 +771,7 @@ img.bunny-logo-about {
 .about-copy .tagline {
   margin: 0 0 12px;
 
-  font-family: 'Bodoni Moda', serif;
+  font-family: 'Bodoni Moda',serif;
 
   letter-spacing: .12em;
 
@@ -858,7 +842,7 @@ footer p {
 
 
 /* =========================================================
-   ANIMACJA
+   REVEAL
 ========================================================= */
 
 .reveal {
@@ -879,12 +863,10 @@ footer p {
 
 
 /* =========================================================
-   TELEFON
+   MOBILE
 ========================================================= */
 
-@media (max-width: 800px) {
-
-  /* TOPBAR */
+@media (max-width:800px) {
 
   .topbar {
     height: 40px;
@@ -945,9 +927,9 @@ footer p {
     top: auto;
     bottom: 28px;
 
-    width: auto;
-
     transform: none;
+
+    width: auto;
   }
 
   .eyebrow {
@@ -965,25 +947,20 @@ footer p {
   }
 
 
-  /* GÓRNY KRÓLICZEK */
+  /* KRÓLIK HERO */
 
-  img.bunny-logo-hero {
-    width: 64px;
-    height: auto;
+  .bunny-logo-hero {
+    width: 66px;
+    height: 84px;
 
-    left: auto;
-    right: 7%;
-
-    top: 10%;
-    bottom: auto;
+    right: 6%;
+    top: 9%;
 
     transform: rotate(5deg);
-
-    opacity: .92;
   }
 
 
-  /* SEKCJE */
+  /* SECTIONS */
 
   .section {
     padding: 30px 16px;
@@ -1019,21 +996,16 @@ footer p {
   }
 
 
-  /* =====================================================
-     SOCIAL MEDIA — TELEFON
-  ===================================================== */
+  /* SOCIALS */
 
   .social-grid {
-    grid-template-columns: repeat(2, minmax(0,1fr));
+    grid-template-columns: repeat(2,minmax(0,1fr));
 
     gap: 8px;
   }
 
-
-  /* SHOWUP / MAJTKOMAT / TELEGRAM */
-
   .social-main {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
 
     width: 100%;
 
@@ -1054,8 +1026,6 @@ footer p {
   }
 
   .social-main .social-content strong {
-    display: block;
-
     margin: 0 0 6px;
 
     font-size: 16px;
@@ -1063,8 +1033,6 @@ footer p {
   }
 
   .social-main .social-content p {
-    display: block;
-
     width: 100%;
     max-width: 100%;
 
@@ -1091,7 +1059,7 @@ footer p {
   }
 
 
-  /* INSTAGRAM / X */
+  /* INSTAGRAM + X */
 
   .social-small {
     grid-column: auto;
@@ -1120,16 +1088,14 @@ footer p {
   }
 
 
-  /* WISHLIST NA CAŁĄ SZEROKOŚĆ */
+  /* WISHLIST */
 
   .social-small:last-child {
-    grid-column: 1 / -1;
+    grid-column: 1/-1;
   }
 
 
-  /* =====================================================
-     OFERTA
-  ===================================================== */
+  /* OFFER */
 
   .schedule {
     grid-template-columns: 1fr;
@@ -1161,9 +1127,7 @@ footer p {
   }
 
 
-  /* =====================================================
-     KIM JESTEM
-  ===================================================== */
+  /* ABOUT */
 
   .about {
     grid-template-columns: 1fr;
@@ -1220,21 +1184,16 @@ footer p {
   }
 
 
-  /* KRÓLICZEK KIM JESTEM */
+  /* KRÓLIK ABOUT */
 
-  img.bunny-logo-about {
+  .bunny-logo-about {
     width: 50px;
-    height: auto;
+    height: 64px;
 
-    left: auto;
     right: 6%;
-
     top: 8%;
-    bottom: auto;
 
     transform: rotate(5deg);
-
-    opacity: .82;
   }
 
 
@@ -1265,10 +1224,10 @@ footer p {
 
 
 /* =========================================================
-   BARDZO MAŁY TELEFON
+   SMALL MOBILE
 ========================================================= */
 
-@media (max-width: 380px) {
+@media (max-width:380px) {
 
   .topbar nav a:nth-child(2) {
     display: none;
@@ -1278,8 +1237,9 @@ footer p {
     font-size: 49px;
   }
 
-  img.bunny-logo-hero {
-    width: 57px;
+  .bunny-logo-hero {
+    width: 58px;
+    height: 74px;
 
     right: 5%;
   }
@@ -1309,7 +1269,8 @@ footer p {
     font-size: 12px;
   }
 
-  img.bunny-logo-about {
+  .bunny-logo-about {
     width: 46px;
+    height: 59px;
   }
 }
