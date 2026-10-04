@@ -1,5 +1,5 @@
 /* =========================================================
-   MAVCIABUNNY — FINAL
+   MAVCIABUNNY
 ========================================================= */
 
 :root {
@@ -9,7 +9,7 @@
   --violet2: #c7a6ff;
   --ink: #fffaff;
   --muted: #a79daf;
-  --line: rgba(181,137,255,.28);
+  --line: rgba(181, 137, 255, .28);
 }
 
 
@@ -28,9 +28,12 @@ html {
 
 body {
   margin: 0;
+
   background: var(--bg);
   color: var(--ink);
+
   font-family: Montserrat, Arial, sans-serif;
+
   overflow-x: hidden;
 }
 
@@ -39,11 +42,16 @@ a {
   text-decoration: none;
 }
 
+
+/* TYLKO ZDJĘCIA */
+
 .hero-photo img,
 .about-photo img {
   display: block;
+
   width: 100%;
   height: 100%;
+
   object-fit: cover;
 }
 
@@ -55,6 +63,7 @@ a {
 .topbar {
   height: 44px;
   max-width: 1180px;
+
   margin: auto;
   padding: 0 28px;
 
@@ -66,6 +75,7 @@ a {
 
   font-size: 8px;
   letter-spacing: .25em;
+
   color: #b9abc8;
 }
 
@@ -89,9 +99,12 @@ a {
 
 .hero {
   position: relative;
+
   max-width: 1180px;
   height: 470px;
+
   margin: auto;
+
   overflow: hidden;
 
   background: #060408;
@@ -101,6 +114,7 @@ a {
 
 .hero-photo {
   position: absolute;
+
   inset: 0 0 0 38%;
 }
 
@@ -116,6 +130,7 @@ a {
 
 .hero-photo::after {
   content: "";
+
   position: absolute;
   inset: 0;
 
@@ -123,7 +138,7 @@ a {
     linear-gradient(
       90deg,
       #050306 0%,
-      rgba(5,3,7,.9) 20%,
+      rgba(5,3,7,.90) 20%,
       rgba(5,3,7,.15) 66%
     ),
     linear-gradient(
@@ -142,6 +157,7 @@ a {
 
 .hero::after {
   content: "";
+
   position: absolute;
   inset: 0;
 
@@ -162,14 +178,15 @@ a {
 
 .hero-copy {
   position: absolute;
+
   z-index: 3;
 
   left: 5%;
   top: 50%;
 
-  transform: translateY(-50%);
-
   width: 61%;
+
+  transform: translateY(-50%);
 }
 
 .eyebrow {
@@ -194,7 +211,8 @@ a {
 .hero h1 {
   margin: 14px 0 12px;
 
-  font-size: clamp(62px,7.2vw,103px);
+  font-size: clamp(62px, 7.2vw, 103px);
+
   line-height: .82;
 
   letter-spacing: -.07em;
@@ -234,6 +252,7 @@ a {
   font-family: 'Bodoni Moda', serif;
 
   letter-spacing: .25em;
+
   font-size: 14px;
 
   color: #d5c9df;
@@ -241,18 +260,21 @@ a {
 
 
 /* =========================================================
-   BUTTONS
+   BUTTON
 ========================================================= */
 
 .cta {
   display: inline-flex;
+
   align-items: center;
 
   gap: 25px;
 
   padding: 10px 12px 10px 20px;
 
-  border: 1px solid rgba(190,144,255,.7);
+  border:
+    1px solid rgba(190,144,255,.70);
+
   border-radius: 999px;
 
   background:
@@ -263,6 +285,7 @@ a {
     );
 
   font-family: 'Bodoni Moda', serif;
+
   font-size: 14px;
 }
 
@@ -273,13 +296,15 @@ a {
   flex-shrink: 0;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 50%;
 
   background: #09060d;
 
-  border: 1px solid rgba(255,255,255,.14);
+  border:
+    1px solid rgba(255,255,255,.14);
 }
 
 .ghost {
@@ -288,60 +313,51 @@ a {
 
 
 /* =========================================================
-   NEONOWY KRÓLIK SVG
+   PRAWDZIWY BUNNY-PURPLE.PNG
 ========================================================= */
 
-.bunny-logo {
+.bunny-purple {
   position: absolute;
-  z-index: 20;
 
-  color: #c06cff;
+  z-index: 8;
+
+  display: block;
+
+  height: auto;
+
+  object-fit: contain;
 
   pointer-events: none;
 
-  filter:
-    drop-shadow(0 0 2px rgba(232,184,255,.95))
-    drop-shadow(0 0 7px rgba(193,103,255,.85))
-    drop-shadow(0 0 15px rgba(142,55,255,.55));
-}
-
-.bunny-logo svg {
-  display: block;
-
-  width: 100%;
-  height: 100%;
-
-  overflow: visible;
+  user-select: none;
 }
 
 
-/* HERO BUNNY */
+/* HERO */
 
-.bunny-logo-hero {
-  width: 78px;
-  height: 99px;
+.bunny-purple-hero {
+  width: 82px;
 
   right: 5%;
-  top: 10%;
+  top: 9%;
 
-  transform: rotate(5deg);
+  transform: rotate(4deg);
 
-  opacity: .94;
+  opacity: .88;
 }
 
 
-/* ABOUT BUNNY */
+/* ABOUT */
 
-.bunny-logo-about {
-  width: 57px;
-  height: 73px;
+.bunny-purple-about {
+  width: 60px;
 
-  right: 6%;
+  right: 5%;
   top: 8%;
 
-  transform: rotate(5deg);
+  transform: rotate(4deg);
 
-  opacity: .82;
+  opacity: .76;
 }
 
 
@@ -356,12 +372,15 @@ a {
 
   padding: 38px 50px;
 
-  border-top: 1px solid rgba(255,255,255,.035);
+  border-top:
+    1px solid rgba(255,255,255,.035);
 }
 
 .section-head {
   display: flex;
+
   align-items: flex-end;
+
   justify-content: space-between;
 
   gap: 30px;
@@ -372,6 +391,7 @@ a {
 .section-head small,
 .about-copy > small {
   font-size: 10px;
+
   line-height: 1.4;
 
   letter-spacing: .27em;
@@ -384,6 +404,7 @@ a {
   margin: 5px 0 0;
 
   font-size: 38px;
+
   line-height: 1;
 }
 
@@ -391,6 +412,7 @@ a {
   margin: 0;
 
   font-size: 11px;
+
   line-height: 1.4;
 
   letter-spacing: .20em;
@@ -402,13 +424,14 @@ a {
 
 
 /* =========================================================
-   SOCIALS
+   SOCIAL GRID
 ========================================================= */
 
 .social-grid {
   display: grid;
 
-  grid-template-columns: repeat(6,minmax(0,1fr));
+  grid-template-columns:
+    repeat(6, minmax(0,1fr));
 
   gap: 11px;
 }
@@ -416,7 +439,9 @@ a {
 .link-card {
   min-width: 0;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid var(--line);
+
   border-radius: 8px;
 
   background:
@@ -433,17 +458,21 @@ a {
 }
 
 .link-card:hover {
-  transform: translateY(-3px);
+  transform:
+    translateY(-3px);
 
-  border-color: rgba(205,169,255,.7);
+  border-color:
+    rgba(205,169,255,.70);
 
   box-shadow:
     0 8px 24px rgba(0,0,0,.35),
-    0 0 20px rgba(145,76,255,.1);
+    0 0 20px rgba(145,76,255,.10);
 }
 
 
-/* MAIN SOCIALS */
+/* =========================================================
+   MAIN SOCIAL CARDS
+========================================================= */
 
 .social-main {
   grid-column: span 2;
@@ -466,6 +495,7 @@ a {
   margin-top: 3px;
 
   font-size: 20px;
+
   line-height: 1;
 }
 
@@ -478,9 +508,12 @@ a {
 
   margin: 0 0 7px;
 
-  font-family: 'Bodoni Moda',serif;
+  font-family:
+    'Bodoni Moda',
+    serif;
 
   font-size: 17px;
+
   line-height: 1.1;
 
   font-weight: 500;
@@ -495,11 +528,16 @@ a {
   max-width: 100%;
 
   margin: 0;
+
   padding: 0;
 
-  font-family: Montserrat,Arial,sans-serif;
+  font-family:
+    Montserrat,
+    Arial,
+    sans-serif;
 
   font-size: 9.5px;
+
   line-height: 1.55;
 
   font-weight: 300;
@@ -510,8 +548,9 @@ a {
 
   white-space: normal;
 
-  overflow-wrap: normal;
   word-break: normal;
+
+  overflow-wrap: break-word;
 }
 
 .social-main em {
@@ -525,7 +564,9 @@ a {
 }
 
 
-/* SMALL SOCIALS */
+/* =========================================================
+   SMALL SOCIALS
+========================================================= */
 
 .social-small {
   grid-column: span 2;
@@ -533,6 +574,7 @@ a {
   height: 66px;
 
   display: flex;
+
   align-items: center;
 
   gap: 10px;
@@ -549,9 +591,12 @@ a {
 .social-small strong {
   min-width: 0;
 
-  font-family: 'Bodoni Moda',serif;
+  font-family:
+    'Bodoni Moda',
+    serif;
 
   font-size: 15px;
+
   font-weight: 400;
 
   white-space: nowrap;
@@ -574,13 +619,15 @@ a {
 
 .live {
   padding-top: 32px;
+
   padding-bottom: 38px;
 }
 
 .schedule {
   display: grid;
 
-  grid-template-columns: repeat(3,minmax(0,1fr));
+  grid-template-columns:
+    repeat(3, minmax(0,1fr));
 
   gap: 14px;
 }
@@ -593,12 +640,16 @@ a {
   overflow: hidden;
 
   display: flex;
+
   flex-direction: column;
+
   justify-content: flex-end;
 
   padding: 20px 18px;
 
-  border: 1px solid var(--line);
+  border:
+    1px solid var(--line);
+
   border-radius: 10px;
 
   background: #0d0912;
@@ -608,6 +659,7 @@ a {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -618,7 +670,7 @@ a {
       rgba(8,4,12,.28) 68%,
       rgba(8,4,12,.08) 100%
     ),
-    var(--bg) center/cover;
+    var(--bg) center / cover;
 
   filter:
     grayscale(.18)
@@ -630,6 +682,7 @@ a {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   background:
@@ -644,6 +697,7 @@ a {
 
 .schedule article > * {
   position: relative;
+
   z-index: 1;
 }
 
@@ -660,9 +714,12 @@ a {
 .offer-grid strong {
   max-width: 100%;
 
-  font-family: 'Bodoni Moda',serif;
+  font-family:
+    'Bodoni Moda',
+    serif;
 
   font-size: 25px;
+
   font-weight: 400;
 
   line-height: 1.05;
@@ -676,6 +733,7 @@ a {
   margin: 10px 0 0;
 
   font-size: 11px;
+
   line-height: 1.55;
 
   color: #d0c5d8;
@@ -695,16 +753,22 @@ a {
 
   display: grid;
 
-  grid-template-columns: 48% 52%;
+  grid-template-columns:
+    48% 52%;
 
   background: #060408;
 
-  border-top: 1px solid rgba(255,255,255,.04);
-  border-bottom: 1px solid rgba(255,255,255,.04);
+  border-top:
+    1px solid rgba(255,255,255,.04);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.04);
 }
 
 
-/* BUNNYBED */
+/* =========================================================
+   BUNNYBED
+========================================================= */
 
 .about-photo {
   position: relative;
@@ -717,7 +781,8 @@ a {
 }
 
 .about-photo img {
-  object-position: center 48%;
+  object-position:
+    center 48%;
 
   filter:
     grayscale(.18)
@@ -730,6 +795,7 @@ a {
   content: "";
 
   position: absolute;
+
   inset: 0;
 
   pointer-events: none;
@@ -752,7 +818,9 @@ a {
 }
 
 
-/* ABOUT TEXT */
+/* =========================================================
+   ABOUT TEXT
+========================================================= */
 
 .about-copy {
   position: relative;
@@ -771,7 +839,9 @@ a {
 .about-copy .tagline {
   margin: 0 0 12px;
 
-  font-family: 'Bodoni Moda',serif;
+  font-family:
+    'Bodoni Moda',
+    serif;
 
   letter-spacing: .12em;
 
@@ -807,7 +877,9 @@ footer {
   padding: 18px 28px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 }
 
@@ -821,6 +893,7 @@ footer p {
   margin: 0;
 
   font-size: 11px;
+
   line-height: 1.5;
 
   letter-spacing: .20em;
@@ -848,7 +921,8 @@ footer p {
 .reveal {
   opacity: 0;
 
-  transform: translateY(10px);
+  transform:
+    translateY(10px);
 
   transition:
     opacity .6s ease,
@@ -866,12 +940,13 @@ footer p {
    MOBILE
 ========================================================= */
 
-@media (max-width:800px) {
+@media (max-width: 800px) {
 
   .topbar {
     height: 40px;
 
-    padding: 0 16px;
+    padding:
+      0 16px;
   }
 
   .topbar nav {
@@ -892,7 +967,8 @@ footer p {
   }
 
   .hero-photo img {
-    object-position: 62% center;
+    object-position:
+      62% center;
 
     filter:
       grayscale(.15)
@@ -927,9 +1003,9 @@ footer p {
     top: auto;
     bottom: 28px;
 
-    transform: none;
-
     width: auto;
+
+    transform: none;
   }
 
   .eyebrow {
@@ -941,29 +1017,33 @@ footer p {
   }
 
   .hero-sub {
-    margin: 10px 0 17px;
+    margin:
+      10px 0 17px;
 
     font-size: 12px;
   }
 
 
-  /* KRÓLIK HERO */
+  /* PRAWDZIWY KRÓLIK HERO */
 
-  .bunny-logo-hero {
-    width: 66px;
-    height: 84px;
+  .bunny-purple-hero {
+    width: 68px;
 
-    right: 6%;
-    top: 9%;
+    right: 5%;
+    top: 8%;
 
-    transform: rotate(5deg);
+    transform:
+      rotate(4deg);
+
+    opacity: .90;
   }
 
 
   /* SECTIONS */
 
   .section {
-    padding: 30px 16px;
+    padding:
+      30px 16px;
   }
 
   .section-head {
@@ -996,16 +1076,18 @@ footer p {
   }
 
 
-  /* SOCIALS */
+  /* SOCIAL */
 
   .social-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
+    grid-template-columns:
+      repeat(2, minmax(0,1fr));
 
     gap: 8px;
   }
 
   .social-main {
-    grid-column: 1/-1;
+    grid-column:
+      1 / -1;
 
     width: 100%;
 
@@ -1016,7 +1098,8 @@ footer p {
 
     column-gap: 10px;
 
-    padding: 14px 13px;
+    padding:
+      14px 13px;
   }
 
   .social-icon {
@@ -1026,36 +1109,34 @@ footer p {
   }
 
   .social-main .social-content strong {
-    margin: 0 0 6px;
+    margin:
+      0 0 6px;
 
     font-size: 16px;
+
     line-height: 1.1;
   }
 
   .social-main .social-content p {
     width: 100%;
+
     max-width: 100%;
 
     margin: 0;
+
     padding: 0;
 
     font-size: 10px;
-    line-height: 1.5;
 
-    font-weight: 300;
+    line-height: 1.5;
 
     letter-spacing: 0;
 
     white-space: normal;
 
-    overflow-wrap: break-word;
     word-break: normal;
-  }
 
-  .social-main em {
-    margin-top: 2px;
-
-    font-size: 11px;
+    overflow-wrap: break-word;
   }
 
 
@@ -1068,7 +1149,8 @@ footer p {
 
     min-width: 0;
 
-    padding: 11px 12px;
+    padding:
+      11px 12px;
 
     gap: 7px;
   }
@@ -1091,14 +1173,16 @@ footer p {
   /* WISHLIST */
 
   .social-small:last-child {
-    grid-column: 1/-1;
+    grid-column:
+      1 / -1;
   }
 
 
   /* OFFER */
 
   .schedule {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     gap: 12px;
   }
@@ -1119,6 +1203,7 @@ footer p {
     max-width: 95%;
 
     font-size: 10.5px;
+
     line-height: 1.5;
   }
 
@@ -1130,18 +1215,21 @@ footer p {
   /* ABOUT */
 
   .about {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      1fr;
 
     min-height: 0;
   }
 
   .about-photo {
     height: 260px;
+
     min-height: 260px;
   }
 
   .about-photo img {
-    object-position: center 46%;
+    object-position:
+      center 46%;
 
     filter:
       grayscale(.16)
@@ -1166,7 +1254,8 @@ footer p {
   }
 
   .about-copy {
-    padding: 24px 20px 30px;
+    padding:
+      24px 20px 30px;
   }
 
   .about-copy h2 {
@@ -1174,7 +1263,7 @@ footer p {
   }
 
   .about-copy .tagline {
-    padding-right: 58px;
+    padding-right: 62px;
   }
 
   .about-copy p:not(.tagline) {
@@ -1184,16 +1273,18 @@ footer p {
   }
 
 
-  /* KRÓLIK ABOUT */
+  /* PRAWDZIWY KRÓLIK ABOUT */
 
-  .bunny-logo-about {
+  .bunny-purple-about {
     width: 50px;
-    height: 64px;
 
-    right: 6%;
-    top: 8%;
+    right: 5%;
+    top: 7%;
 
-    transform: rotate(5deg);
+    transform:
+      rotate(4deg);
+
+    opacity: .78;
   }
 
 
@@ -1202,7 +1293,8 @@ footer p {
   footer {
     display: block;
 
-    padding: 22px 16px;
+    padding:
+      22px 16px;
 
     text-align: center;
   }
@@ -1212,7 +1304,8 @@ footer p {
   }
 
   footer p {
-    margin: 10px 0;
+    margin:
+      10px 0;
 
     font-size: 11px;
   }
@@ -1227,7 +1320,7 @@ footer p {
    SMALL MOBILE
 ========================================================= */
 
-@media (max-width:380px) {
+@media (max-width: 380px) {
 
   .topbar nav a:nth-child(2) {
     display: none;
@@ -1237,11 +1330,10 @@ footer p {
     font-size: 49px;
   }
 
-  .bunny-logo-hero {
-    width: 58px;
-    height: 74px;
+  .bunny-purple-hero {
+    width: 60px;
 
-    right: 5%;
+    right: 4%;
   }
 
   .social-main {
@@ -1250,7 +1342,8 @@ footer p {
 
     column-gap: 8px;
 
-    padding: 13px 11px;
+    padding:
+      13px 11px;
   }
 
   .social-main .social-content strong {
@@ -1262,15 +1355,15 @@ footer p {
   }
 
   .social-small {
-    padding: 9px 10px;
+    padding:
+      9px 10px;
   }
 
   .social-small strong {
     font-size: 12px;
   }
 
-  .bunny-logo-about {
+  .bunny-purple-about {
     width: 46px;
-    height: 59px;
   }
 }
