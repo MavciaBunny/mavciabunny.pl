@@ -1,5 +1,6 @@
 /* =========================================================
    MAVCIABUNNY
+   BLACK / VIOLET / DARK FEMININE
 ========================================================= */
 
 :root {
@@ -23,17 +24,13 @@
 
 html {
   scroll-behavior: smooth;
-  background: var(--bg);
 }
 
 body {
   margin: 0;
-
   background: var(--bg);
   color: var(--ink);
-
   font-family: Montserrat, Arial, sans-serif;
-
   overflow-x: hidden;
 }
 
@@ -42,16 +39,10 @@ a {
   text-decoration: none;
 }
 
-
-/* TYLKO ZDJĘCIA */
-
-.hero-photo img,
-.about-photo img {
+img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: cover;
 }
 
@@ -63,7 +54,6 @@ a {
 .topbar {
   height: 44px;
   max-width: 1180px;
-
   margin: auto;
   padding: 0 28px;
 
@@ -75,7 +65,6 @@ a {
 
   font-size: 8px;
   letter-spacing: .25em;
-
   color: #b9abc8;
 }
 
@@ -99,12 +88,9 @@ a {
 
 .hero {
   position: relative;
-
   max-width: 1180px;
   height: 470px;
-
   margin: auto;
-
   overflow: hidden;
 
   background: #060408;
@@ -114,7 +100,6 @@ a {
 
 .hero-photo {
   position: absolute;
-
   inset: 0 0 0 38%;
 }
 
@@ -130,7 +115,6 @@ a {
 
 .hero-photo::after {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -138,7 +122,7 @@ a {
     linear-gradient(
       90deg,
       #050306 0%,
-      rgba(5,3,7,.90) 20%,
+      rgba(5,3,7,.9) 20%,
       rgba(5,3,7,.15) 66%
     ),
     linear-gradient(
@@ -157,7 +141,6 @@ a {
 
 .hero::after {
   content: "";
-
   position: absolute;
   inset: 0;
 
@@ -173,28 +156,25 @@ a {
 
 
 /* =========================================================
-   HERO COPY
+   HERO TEXT
 ========================================================= */
 
 .hero-copy {
   position: absolute;
-
   z-index: 3;
 
   left: 5%;
   top: 50%;
 
-  width: 61%;
-
   transform: translateY(-50%);
+
+  width: 61%;
 }
 
 .eyebrow {
   margin: 0;
 
   font-size: 9px;
-  line-height: 1.4;
-
   letter-spacing: .38em;
 
   color: #aa99bd;
@@ -212,7 +192,6 @@ a {
   margin: 14px 0 12px;
 
   font-size: clamp(62px, 7.2vw, 103px);
-
   line-height: .82;
 
   letter-spacing: -.07em;
@@ -252,7 +231,6 @@ a {
   font-family: 'Bodoni Moda', serif;
 
   letter-spacing: .25em;
-
   font-size: 14px;
 
   color: #d5c9df;
@@ -260,21 +238,18 @@ a {
 
 
 /* =========================================================
-   BUTTON
+   BUTTONS
 ========================================================= */
 
 .cta {
   display: inline-flex;
-
   align-items: center;
 
   gap: 25px;
 
   padding: 10px 12px 10px 20px;
 
-  border:
-    1px solid rgba(190,144,255,.70);
-
+  border: 1px solid rgba(190,144,255,.7);
   border-radius: 999px;
 
   background:
@@ -285,7 +260,6 @@ a {
     );
 
   font-family: 'Bodoni Moda', serif;
-
   font-size: 14px;
 }
 
@@ -293,18 +267,14 @@ a {
   width: 26px;
   height: 26px;
 
-  flex-shrink: 0;
-
   display: grid;
-
   place-items: center;
 
   border-radius: 50%;
 
   background: #09060d;
 
-  border:
-    1px solid rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.14);
 }
 
 .ghost {
@@ -313,51 +283,42 @@ a {
 
 
 /* =========================================================
-   PRAWDZIWY BUNNY-PURPLE.PNG
+   FIOLETOWY KRÓLIK
 ========================================================= */
 
-.bunny-purple {
+.bunny-logo {
   position: absolute;
-
-  z-index: 8;
-
-  display: block;
+  z-index: 4;
 
   height: auto;
 
   object-fit: contain;
 
-  pointer-events: none;
+  filter:
+    drop-shadow(0 0 5px rgba(190,115,255,.72))
+    drop-shadow(0 0 16px rgba(143,84,232,.38));
 
-  user-select: none;
+  pointer-events: none;
 }
 
-
-/* HERO */
-
-.bunny-purple-hero {
+.bunny-logo-hero {
   width: 82px;
 
-  right: 5%;
-  top: 9%;
+  left: 45%;
+  bottom: 5%;
 
-  transform: rotate(4deg);
-
-  opacity: .88;
+  transform: rotate(-7deg);
 }
 
+.bunny-logo-about {
+  width: 68px;
 
-/* ABOUT */
-
-.bunny-purple-about {
-  width: 60px;
-
-  right: 5%;
+  right: 7%;
   top: 8%;
 
-  transform: rotate(4deg);
+  transform: rotate(6deg);
 
-  opacity: .76;
+  opacity: .84;
 }
 
 
@@ -378,9 +339,7 @@ a {
 
 .section-head {
   display: flex;
-
   align-items: flex-end;
-
   justify-content: space-between;
 
   gap: 30px;
@@ -391,7 +350,6 @@ a {
 .section-head small,
 .about-copy > small {
   font-size: 10px;
-
   line-height: 1.4;
 
   letter-spacing: .27em;
@@ -404,7 +362,6 @@ a {
   margin: 5px 0 0;
 
   font-size: 38px;
-
   line-height: 1;
 }
 
@@ -412,10 +369,9 @@ a {
   margin: 0;
 
   font-size: 11px;
-
   line-height: 1.4;
 
-  letter-spacing: .20em;
+  letter-spacing: .2em;
 
   color: #8e8099;
 
@@ -439,9 +395,7 @@ a {
 .link-card {
   min-width: 0;
 
-  border:
-    1px solid var(--line);
-
+  border: 1px solid var(--line);
   border-radius: 8px;
 
   background:
@@ -458,20 +412,19 @@ a {
 }
 
 .link-card:hover {
-  transform:
-    translateY(-3px);
+  transform: translateY(-3px);
 
   border-color:
-    rgba(205,169,255,.70);
+    rgba(205,169,255,.7);
 
   box-shadow:
     0 8px 24px rgba(0,0,0,.35),
-    0 0 20px rgba(145,76,255,.10);
+    0 0 20px rgba(145,76,255,.1);
 }
 
 
 /* =========================================================
-   MAIN SOCIAL CARDS
+   SHOWUP / MAJTKOMAT / TELEGRAM
 ========================================================= */
 
 .social-main {
@@ -495,7 +448,6 @@ a {
   margin-top: 3px;
 
   font-size: 20px;
-
   line-height: 1;
 }
 
@@ -508,12 +460,9 @@ a {
 
   margin: 0 0 7px;
 
-  font-family:
-    'Bodoni Moda',
-    serif;
+  font-family: 'Bodoni Moda', serif;
 
   font-size: 17px;
-
   line-height: 1.1;
 
   font-weight: 500;
@@ -528,16 +477,11 @@ a {
   max-width: 100%;
 
   margin: 0;
-
   padding: 0;
 
-  font-family:
-    Montserrat,
-    Arial,
-    sans-serif;
+  font-family: Montserrat, Arial, sans-serif;
 
   font-size: 9.5px;
-
   line-height: 1.55;
 
   font-weight: 300;
@@ -547,10 +491,8 @@ a {
   color: #bdb1c7;
 
   white-space: normal;
-
+  overflow-wrap: normal;
   word-break: normal;
-
-  overflow-wrap: break-word;
 }
 
 .social-main em {
@@ -565,7 +507,7 @@ a {
 
 
 /* =========================================================
-   SMALL SOCIALS
+   INSTAGRAM / X / WISHLIST
 ========================================================= */
 
 .social-small {
@@ -574,7 +516,6 @@ a {
   height: 66px;
 
   display: flex;
-
   align-items: center;
 
   gap: 10px;
@@ -591,12 +532,9 @@ a {
 .social-small strong {
   min-width: 0;
 
-  font-family:
-    'Bodoni Moda',
-    serif;
+  font-family: 'Bodoni Moda', serif;
 
   font-size: 15px;
-
   font-weight: 400;
 
   white-space: nowrap;
@@ -619,7 +557,6 @@ a {
 
 .live {
   padding-top: 32px;
-
   padding-bottom: 38px;
 }
 
@@ -640,16 +577,12 @@ a {
   overflow: hidden;
 
   display: flex;
-
   flex-direction: column;
-
   justify-content: flex-end;
 
   padding: 20px 18px;
 
-  border:
-    1px solid var(--line);
-
+  border: 1px solid var(--line);
   border-radius: 10px;
 
   background: #0d0912;
@@ -659,7 +592,6 @@ a {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
   background:
@@ -682,7 +614,6 @@ a {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
   background:
@@ -697,7 +628,6 @@ a {
 
 .schedule article > * {
   position: relative;
-
   z-index: 1;
 }
 
@@ -714,12 +644,9 @@ a {
 .offer-grid strong {
   max-width: 100%;
 
-  font-family:
-    'Bodoni Moda',
-    serif;
+  font-family: 'Bodoni Moda', serif;
 
   font-size: 25px;
-
   font-weight: 400;
 
   line-height: 1.05;
@@ -733,7 +660,6 @@ a {
   margin: 10px 0 0;
 
   font-size: 11px;
-
   line-height: 1.55;
 
   color: #d0c5d8;
@@ -766,9 +692,7 @@ a {
 }
 
 
-/* =========================================================
-   BUNNYBED
-========================================================= */
+/* NOWE ZDJĘCIE — bunnybed.webp */
 
 .about-photo {
   position: relative;
@@ -781,11 +705,15 @@ a {
 }
 
 .about-photo img {
-  object-position:
-    center 48%;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center 48%;
 
   filter:
-    grayscale(.18)
+    grayscale(.20)
     saturate(.72)
     contrast(1.10)
     brightness(.52);
@@ -795,7 +723,6 @@ a {
   content: "";
 
   position: absolute;
-
   inset: 0;
 
   pointer-events: none;
@@ -817,11 +744,6 @@ a {
   mix-blend-mode: screen;
 }
 
-
-/* =========================================================
-   ABOUT TEXT
-========================================================= */
-
 .about-copy {
   position: relative;
 
@@ -839,9 +761,7 @@ a {
 .about-copy .tagline {
   margin: 0 0 12px;
 
-  font-family:
-    'Bodoni Moda',
-    serif;
+  font-family: 'Bodoni Moda', serif;
 
   letter-spacing: .12em;
 
@@ -877,9 +797,7 @@ footer {
   padding: 18px 28px;
 
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 }
 
@@ -893,10 +811,9 @@ footer p {
   margin: 0;
 
   font-size: 11px;
-
   line-height: 1.5;
 
-  letter-spacing: .20em;
+  letter-spacing: .2em;
 
   color: #8d7d9c;
 }
@@ -921,8 +838,7 @@ footer p {
 .reveal {
   opacity: 0;
 
-  transform:
-    translateY(10px);
+  transform: translateY(10px);
 
   transition:
     opacity .6s ease,
@@ -942,11 +858,13 @@ footer p {
 
 @media (max-width: 800px) {
 
+
+  /* TOPBAR */
+
   .topbar {
     height: 40px;
 
-    padding:
-      0 16px;
+    padding: 0 16px;
   }
 
   .topbar nav {
@@ -967,8 +885,7 @@ footer p {
   }
 
   .hero-photo img {
-    object-position:
-      62% center;
+    object-position: 62% center;
 
     filter:
       grayscale(.15)
@@ -1003,9 +920,9 @@ footer p {
     top: auto;
     bottom: 28px;
 
-    width: auto;
-
     transform: none;
+
+    width: auto;
   }
 
   .eyebrow {
@@ -1017,33 +934,27 @@ footer p {
   }
 
   .hero-sub {
-    margin:
-      10px 0 17px;
+    margin: 10px 0 17px;
 
     font-size: 12px;
   }
 
 
-  /* PRAWDZIWY KRÓLIK HERO */
+  /* KRÓLIK HERO */
 
-  .bunny-purple-hero {
+  .bunny-logo-hero {
     width: 68px;
 
-    right: 5%;
-    top: 8%;
-
-    transform:
-      rotate(4deg);
-
-    opacity: .90;
+    left: auto;
+    right: 6%;
+    bottom: 29%;
   }
 
 
   /* SECTIONS */
 
   .section {
-    padding:
-      30px 16px;
+    padding: 30px 16px;
   }
 
   .section-head {
@@ -1056,7 +967,7 @@ footer p {
   .about-copy > small {
     font-size: 9px;
 
-    letter-spacing: .20em;
+    letter-spacing: .2em;
   }
 
   .section-head > p {
@@ -1076,30 +987,33 @@ footer p {
   }
 
 
-  /* SOCIAL */
+  /* =====================================================
+     SOCIAL MOBILE
+  ===================================================== */
 
   .social-grid {
     grid-template-columns:
-      repeat(2, minmax(0,1fr));
+      repeat(3, minmax(0,1fr));
 
     gap: 8px;
   }
 
+
+  /* SHOWUP / MAJTKOMAT / TELEGRAM */
+
   .social-main {
-    grid-column:
-      1 / -1;
+    grid-column: 1 / -1;
 
     width: 100%;
 
-    min-height: 96px;
+    min-height: 94px;
 
     grid-template-columns:
       28px minmax(0,1fr) 18px;
 
     column-gap: 10px;
 
-    padding:
-      14px 13px;
+    padding: 14px 13px;
   }
 
   .social-icon {
@@ -1109,50 +1023,52 @@ footer p {
   }
 
   .social-main .social-content strong {
-    margin:
-      0 0 6px;
+    margin: 0 0 5px;
 
     font-size: 16px;
-
     line-height: 1.1;
   }
 
   .social-main .social-content p {
     width: 100%;
 
-    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
 
-    margin: 0;
+    font-size: 10px !important;
+    line-height: 1.45 !important;
 
-    padding: 0;
+    font-weight: 300;
 
-    font-size: 10px;
+    letter-spacing: 0 !important;
 
-    line-height: 1.5;
+    white-space: normal !important;
 
-    letter-spacing: 0;
+    max-width: 100% !important;
+  }
 
-    white-space: normal;
+  .social-main em {
+    margin-top: 2px;
 
-    word-break: normal;
-
-    overflow-wrap: break-word;
+    font-size: 11px;
   }
 
 
-  /* INSTAGRAM + X */
+  /* INSTAGRAM / X / WISHLIST — JEDEN RZĄD */
 
   .social-small {
     grid-column: auto;
 
+    width: 100%;
     height: 62px;
 
     min-width: 0;
 
-    padding:
-      11px 12px;
+    justify-content: center;
 
-    gap: 7px;
+    padding: 9px 5px;
+
+    gap: 5px;
   }
 
   .social-small > span {
@@ -1160,29 +1076,20 @@ footer p {
   }
 
   .social-small strong {
-    font-size: 13px;
-  }
-
-  .social-small em {
-    margin-left: auto;
-
     font-size: 11px;
   }
 
-
-  /* WISHLIST */
-
-  .social-small:last-child {
-    grid-column:
-      1 / -1;
+  .social-small em {
+    display: none;
   }
 
 
-  /* OFFER */
+  /* =====================================================
+     OFFER MOBILE
+  ===================================================== */
 
   .schedule {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     gap: 12px;
   }
@@ -1203,7 +1110,6 @@ footer p {
     max-width: 95%;
 
     font-size: 10.5px;
-
     line-height: 1.5;
   }
 
@@ -1212,29 +1118,28 @@ footer p {
   }
 
 
-  /* ABOUT */
+  /* =====================================================
+     ABOUT MOBILE
+  ===================================================== */
 
   .about {
-    grid-template-columns:
-      1fr;
+    grid-template-columns: 1fr;
 
     min-height: 0;
   }
 
   .about-photo {
     height: 260px;
-
     min-height: 260px;
   }
 
   .about-photo img {
-    object-position:
-      center 46%;
+    object-position: center 46%;
 
     filter:
-      grayscale(.16)
-      saturate(.74)
-      contrast(1.08)
+      grayscale(.18)
+      saturate(.72)
+      contrast(1.10)
       brightness(.50);
   }
 
@@ -1243,19 +1148,18 @@ footer p {
       linear-gradient(
         0deg,
         #060408 0%,
-        rgba(6,4,8,.34) 35%,
+        rgba(6,4,8,.35) 35%,
         rgba(92,37,150,.12) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(112,53,178,.17),
+        rgba(112,53,178,.16),
         transparent 70%
       );
   }
 
   .about-copy {
-    padding:
-      24px 20px 30px;
+    padding: 24px 20px 30px;
   }
 
   .about-copy h2 {
@@ -1263,7 +1167,7 @@ footer p {
   }
 
   .about-copy .tagline {
-    padding-right: 62px;
+    padding-right: 58px;
   }
 
   .about-copy p:not(.tagline) {
@@ -1273,18 +1177,13 @@ footer p {
   }
 
 
-  /* PRAWDZIWY KRÓLIK ABOUT */
+  /* KRÓLIK ABOUT */
 
-  .bunny-purple-about {
-    width: 50px;
+  .bunny-logo-about {
+    width: 57px;
 
     right: 5%;
-    top: 7%;
-
-    transform:
-      rotate(4deg);
-
-    opacity: .78;
+    top: 9%;
   }
 
 
@@ -1293,19 +1192,13 @@ footer p {
   footer {
     display: block;
 
-    padding:
-      22px 16px;
+    padding: 22px 16px;
 
     text-align: center;
   }
 
-  .footer-brand {
-    font-size: 23px;
-  }
-
   footer p {
-    margin:
-      10px 0;
+    margin: 10px 0;
 
     font-size: 11px;
   }
@@ -1313,11 +1206,12 @@ footer p {
   .footer-links {
     justify-content: center;
   }
+
 }
 
 
 /* =========================================================
-   SMALL MOBILE
+   VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 380px) {
@@ -1330,150 +1224,35 @@ footer p {
     font-size: 49px;
   }
 
-  .bunny-purple-hero {
-    width: 60px;
-
-    right: 4%;
-  }
-
   .social-main {
     grid-template-columns:
       26px minmax(0,1fr) 16px;
 
     column-gap: 8px;
 
-    padding:
-      13px 11px;
+    padding: 13px 11px;
   }
 
   .social-main .social-content strong {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .social-main .social-content p {
-    font-size: 9.5px;
+    font-size: 9.5px !important;
   }
 
   .social-small {
-    padding:
-      9px 10px;
+    padding: 8px 3px;
+
+    gap: 3px;
+  }
+
+  .social-small > span {
+    font-size: 15px;
   }
 
   .social-small strong {
-    font-size: 12px;
+    font-size: 10px;
   }
 
-  .bunny-purple-about {
-    width: 46px;
-  }
-}
-/* =========================================================
-   BUNNY PURPLE — OSTATECZNE POZYCJE
-========================================================= */
-
-
-/* ---------- KRÓLIK HERO / GÓRA STRONY ---------- */
-
-.hero {
-  position: relative !important;
-}
-
-.hero .bunny-purple-hero {
-  display: block !important;
-  position: absolute !important;
-
-  width: 95px !important;
-  height: auto !important;
-
-  top: 55px !important;
-  right: 6% !important;
-
-  left: auto !important;
-  bottom: auto !important;
-
-  max-width: 95px !important;
-  max-height: none !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  object-fit: contain !important;
-
-  opacity: .95 !important;
-
-  z-index: 20 !important;
-
-  transform: rotate(3deg) !important;
-
-  pointer-events: none !important;
-}
-
-
-/* ---------- KRÓLIK "KIM JESTEM" ---------- */
-
-.about-copy {
-  position: relative !important;
-}
-
-.about-copy .bunny-purple-about {
-  display: block !important;
-  position: absolute !important;
-
-  width: 55px !important;
-  height: auto !important;
-
-  top: 25px !important;
-  right: 25px !important;
-
-  left: auto !important;
-  bottom: auto !important;
-
-  max-width: 55px !important;
-  max-height: none !important;
-
-  margin: 0 !important;
-  padding: 0 !important;
-
-  object-fit: contain !important;
-
-  opacity: .82 !important;
-
-  z-index: 20 !important;
-
-  transform: rotate(3deg) !important;
-
-  pointer-events: none !important;
-}
-
-
-/* =========================================================
-   TELEFON
-========================================================= */
-
-@media (max-width: 800px) {
-
-  /* GÓRNY KRÓLIK */
-  .hero .bunny-purple-hero {
-    width: 90px !important;
-    max-width: 90px !important;
-
-    top: 75px !important;
-    right: 7% !important;
-
-    opacity: .95 !important;
-
-    z-index: 30 !important;
-  }
-
-
-  /* KRÓLIK PRZY KIM JESTEM */
-  .about-copy .bunny-purple-about {
-    width: 50px !important;
-    max-width: 50px !important;
-
-    top: 20px !important;
-    right: 18px !important;
-
-    opacity: .82 !important;
-  }
 }
