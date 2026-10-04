@@ -1,5 +1,5 @@
 /* =========================================================
-   MAVCIABUNNY
+   MAVCIABUNNY — FINAL STYLE
    BLACK / VIOLET / DARK FEMININE
 ========================================================= */
 
@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--bg);
 }
 
 body {
@@ -39,7 +40,10 @@ a {
   text-decoration: none;
 }
 
-img {
+/* Tylko zwykłe zdjęcia mają wypełniać kontener.
+   bunny-logo jest wyłączone z tej reguły. */
+.hero-photo img,
+.about-photo img {
   display: block;
   width: 100%;
   height: 100%;
@@ -88,9 +92,12 @@ img {
 
 .hero {
   position: relative;
+
   max-width: 1180px;
   height: 470px;
+
   margin: auto;
+
   overflow: hidden;
 
   background: #060408;
@@ -115,6 +122,7 @@ img {
 
 .hero-photo::after {
   content: "";
+
   position: absolute;
   inset: 0;
 
@@ -122,7 +130,7 @@ img {
     linear-gradient(
       90deg,
       #050306 0%,
-      rgba(5,3,7,.9) 20%,
+      rgba(5,3,7,.90) 20%,
       rgba(5,3,7,.15) 66%
     ),
     linear-gradient(
@@ -141,6 +149,7 @@ img {
 
 .hero::after {
   content: "";
+
   position: absolute;
   inset: 0;
 
@@ -166,15 +175,17 @@ img {
   left: 5%;
   top: 50%;
 
-  transform: translateY(-50%);
-
   width: 61%;
+
+  transform: translateY(-50%);
 }
 
 .eyebrow {
   margin: 0;
 
   font-size: 9px;
+  line-height: 1.4;
+
   letter-spacing: .38em;
 
   color: #aa99bd;
@@ -249,7 +260,7 @@ img {
 
   padding: 10px 12px 10px 20px;
 
-  border: 1px solid rgba(190,144,255,.7);
+  border: 1px solid rgba(190,144,255,.70);
   border-radius: 999px;
 
   background:
@@ -267,6 +278,8 @@ img {
   width: 26px;
   height: 26px;
 
+  flex-shrink: 0;
+
   display: grid;
   place-items: center;
 
@@ -283,47 +296,68 @@ img {
 
 
 /* =========================================================
-   FIOLETOWY KRÓLIK
+   KRÓLICZKI
+   WAŻNE: NIE PODLEGAJĄ REGULE ZWYKŁYCH IMG
 ========================================================= */
 
-.bunny-logo {
+img.bunny-logo {
   position: absolute;
-  z-index: 4;
+
+  display: block;
 
   height: auto;
+  max-width: none;
 
   object-fit: contain;
 
-  filter:
-    drop-shadow(0 0 5px rgba(190,115,255,.72))
-    drop-shadow(0 0 16px rgba(143,84,232,.38));
+  z-index: 10;
 
   pointer-events: none;
+
+  filter:
+    drop-shadow(0 0 4px rgba(205,145,255,.72))
+    drop-shadow(0 0 12px rgba(151,70,255,.40));
 }
 
-.bunny-logo-hero {
-  width: 82px;
 
-  left: 45%;
-  bottom: 5%;
+/* KRÓLIK HERO */
 
-  transform: rotate(-7deg);
+img.bunny-logo-hero {
+  width: 76px;
+  height: auto;
+
+  left: auto;
+  right: 6%;
+
+  top: 12%;
+  bottom: auto;
+
+  transform: rotate(5deg);
+
+  opacity: .90;
 }
 
-.bunny-logo-about {
-  width: 68px;
 
-  right: 7%;
+/* KRÓLIK KIM JESTEM */
+
+img.bunny-logo-about {
+  width: 58px;
+  height: auto;
+
+  left: auto;
+  right: 6%;
+
   top: 8%;
+  bottom: auto;
 
-  transform: rotate(6deg);
+  transform: rotate(5deg);
 
-  opacity: .84;
+  opacity: .80;
 }
 
 
 /* =========================================================
-   SECTIONS
+   GŁÓWNE SEKCJE
 ========================================================= */
 
 .section {
@@ -333,8 +367,7 @@ img {
 
   padding: 38px 50px;
 
-  border-top:
-    1px solid rgba(255,255,255,.035);
+  border-top: 1px solid rgba(255,255,255,.035);
 }
 
 .section-head {
@@ -371,7 +404,7 @@ img {
   font-size: 11px;
   line-height: 1.4;
 
-  letter-spacing: .2em;
+  letter-spacing: .20em;
 
   color: #8e8099;
 
@@ -380,14 +413,13 @@ img {
 
 
 /* =========================================================
-   SOCIAL GRID
+   SOCIAL MEDIA
 ========================================================= */
 
 .social-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(6, minmax(0,1fr));
+  grid-template-columns: repeat(6, minmax(0,1fr));
 
   gap: 11px;
 }
@@ -414,12 +446,11 @@ img {
 .link-card:hover {
   transform: translateY(-3px);
 
-  border-color:
-    rgba(205,169,255,.7);
+  border-color: rgba(205,169,255,.70);
 
   box-shadow:
     0 8px 24px rgba(0,0,0,.35),
-    0 0 20px rgba(145,76,255,.1);
+    0 0 20px rgba(145,76,255,.10);
 }
 
 
@@ -491,6 +522,7 @@ img {
   color: #bdb1c7;
 
   white-space: normal;
+
   overflow-wrap: normal;
   word-break: normal;
 }
@@ -552,7 +584,7 @@ img {
 
 
 /* =========================================================
-   OFFER
+   OFERTA
 ========================================================= */
 
 .live {
@@ -563,8 +595,7 @@ img {
 .schedule {
   display: grid;
 
-  grid-template-columns:
-    repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(3, minmax(0,1fr));
 
   gap: 14px;
 }
@@ -628,6 +659,7 @@ img {
 
 .schedule article > * {
   position: relative;
+
   z-index: 1;
 }
 
@@ -667,7 +699,7 @@ img {
 
 
 /* =========================================================
-   ABOUT
+   KIM JESTEM
 ========================================================= */
 
 .about {
@@ -679,20 +711,16 @@ img {
 
   display: grid;
 
-  grid-template-columns:
-    48% 52%;
+  grid-template-columns: 48% 52%;
 
   background: #060408;
 
-  border-top:
-    1px solid rgba(255,255,255,.04);
-
-  border-bottom:
-    1px solid rgba(255,255,255,.04);
+  border-top: 1px solid rgba(255,255,255,.04);
+  border-bottom: 1px solid rgba(255,255,255,.04);
 }
 
 
-/* NOWE ZDJĘCIE — bunnybed.webp */
+/* bunnybed.webp */
 
 .about-photo {
   position: relative;
@@ -705,15 +733,10 @@ img {
 }
 
 .about-photo img {
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-
   object-position: center 48%;
 
   filter:
-    grayscale(.20)
+    grayscale(.18)
     saturate(.72)
     contrast(1.10)
     brightness(.52);
@@ -743,6 +766,9 @@ img {
 
   mix-blend-mode: screen;
 }
+
+
+/* ABOUT TEXT */
 
 .about-copy {
   position: relative;
@@ -813,7 +839,7 @@ footer p {
   font-size: 11px;
   line-height: 1.5;
 
-  letter-spacing: .2em;
+  letter-spacing: .20em;
 
   color: #8d7d9c;
 }
@@ -832,7 +858,7 @@ footer p {
 
 
 /* =========================================================
-   REVEAL
+   ANIMACJA
 ========================================================= */
 
 .reveal {
@@ -853,11 +879,10 @@ footer p {
 
 
 /* =========================================================
-   MOBILE
+   TELEFON
 ========================================================= */
 
 @media (max-width: 800px) {
-
 
   /* TOPBAR */
 
@@ -920,9 +945,9 @@ footer p {
     top: auto;
     bottom: 28px;
 
-    transform: none;
-
     width: auto;
+
+    transform: none;
   }
 
   .eyebrow {
@@ -940,18 +965,25 @@ footer p {
   }
 
 
-  /* KRÓLIK HERO */
+  /* GÓRNY KRÓLICZEK */
 
-  .bunny-logo-hero {
-    width: 68px;
+  img.bunny-logo-hero {
+    width: 64px;
+    height: auto;
 
     left: auto;
-    right: 6%;
-    bottom: 29%;
+    right: 7%;
+
+    top: 10%;
+    bottom: auto;
+
+    transform: rotate(5deg);
+
+    opacity: .92;
   }
 
 
-  /* SECTIONS */
+  /* SEKCJE */
 
   .section {
     padding: 30px 16px;
@@ -967,7 +999,7 @@ footer p {
   .about-copy > small {
     font-size: 9px;
 
-    letter-spacing: .2em;
+    letter-spacing: .20em;
   }
 
   .section-head > p {
@@ -988,12 +1020,11 @@ footer p {
 
 
   /* =====================================================
-     SOCIAL MOBILE
+     SOCIAL MEDIA — TELEFON
   ===================================================== */
 
   .social-grid {
-    grid-template-columns:
-      repeat(3, minmax(0,1fr));
+    grid-template-columns: repeat(2, minmax(0,1fr));
 
     gap: 8px;
   }
@@ -1006,7 +1037,7 @@ footer p {
 
     width: 100%;
 
-    min-height: 94px;
+    min-height: 96px;
 
     grid-template-columns:
       28px minmax(0,1fr) 18px;
@@ -1023,28 +1054,34 @@ footer p {
   }
 
   .social-main .social-content strong {
-    margin: 0 0 5px;
+    display: block;
+
+    margin: 0 0 6px;
 
     font-size: 16px;
     line-height: 1.1;
   }
 
   .social-main .social-content p {
+    display: block;
+
     width: 100%;
+    max-width: 100%;
 
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0;
+    padding: 0;
 
-    font-size: 10px !important;
-    line-height: 1.45 !important;
+    font-size: 10px;
+    line-height: 1.5;
 
     font-weight: 300;
 
-    letter-spacing: 0 !important;
+    letter-spacing: 0;
 
-    white-space: normal !important;
+    white-space: normal;
 
-    max-width: 100% !important;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .social-main em {
@@ -1054,21 +1091,18 @@ footer p {
   }
 
 
-  /* INSTAGRAM / X / WISHLIST — JEDEN RZĄD */
+  /* INSTAGRAM / X */
 
   .social-small {
     grid-column: auto;
 
-    width: 100%;
     height: 62px;
 
     min-width: 0;
 
-    justify-content: center;
+    padding: 11px 12px;
 
-    padding: 9px 5px;
-
-    gap: 5px;
+    gap: 7px;
   }
 
   .social-small > span {
@@ -1076,16 +1110,25 @@ footer p {
   }
 
   .social-small strong {
-    font-size: 11px;
+    font-size: 13px;
   }
 
   .social-small em {
-    display: none;
+    margin-left: auto;
+
+    font-size: 11px;
+  }
+
+
+  /* WISHLIST NA CAŁĄ SZEROKOŚĆ */
+
+  .social-small:last-child {
+    grid-column: 1 / -1;
   }
 
 
   /* =====================================================
-     OFFER MOBILE
+     OFERTA
   ===================================================== */
 
   .schedule {
@@ -1119,7 +1162,7 @@ footer p {
 
 
   /* =====================================================
-     ABOUT MOBILE
+     KIM JESTEM
   ===================================================== */
 
   .about {
@@ -1137,9 +1180,9 @@ footer p {
     object-position: center 46%;
 
     filter:
-      grayscale(.18)
-      saturate(.72)
-      contrast(1.10)
+      grayscale(.16)
+      saturate(.74)
+      contrast(1.08)
       brightness(.50);
   }
 
@@ -1148,12 +1191,12 @@ footer p {
       linear-gradient(
         0deg,
         #060408 0%,
-        rgba(6,4,8,.35) 35%,
+        rgba(6,4,8,.34) 35%,
         rgba(92,37,150,.12) 100%
       ),
       linear-gradient(
         90deg,
-        rgba(112,53,178,.16),
+        rgba(112,53,178,.17),
         transparent 70%
       );
   }
@@ -1177,13 +1220,21 @@ footer p {
   }
 
 
-  /* KRÓLIK ABOUT */
+  /* KRÓLICZEK KIM JESTEM */
 
-  .bunny-logo-about {
-    width: 57px;
+  img.bunny-logo-about {
+    width: 50px;
+    height: auto;
 
-    right: 5%;
-    top: 9%;
+    left: auto;
+    right: 6%;
+
+    top: 8%;
+    bottom: auto;
+
+    transform: rotate(5deg);
+
+    opacity: .82;
   }
 
 
@@ -1197,6 +1248,10 @@ footer p {
     text-align: center;
   }
 
+  .footer-brand {
+    font-size: 23px;
+  }
+
   footer p {
     margin: 10px 0;
 
@@ -1206,12 +1261,11 @@ footer p {
   .footer-links {
     justify-content: center;
   }
-
 }
 
 
 /* =========================================================
-   VERY SMALL MOBILE
+   BARDZO MAŁY TELEFON
 ========================================================= */
 
 @media (max-width: 380px) {
@@ -1224,6 +1278,12 @@ footer p {
     font-size: 49px;
   }
 
+  img.bunny-logo-hero {
+    width: 57px;
+
+    right: 5%;
+  }
+
   .social-main {
     grid-template-columns:
       26px minmax(0,1fr) 16px;
@@ -1234,25 +1294,22 @@ footer p {
   }
 
   .social-main .social-content strong {
-    font-size: 16px;
-  }
-
-  .social-main .social-content p {
-    font-size: 9.5px !important;
-  }
-
-  .social-small {
-    padding: 8px 3px;
-
-    gap: 3px;
-  }
-
-  .social-small > span {
     font-size: 15px;
   }
 
-  .social-small strong {
-    font-size: 10px;
+  .social-main .social-content p {
+    font-size: 9.5px;
   }
 
+  .social-small {
+    padding: 9px 10px;
+  }
+
+  .social-small strong {
+    font-size: 12px;
+  }
+
+  img.bunny-logo-about {
+    width: 46px;
+  }
 }
