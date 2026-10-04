@@ -1367,3 +1367,113 @@ footer p {
     width: 46px;
   }
 }
+/* =========================================================
+   BUNNY PURPLE — OSTATECZNE POZYCJE
+========================================================= */
+
+
+/* ---------- KRÓLIK HERO / GÓRA STRONY ---------- */
+
+.hero {
+  position: relative !important;
+}
+
+.hero .bunny-purple-hero {
+  display: block !important;
+  position: absolute !important;
+
+  width: 95px !important;
+  height: auto !important;
+
+  top: 55px !important;
+  right: 6% !important;
+
+  left: auto !important;
+  bottom: auto !important;
+
+  max-width: 95px !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+
+  opacity: .95 !important;
+
+  z-index: 20 !important;
+
+  transform: rotate(3deg) !important;
+
+  pointer-events: none !important;
+}
+
+
+/* ---------- KRÓLIK "KIM JESTEM" ---------- */
+
+.about-copy {
+  position: relative !important;
+}
+
+.about-copy .bunny-purple-about {
+  display: block !important;
+  position: absolute !important;
+
+  width: 55px !important;
+  height: auto !important;
+
+  top: 25px !important;
+  right: 25px !important;
+
+  left: auto !important;
+  bottom: auto !important;
+
+  max-width: 55px !important;
+  max-height: none !important;
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  object-fit: contain !important;
+
+  opacity: .82 !important;
+
+  z-index: 20 !important;
+
+  transform: rotate(3deg) !important;
+
+  pointer-events: none !important;
+}
+
+
+/* =========================================================
+   TELEFON
+========================================================= */
+
+@media (max-width: 800px) {
+
+  /* GÓRNY KRÓLIK */
+  .hero .bunny-purple-hero {
+    width: 90px !important;
+    max-width: 90px !important;
+
+    top: 75px !important;
+    right: 7% !important;
+
+    opacity: .95 !important;
+
+    z-index: 30 !important;
+  }
+
+
+  /* KRÓLIK PRZY KIM JESTEM */
+  .about-copy .bunny-purple-about {
+    width: 50px !important;
+    max-width: 50px !important;
+
+    top: 20px !important;
+    right: 18px !important;
+
+    opacity: .82 !important;
+  }
+}
