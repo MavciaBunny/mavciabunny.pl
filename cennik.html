@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050307">
+  <meta name="description" content="MavciaBunny — cennik pokazów i zamówień indywidualnych.">
+  <title>Cennik ♡ MavciaBunny</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Style tylko dla podstrony cennika */
+    .price-page { max-width: 1180px; margin: 0 auto; padding: 0 50px 65px; }
+    .price-intro { position: relative; overflow: hidden; text-align: center; padding: 65px 20px 50px; }
+    .price-intro::before { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 40%,rgba(116,49,184,.22),transparent 65%); pointer-events: none; }
+    .price-kicker { position: relative; color: #bca0e5; font-size: 10px; letter-spacing: .28em; }
+    .price-intro h1 { position: relative; font: 500 clamp(48px,8vw,82px)/1 'Bodoni Moda',serif; margin: 15px 0 18px; color: #f6efff; }
+    .price-intro h1 span { color: #c7a6ff; }
+    .price-intro p { position: relative; color: #c9bcd3; font-size: 12px; line-height: 1.7; }
+    .price-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+    .price-card { display: flex; flex-direction: column; min-width: 0; padding: 23px 24px; border: 1px solid rgba(181,137,255,.30); border-radius: 12px; background: linear-gradient(145deg,rgba(255,255,255,.035),rgba(22,10,33,.80)); box-shadow: 0 10px 30px rgba(0,0,0,.13); }
+    .price-card-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+    .price-index { color: #ad8ad9; font-size: 9px; letter-spacing: .19em; }
+    .price-card h2 { margin: 9px 0 12px; font: 500 27px/1.15 'Bodoni Moda',serif; color: #f3eaff; }
+    .price-description { flex: 1; min-height: 45px; margin: 0 0 20px; font: 400 12px/1.65 Montserrat,Arial,sans-serif; color: #c9bbd2; overflow-wrap: anywhere; }
+    .price-meta { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding-top: 15px; border-top: 1px solid rgba(181,137,255,.2); }
+    .price-duration { color: #d5c5e4; font-size: 12px; }
+    .price-amount { color: #d8baff; font: 500 23px 'Bodoni Moda',serif; }
+    .price-custom { grid-column: 1 / -1; border-color: rgba(192,139,255,.65); background: linear-gradient(135deg,rgba(103,45,154,.32),rgba(15,8,23,.96)); }
+    .price-custom .price-description { min-height: 0; }
+    .price-custom .price-amount { font-size: 16px; }
+    .price-contact { display: inline-flex; align-items: center; justify-content: center; align-self: flex-start; margin-top: 22px; padding: 12px 23px; border: 1px solid #b688ee; border-radius: 999px; color: #fff; background: rgba(115,61,177,.28); font-size: 12px; transition: background .2s; }
+    .price-contact:hover { background: rgba(140,74,210,.5); }
+    .price-back { display: inline-block; margin: 32px 0 0; font-size: 12px; color: #c8a8f5; }
+    .price-back:hover { color: white; }
+    @media(max-width:800px) { .price-page { padding: 0 16px 42px; } .price-intro { padding: 49px 8px 34px; } .price-grid { grid-template-columns: 1fr; gap: 12px; } .price-card { padding: 19px 18px; } .price-card h2 { font-size: 25px; } .price-description { min-height: 0; } }
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a class="mini-brand" href="index.html#top">♡ MAVCIABUNNY</a>
+  <nav>
+    <a href="index.html#links">LINKI</a>
+    <a href="index.html#live">OFERTA</a>
+    <a href="cennik.html" aria-current="page">CENNIK</a>
+  </nav>
+</header>
+<main class="price-page">
+  <div class="price-intro">
+    <div class="price-kicker">PRYWATNE POKAZY ONLINE</div>
+    <h1>Cennik <span>♡</span></h1>
+    <p>Wybierz pokaz, który najbardziej Cię interesuje.</p>
+  </div>
+  <div class="price-grid">
+    <!-- POKAZ 01: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 01</span></div>
+      <h2>Pokaz 01</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 02: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 02</span></div>
+      <h2>Pokaz 02</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 03: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 03</span></div>
+      <h2>Pokaz 03</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 04: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 04</span></div>
+      <h2>Pokaz 04</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 05: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 05</span></div>
+      <h2>Pokaz 05</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 06: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 06</span></div>
+      <h2>Pokaz 06</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 07: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 07</span></div>
+      <h2>Pokaz 07</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 08: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 08</span></div>
+      <h2>Pokaz 08</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 09: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 09</span></div>
+      <h2>Pokaz 09</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 10: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 10</span></div>
+      <h2>Pokaz 10</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 11: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 11</span></div>
+      <h2>Pokaz 11</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 12: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 12</span></div>
+      <h2>Pokaz 12</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 13: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 13</span></div>
+      <h2>Pokaz 13</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 14: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 14</span></div>
+      <h2>Pokaz 14</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 15: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 15</span></div>
+      <h2>Pokaz 15</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 16: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 16</span></div>
+      <h2>Pokaz 16</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 17: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 17</span></div>
+      <h2>Pokaz 17</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 18: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 18</span></div>
+      <h2>Pokaz 18</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 19: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 19</span></div>
+      <h2>Pokaz 19</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ 20: edytuj nazwę, opis, czas i cenę poniżej -->
+    <article class="price-card">
+      <div class="price-card-header"><span class="price-index">POKAZ 20</span></div>
+      <h2>Pokaz 20</h2>
+      <p class="price-description">Tutaj wpisz opis pokazu.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ 00 minut</span>
+        <strong class="price-amount">000 zł</strong>
+      </div>
+    </article>
+    <!-- POKAZ NA ŻYCZENIE -->
+    <article class="price-card price-custom">
+      <span class="price-index">SPECJALNIE DLA CIEBIE ♡</span>
+      <h2>Pokaz na życzenie</h2>
+      <p class="price-description">Masz własny pomysł? Napisz do mnie i ustalimy szczegóły indywidualnie.</p>
+      <div class="price-meta">
+        <span class="price-duration">⏱ Czas ustalany indywidualnie</span>
+        <strong class="price-amount">Cena ustalana indywidualnie</strong>
+      </div>
+      <a class="price-contact" href="https://t.me/mavciabunny" target="_blank" rel="noopener noreferrer">Zamów pokaz ♡ →</a>
+    </article>
+  </div>
+  <a class="price-back" href="index.html">← Wróć na stronę główną</a>
+</main>
+<footer>
+  <div class="footer-brand">MavciaBunny♡</div>
+  <p>DZIĘKUJĘ, ŻE TU JESTEŚ ♡</p>
+  <div class="footer-links">
+    <a href="index.html#links">LINKI</a>
+    <a href="index.html#live">OFERTA</a>
+    <a href="cennik.html">CENNIK</a>
+  </div>
+</footer>
+</body>
+</html>
