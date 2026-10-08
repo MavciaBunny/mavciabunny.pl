@@ -277,5 +277,47 @@
     <a href="cennik.html">CENNIK</a>
   </div>
 </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const grid = document.querySelector(".price-grid");
+
+  const cards = Array.from(
+    grid.querySelectorAll(".price-card:not(.price-custom)")
+  );
+
+  cards.sort((a, b) => {
+
+    const getPrice = (card) => {
+      const text = card.querySelector(".price-amount").textContent;
+      return parseFloat(text.replace(/\s/g, "").replace(",", "."));
+    };
+
+    return getPrice(b) - getPrice(a);
+
+  });
+
+  cards.forEach(card => grid.appendChild(card));
+
+  // Pokaz na życzenie zawsze na końcu
+  const custom = grid.querySelector(".price-custom");
+  if (custom) {
+    grid.appendChild(custom);
+  }
+
+  // Numeracja zgodna z nową kolejnością
+  cards.forEach((card, index) => {
+    const number = card.querySelector(".price-index");
+
+    if (number) {
+      number.textContent =
+        "POKAZ " + String(index + 1).padStart(2, "0");
+    }
+  });
+
+});
+</script>
+
 </body>
 </html>
