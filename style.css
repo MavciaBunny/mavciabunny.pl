@@ -1257,57 +1257,46 @@ footer p {
 
 }
 
-/* =========================================================
-   ONLYFANS — WIDE FEATURE CARD
-========================================================= */
+/* ONLYFANS — zgodnie z zaakceptowanym podglądem */
 .onlyfans-card {
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
-  min-height: 90px;
-  padding: 16px 22px;
-  position: relative;
-  background: linear-gradient(110deg, rgba(17,9,24,.95), rgba(43,19,60,.78));
-  border-color: rgba(143,84,232,.48);
+  gap: 12px;
+  min-height: 92px;
+  padding: 15px 18px;
+  background: #110b18;
+  border: 1px solid #674b80;
+  border-radius: 8px;
 }
-.onlyfans-left { display: flex; align-items: center; gap: 16px; min-width: 0; }
+.onlyfans-left { display: flex; align-items: center; gap: 15px; min-width: 0; }
 .onlyfans-logo {
-  width: 46px; height: 46px; flex: 0 0 46px;
+  width: 44px; height: 44px; flex: 0 0 44px;
   display: grid; place-items: center;
-  border-radius: 9px;
-  background: #1c102a;
-  border: 1px solid rgba(181,137,255,.36);
+  background: #00aff0; border-radius: 9px;
 }
-.onlyfans-logo img { width: 28px; height: 28px; object-fit: contain; filter: invert(1); }
+.onlyfans-logo img { width: 27px; height: 27px; object-fit: contain; filter: brightness(0) invert(1); }
 .onlyfans-content { min-width: 0; }
 .onlyfans-content strong {
-  display: block;
-  font-family: 'Bodoni Moda', serif;
-  font-weight: 500;
-  font-size: 21px;
-  letter-spacing: .075em;
-  color: #f6efff;
+  display: block; color: #f6efff;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 17px; font-weight: 600; letter-spacing: .04em;
 }
-.onlyfans-content p { margin: 5px 0 0; color: #d2c7da; font-size: 11.5px; line-height: 1.5; }
-/* Elegancka, nieregularna pieczęć NEW */
-.onlyfans-new {
-  width: 104px;
-  height: 80px;
-  flex: 0 0 104px;
-  display: block;
-  transform: rotate(4deg);
-  filter: drop-shadow(0 2px 9px rgba(101,54,135,.25));
-}
-.onlyfans-new svg { display: block; width: 100%; height: 100%; overflow: visible; }
-.onlyfans-card:hover { border-color: rgba(205,169,255,.8); }
+.onlyfans-content p { margin: 6px 0 0; color: #cdbed8; font-size: 11.5px; line-height: 1.45; }
+.onlyfans-new { display: block; width: 104px; height: 80px; flex: 0 0 104px; }
+.onlyfans-new svg { width: 100%; height: 100%; display: block; }
+.onlyfans-card:hover { border-color: #a17ab5; }
 @media (max-width: 800px) {
-  .onlyfans-card { padding: 13px 15px; min-height: 80px; gap: 10px; }
-  .onlyfans-left { gap: 11px; }
+  .onlyfans-card { padding: 12px 10px; gap: 7px; }
+  .onlyfans-left { gap: 9px; }
   .onlyfans-logo { width: 39px; height: 39px; flex-basis: 39px; }
   .onlyfans-logo img { width: 24px; height: 24px; }
-  .onlyfans-content strong { font-size: 17px; }
+  .onlyfans-content strong { font-size: 14px; }
   .onlyfans-content p { font-size: 10px; }
-  .onlyfans-new { width: 76px; height: 62px; flex-basis: 76px; }
+  .onlyfans-new { width: 79px; height: 61px; flex-basis: 79px; }
+}
+@media (max-width: 380px) {
+  .onlyfans-content p { font-size: 9px; }
+  .onlyfans-new { width: 68px; height: 55px; flex-basis: 68px; }
 }
